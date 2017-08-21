@@ -7,8 +7,8 @@ team_name "SAULO A COELHO"
 #team_id "E234QZ5Z6G" # Developer Portal Team ID
 
 # To select a team for iTunes Connect use
-# itc_team_name "Company Name"
-# itc_team_id "18742801
+itc_team_name "Saulo Arruda"
+itc_team_id "830099
 
 # you can even provide different app identifiers, Apple IDs and team names per lane:
 # More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
