@@ -18,6 +18,11 @@
 		F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */; };
 		F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */; };
 		F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E651F4DF19E002CDA39 /* BaseInteractor.swift */; };
+		F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E681F4DF2F9002CDA39 /* LabsDescriptionPresenter.swift */; };
+		F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E691F4DF2F9002CDA39 /* LabsDescriptionViewController.swift */; };
+		F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E6B1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift */; };
+		F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E711F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift */; };
+		F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E731F4DF9B6002CDA39 /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +55,11 @@
 		F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireFrame.swift; sourceTree = "<group>"; };
 		F0FA0E651F4DF19E002CDA39 /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
+		F0FA0E681F4DF2F9002CDA39 /* LabsDescriptionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionPresenter.swift; sourceTree = "<group>"; };
+		F0FA0E691F4DF2F9002CDA39 /* LabsDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionViewController.swift; sourceTree = "<group>"; };
+		F0FA0E6B1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionWireFrame.swift; sourceTree = "<group>"; };
+		F0FA0E711F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionInteractor.swift; sourceTree = "<group>"; };
+		F0FA0E731F4DF9B6002CDA39 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				F0FA0E5C1F4DEFC6002CDA39 /* base */,
+				F0FA0E701F4DF4B9002CDA39 /* labsDescription */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -156,6 +167,7 @@
 			children = (
 				F0FA0E5B1F4DEF95002CDA39 /* utils */,
 				F0FA0E5A1F4DEF8A002CDA39 /* base */,
+				F0FA0E671F4DF2A2002CDA39 /* labsDescription */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -173,6 +185,7 @@
 		F0FA0E5B1F4DEF95002CDA39 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				F0FA0E731F4DF9B6002CDA39 /* Appearance.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -183,6 +196,32 @@
 				F0FA0E651F4DF19E002CDA39 /* BaseInteractor.swift */,
 			);
 			path = base;
+			sourceTree = "<group>";
+		};
+		F0FA0E671F4DF2A2002CDA39 /* labsDescription */ = {
+			isa = PBXGroup;
+			children = (
+				F0FA0E751F4DFA67002CDA39 /* view */,
+				F0FA0E681F4DF2F9002CDA39 /* LabsDescriptionPresenter.swift */,
+				F0FA0E691F4DF2F9002CDA39 /* LabsDescriptionViewController.swift */,
+				F0FA0E6B1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift */,
+			);
+			path = labsDescription;
+			sourceTree = "<group>";
+		};
+		F0FA0E701F4DF4B9002CDA39 /* labsDescription */ = {
+			isa = PBXGroup;
+			children = (
+				F0FA0E711F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift */,
+			);
+			path = labsDescription;
+			sourceTree = "<group>";
+		};
+		F0FA0E751F4DFA67002CDA39 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = view;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,9 +436,14 @@
 				F034E7E41F4A1FD100276796 /* ViewController.swift in Sources */,
 				F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */,
 				F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */,
+				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
 				F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */,
+				F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */,
 				F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */,
+				F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */,
 				F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */,
+				F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */,
+				F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

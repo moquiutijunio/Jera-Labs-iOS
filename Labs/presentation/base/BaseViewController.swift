@@ -8,11 +8,7 @@
 
 import UIKit
 
-protocol BaseViewProtocol {
-    
-}
-
-class BaseViewController: BaseViewProtocol {
+class BaseViewController: UIViewController {
     
     deinit {
         print("dealloc ---> \(String(describing: type(of: self)))")
