@@ -5,6 +5,8 @@ target 'Labs' do
 
   # Pods for Labs
   pod 'RxCocoa', '~> 3.4'
+  pod 'Cartography'
+  pod 'TPKeyboardAvoiding', '~> 1.3'
 
   target 'LabsUITests' do
     inherit! :search_paths

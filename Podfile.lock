@@ -1,15 +1,21 @@
 PODS:
+  - Cartography (1.1.0)
   - RxCocoa (3.6.1):
     - RxSwift (~> 3.6)
   - RxSwift (3.6.1)
+  - TPKeyboardAvoiding (1.3.1)
 
 DEPENDENCIES:
+  - Cartography
   - RxCocoa (~> 3.4)
+  - TPKeyboardAvoiding (~> 1.3)
 
 SPEC CHECKSUMS:
+  Cartography: 0538ccb4044acbbda2266335fc58cb4228794d90
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
+  TPKeyboardAvoiding: 0d6af20e95e2850f4c621841225b59ec7d8dd852
 
-PODFILE CHECKSUM: 130f5e605e19ad9b0c631ee088e1d3d6787f39d8
+PODFILE CHECKSUM: 007fe676199fa46799ef22a78da1f1ac6c5622ae
 
 COCOAPODS: 1.2.1

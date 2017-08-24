@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		053FB848AC0DD91B00391969 /* Pods_Labs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08609AD3F3A032A564D89C38 /* Pods_Labs.framework */; };
 		2AB3182F1E8E40B1F4B3E813 /* Pods_LabsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */; };
+		F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */; };
+		F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */; };
+		F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */; };
 		F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E7E11F4A1FD100276796 /* AppDelegate.swift */; };
 		F034E7E41F4A1FD100276796 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E7E31F4A1FD100276796 /* ViewController.swift */; };
 		F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F034E7E81F4A1FD100276796 /* Assets.xcassets */; };
@@ -42,6 +45,9 @@
 		518C0CE7684939A1381C36B5 /* Pods-LabsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC529B56B2AD9CF70AC54E6E /* Pods-LabsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
+		F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F034E7DE1F4A1FD100276796 /* Labs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Labs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034E7E11F4A1FD100276796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F034E7E31F4A1FD100276796 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +184,7 @@
 				F0FA0E5D1F4DF0EB002CDA39 /* BasePresenter.swift */,
 				F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */,
 				F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */,
+				F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -220,6 +227,8 @@
 		F0FA0E751F4DFA67002CDA39 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */,
+				F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -315,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */,
 				F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */,
 				F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */,
 			);
@@ -439,10 +449,12 @@
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
 				F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */,
 				F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */,
+				F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */,
 				F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */,
 				F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */,
 				F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */,
 				F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */,
+				F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */,
 				F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

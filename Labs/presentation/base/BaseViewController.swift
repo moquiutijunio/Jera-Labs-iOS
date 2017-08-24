@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Cartography
+import TPKeyboardAvoiding
 
 protocol BaseViewProtocol: class {
     func addLogoOnNav()
@@ -14,6 +16,9 @@ protocol BaseViewProtocol: class {
 }
 
 class BaseViewController: UIViewController {
+    
+    lazy var tableView: TPKeyboardAvoidingTableView = self.initializeTableView()
+    var tableViewConstraints: [NSLayoutConstraint]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +34,36 @@ class BaseViewController: UIViewController {
     
     deinit {
         print("dealloc ---> \(String(describing: type(of: self)))")
+    }
+}
+
+extension BaseViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    fileprivate func initializeTableView() -> TPKeyboardAvoidingTableView {
+        let tableView = TPKeyboardAvoidingTableView()
+        view.addSubview(tableView)
+        view.sendSubview(toBack: tableView)
+        constrain(tableView, view) { (tableView, view) in
+            self.tableViewConstraints = tableView.edges == view.edges
+        }
+        return tableView
+    }
+    
+    func configureTableView() {
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = .clear
+        tableView.keyboardDismissMode = .interactive
+        tableView.separatorColor = .separetorColor
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
 
