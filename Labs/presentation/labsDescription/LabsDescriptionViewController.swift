@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import RxCocoa
 
-protocol LabsDescriptionViewProtocol: class {
+protocol LabsDescriptionViewProtocol: BaseViewProtocol {
     
 }
 
@@ -19,6 +20,10 @@ class LabsDescriptionViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addLogoOnNav()
+        addRightBarButton(image: #imageLiteral(resourceName: "ic_info_outline").withRenderingMode(.alwaysTemplate)) {
+            print("TODO Show about view")
+        }
     }
 }
 
