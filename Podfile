@@ -4,9 +4,12 @@ target 'Labs' do
   use_frameworks!
 
   # Pods for Labs
+  pod 'R.swift', '~> 3.2'
+  pod 'Material', '~> 2.9'
   pod 'RxCocoa', '~> 3.4'
   pod 'Cartography'
-  pod 'TPKeyboardAvoiding', '~> 1.3'
+  pod 'Kingfisher'
+  pod 'Moya-ObjectMapper/RxSwift', '~> 2.3'
 
   target 'LabsUITests' do
     inherit! :search_paths

@@ -22,7 +22,7 @@ class LabsDescriptionWireFrame: BaseWireFrame {
     
     override init() {
         let interactor = LabsDescriptionInteractor()
-        let presenter = LabsDescriptionPresenter(interactor: interactor)
+        let presenter = LabsDescriptionPresenter()
         
         self.presenter = presenter
         self.interactor = interactor
@@ -34,6 +34,7 @@ class LabsDescriptionWireFrame: BaseWireFrame {
         super.init()
         
         presenter.viewProtocol = viewController
+        presenter.interactor = interactor
         presenter.router = self
     }
     

@@ -25,6 +25,8 @@ class LabsDescriptionViewController: BaseViewController {
         addRightBarButton(image: #imageLiteral(resourceName: "ic_info_outline").withRenderingMode(.alwaysTemplate)) {
             print("TODO Show about view")
         }
+        
+        presenterProtocol.makeRequestLabs()
     }
     
     override func configureTableView() {
@@ -42,25 +44,17 @@ extension LabsDescriptionViewController: LabsDescriptionViewProtocol {
 }
 
 extension LabsDescriptionViewController {
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return presenterProtocol.numberOfRows(section: section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LabsDescriptionTableViewCell.nibName()) as? LabsDescriptionTableViewCell
-        if let cell = cell {
-            let viewModel = LabsDescriptionTableViewModel()
-            cell.viewModel = viewModel
-            return cell
-        }
-        
-        return UITableViewCell()
+        return presenterProtocol.cellForRow(tableView: tableView, indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        switch indexPath.section {
-        default:
-            break
-        }
+        presenterProtocol.didSelectedRow(at: indexPath)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

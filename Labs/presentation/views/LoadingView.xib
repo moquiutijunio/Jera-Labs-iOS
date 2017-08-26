@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.otf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="XnT-rP-LTB" customClass="LoadingView" customModule="Labs" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="qrv-xh-7kX">
+                    <rect key="frame" x="169" y="315" width="37" height="37"/>
+                </activityIndicatorView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVI-aQ-ygB">
+                    <rect key="frame" x="10" y="362" width="355" height="24"/>
+                    <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="aVI-aQ-ygB" firstAttribute="top" secondItem="qrv-xh-7kX" secondAttribute="bottom" constant="10" id="FvM-6G-pKe"/>
+                <constraint firstItem="aVI-aQ-ygB" firstAttribute="leading" secondItem="XnT-rP-LTB" secondAttribute="leading" constant="10" id="JfT-fq-0My"/>
+                <constraint firstItem="qrv-xh-7kX" firstAttribute="centerY" secondItem="XnT-rP-LTB" secondAttribute="centerY" id="cH7-Hf-u3k"/>
+                <constraint firstAttribute="trailing" secondItem="aVI-aQ-ygB" secondAttribute="trailing" constant="10" id="par-RY-20x"/>
+                <constraint firstItem="qrv-xh-7kX" firstAttribute="centerX" secondItem="XnT-rP-LTB" secondAttribute="centerX" id="tgI-13-rtU"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <connections>
+                <outlet property="activityIndicatorView" destination="qrv-xh-7kX" id="nTN-8L-TwQ"/>
+                <outlet property="messageLabel" destination="aVI-aQ-ygB" id="DmX-4d-ZVi"/>
+            </connections>
+            <point key="canvasLocation" x="-181.5" y="-52"/>
+        </view>
+    </objects>
+</document>

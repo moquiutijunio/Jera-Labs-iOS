@@ -8,16 +8,19 @@
 
 import UIKit
 import Cartography
-import TPKeyboardAvoiding
 
 protocol BaseViewProtocol: class {
     func addLogoOnNav()
     func addRightBarButton(image: UIImage, block: @escaping () -> Void )
+    func reloadTableView()
+    func placeholder(type: PlaceholderType, buttonAction: (() -> ())?)
+    func hidePlaceholder()
 }
 
 class BaseViewController: UIViewController {
     
-    lazy var tableView: TPKeyboardAvoidingTableView = self.initializeTableView()
+    fileprivate var placeholderView: PlaceholderView?
+    lazy var tableView: UITableView = self.initializeTableView()
     var tableViewConstraints: [NSLayoutConstraint]?
     
     override func viewDidLoad() {
@@ -39,8 +42,8 @@ class BaseViewController: UIViewController {
 
 extension BaseViewController: UITableViewDataSource, UITableViewDelegate {
     
-    fileprivate func initializeTableView() -> TPKeyboardAvoidingTableView {
-        let tableView = TPKeyboardAvoidingTableView()
+    fileprivate func initializeTableView() -> UITableView {
+        let tableView = UITableView()
         view.addSubview(tableView)
         view.sendSubview(toBack: tableView)
         constrain(tableView, view) { (tableView, view) in
@@ -81,5 +84,24 @@ extension BaseViewController: BaseViewProtocol {
     func addLogoOnNav() {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "logo_jeralabs"))
         self.navigationItem.titleView = imageView
+    }
+    
+    
+    func reloadTableView() {
+        tableView.reloadData()
+    }
+    
+    func placeholder(type: PlaceholderType, buttonAction: (() -> ())?) {
+        hidePlaceholder()
+        let placeholderView = PlaceholderView.build(type: type, buttonAction: buttonAction)
+        view.addSubview(placeholderView)
+        constrain(view, placeholderView) { (container, placeholder) in
+            placeholder.edges == container.edges
+        }
+        self.placeholderView = placeholderView
+    }
+    
+    func hidePlaceholder() {
+        placeholderView?.removeFromSuperview()
     }
 }

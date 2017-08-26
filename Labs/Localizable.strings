@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Labs
+
+  Created by Junio Moquiuti on 26/08/17.
+  Copyright © 2017 Jera. All rights reserved.
+*/
+
+//Alert
+"alert.title" = "Ops...";
+"alert.loading" = "Carregando...";
+"alert.tryAgain" = "Tentar novamente";

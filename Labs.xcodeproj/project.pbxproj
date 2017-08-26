@@ -17,6 +17,17 @@
 		F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F034E7E81F4A1FD100276796 /* Assets.xcassets */; };
 		F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F034E7EA1F4A1FD100276796 /* LaunchScreen.storyboard */; };
 		F034E7F71F4A1FD100276796 /* LabsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E7F61F4A1FD100276796 /* LabsUITests.swift */; };
+		F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */; };
+		F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294521F51ED2A00CDA442 /* Lab.swift */; };
+		F0C294561F51EE2300CDA442 /* LabAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294551F51EE2300CDA442 /* LabAPI.swift */; };
+		F0C2945A1F51F61900CDA442 /* PlaceholderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294591F51F61900CDA442 /* PlaceholderView.swift */; };
+		F0C2945C1F51F64D00CDA442 /* EmptyOrErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2945B1F51F64D00CDA442 /* EmptyOrErrorView.swift */; };
+		F0C2945F1F51FA3C00CDA442 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2945E1F51FA3C00CDA442 /* R.generated.swift */; };
+		F0C294611F51FA6A00CDA442 /* EmptyOrErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C294601F51FA6A00CDA442 /* EmptyOrErrorView.xib */; };
+		F0C294631F51FCF500CDA442 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0C294621F51FCF500CDA442 /* LoadingView.xib */; };
+		F0C294651F51FD1100CDA442 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294641F51FD1100CDA442 /* LoadingView.swift */; };
+		F0C294671F52074B00CDA442 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0C294661F52074B00CDA442 /* Localizable.strings */; };
+		F0C294691F52147A00CDA442 /* DomainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294681F52147A00CDA442 /* DomainHelper.swift */; };
 		F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E5D1F4DF0EB002CDA39 /* BasePresenter.swift */; };
 		F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */; };
 		F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */; };
@@ -57,6 +68,17 @@
 		F034E7F21F4A1FD100276796 /* LabsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034E7F61F4A1FD100276796 /* LabsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsUITests.swift; sourceTree = "<group>"; };
 		F034E7F81F4A1FD100276796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResponse.swift; sourceTree = "<group>"; };
+		F0C294521F51ED2A00CDA442 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
+		F0C294551F51EE2300CDA442 /* LabAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabAPI.swift; sourceTree = "<group>"; };
+		F0C294591F51F61900CDA442 /* PlaceholderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlaceholderView.swift; sourceTree = "<group>"; };
+		F0C2945B1F51F64D00CDA442 /* EmptyOrErrorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyOrErrorView.swift; sourceTree = "<group>"; };
+		F0C2945E1F51FA3C00CDA442 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		F0C294601F51FA6A00CDA442 /* EmptyOrErrorView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyOrErrorView.xib; sourceTree = "<group>"; };
+		F0C294621F51FCF500CDA442 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		F0C294641F51FD1100CDA442 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		F0C294661F52074B00CDA442 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		F0C294681F52147A00CDA442 /* DomainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainHelper.swift; sourceTree = "<group>"; };
 		F0FA0E5D1F4DF0EB002CDA39 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireFrame.swift; sourceTree = "<group>"; };
@@ -139,6 +161,8 @@
 				F034E7E81F4A1FD100276796 /* Assets.xcassets */,
 				F034E7EA1F4A1FD100276796 /* LaunchScreen.storyboard */,
 				F034E7ED1F4A1FD100276796 /* Info.plist */,
+				F0C294661F52074B00CDA442 /* Localizable.strings */,
+				F0C2945E1F51FA3C00CDA442 /* R.generated.swift */,
 			);
 			path = Labs;
 			sourceTree = "<group>";
@@ -152,9 +176,47 @@
 			path = LabsUITests;
 			sourceTree = "<group>";
 		};
+		F0C2944E1F51EC9000CDA442 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */,
+				F0C294681F52147A00CDA442 /* DomainHelper.swift */,
+			);
+			path = utils;
+			sourceTree = "<group>";
+		};
+		F0C294511F51ECD300CDA442 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				F0C294521F51ED2A00CDA442 /* Lab.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		F0C294541F51EE0D00CDA442 /* entities */ = {
+			isa = PBXGroup;
+			children = (
+				F0C294551F51EE2300CDA442 /* LabAPI.swift */,
+			);
+			path = entities;
+			sourceTree = "<group>";
+		};
+		F0C294581F51F5FD00CDA442 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F0C294591F51F61900CDA442 /* PlaceholderView.swift */,
+				F0C2945B1F51F64D00CDA442 /* EmptyOrErrorView.swift */,
+				F0C294601F51FA6A00CDA442 /* EmptyOrErrorView.xib */,
+				F0C294641F51FD1100CDA442 /* LoadingView.swift */,
+				F0C294621F51FCF500CDA442 /* LoadingView.xib */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		F0FA0E571F4DEF48002CDA39 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				F0C294541F51EE0D00CDA442 /* entities */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -162,6 +224,8 @@
 		F0FA0E581F4DEF53002CDA39 /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				F0C294511F51ECD300CDA442 /* models */,
+				F0C2944E1F51EC9000CDA442 /* utils */,
 				F0FA0E5C1F4DEFC6002CDA39 /* base */,
 				F0FA0E701F4DF4B9002CDA39 /* labsDescription */,
 			);
@@ -171,6 +235,7 @@
 		F0FA0E591F4DEF5A002CDA39 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
+				F0C294581F51F5FD00CDA442 /* views */,
 				F0FA0E5B1F4DEF95002CDA39 /* utils */,
 				F0FA0E5A1F4DEF8A002CDA39 /* base */,
 				F0FA0E671F4DF2A2002CDA39 /* labsDescription */,
@@ -246,6 +311,7 @@
 				F034E7DC1F4A1FD100276796 /* Resources */,
 				1A2D8069DED120049315DB6F /* [CP] Embed Pods Frameworks */,
 				81199EDE99D86C9F5DF84569 /* [CP] Copy Pods Resources */,
+				F0C2945D1F51F83500CDA442 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -325,8 +391,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */,
+				F0C294671F52074B00CDA442 /* Localizable.strings in Resources */,
 				F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */,
+				F0C294611F51FA6A00CDA442 /* EmptyOrErrorView.xib in Resources */,
 				F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */,
+				F0C294631F51FCF500CDA442 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,9 +415,32 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Labs/Pods-Labs-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -370,7 +462,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		51C4D1708B60E97B0BE327DC /* [CP] Embed Pods Frameworks */ = {
@@ -433,8 +525,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		F0C2945D1F51F83500CDA442 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -443,18 +548,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0C294561F51EE2300CDA442 /* LabAPI.swift in Sources */,
 				F034E7E41F4A1FD100276796 /* ViewController.swift in Sources */,
 				F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */,
 				F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */,
+				F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */,
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
+				F0C2945F1F51FA3C00CDA442 /* R.generated.swift in Sources */,
+				F0C2945A1F51F61900CDA442 /* PlaceholderView.swift in Sources */,
 				F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */,
+				F0C294691F52147A00CDA442 /* DomainHelper.swift in Sources */,
+				F0C2945C1F51F64D00CDA442 /* EmptyOrErrorView.swift in Sources */,
 				F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */,
 				F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */,
 				F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */,
+				F0C294651F51FD1100CDA442 /* LoadingView.swift in Sources */,
 				F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */,
 				F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */,
 				F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */,
 				F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */,
+				F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */,
 				F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

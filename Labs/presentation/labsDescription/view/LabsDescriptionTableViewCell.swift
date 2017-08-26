@@ -8,16 +8,17 @@
 
 import UIKit
 import RxSwift
+import Kingfisher
 
 class LabsDescriptionTableViewModel {
-    var labsImage: Variable<UIImage?>
+    var labsAvatar: Variable<URL?>
     var labsName: Variable<String?>
     var labsDescription: Variable<String?>
     
-    init() { //TODO
-        self.labsImage = Variable(#imageLiteral(resourceName: "img_av_parca"))
-        self.labsName = Variable("Parça")
-        self.labsDescription = Variable("Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça Parça .")
+    init(lab: Lab) {
+        self.labsAvatar = Variable(lab.avatar)
+        self.labsName = Variable(lab.name)
+        self.labsDescription = Variable(lab.description)
     }
 }
 
@@ -43,6 +44,7 @@ class LabsDescriptionTableViewCell: BaseTableViewCell {
         selectedColor = .clear
         
         labsLogoImageView.layer.cornerRadius = labsLogoImageView.frame.height/2
+        labsLogoImageView.clipsToBounds = true
         
         labsNameLabel.font = UIFont.systemFont(ofSize: 16)
         labsNameLabel.textColor = UIColor(red:0.2, green:0.77, blue:0.37, alpha:1)
@@ -56,9 +58,14 @@ class LabsDescriptionTableViewCell: BaseTableViewCell {
         
         disposeBag = DisposeBag()
         
-        viewModel.labsImage
+        viewModel.labsAvatar
             .asObservable()
-            .bind(to: labsLogoImageView.rx.image)
+            .subscribe(onNext: { [weak self] (avatarURL) in
+                guard let strongSelf = self else { return }
+                guard let avatarURL = avatarURL else { return }
+                
+                strongSelf.labsLogoImageView.kf.setImage(with: avatarURL)
+            })
             .disposed(by: disposeBag)
         
         viewModel.labsName
