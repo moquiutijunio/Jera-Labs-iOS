@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
 //        Fabric.with([Crashlytics.self])
+        
+        FirebaseApp.configure()
+        
+        //TODO Test
+//        var ref: DatabaseReference!
+//        
+//        ref = Database.database().reference()
+//        
+//        ref.child("projects").observe(.childAdded, with: { (snapshot) in
+//            
+//            let value = snapshot.value as? [String: Any]
+//            let post = LabAPI(JSON: value!)
+//            
+//            if let post = post {
+//                print("Foi? \(post.name)")
+//            }
+//            
+//        })
         
         Appearance.applyUIAppearence()
         

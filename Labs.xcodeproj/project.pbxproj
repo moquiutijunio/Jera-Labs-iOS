@@ -10,6 +10,7 @@
 		053FB848AC0DD91B00391969 /* Pods_Labs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08609AD3F3A032A564D89C38 /* Pods_Labs.framework */; };
 		2AB3182F1E8E40B1F4B3E813 /* Pods_LabsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */; };
 		F02E4E021F55DD3500CABD37 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E4E011F55DD3500CABD37 /* R.generated.swift */; };
+		F02E4E041F55E22B00CABD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */; };
 		F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */; };
 		F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */; };
 		F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */; };
@@ -57,6 +58,7 @@
 		CC529B56B2AD9CF70AC54E6E /* Pods-LabsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F02E4E011F55DD3500CABD37 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +163,7 @@
 				F034E7E81F4A1FD100276796 /* Assets.xcassets */,
 				F034E7EA1F4A1FD100276796 /* LaunchScreen.storyboard */,
 				F034E7ED1F4A1FD100276796 /* Info.plist */,
+				F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */,
 				F0C294661F52074B00CDA442 /* Localizable.strings */,
 				F02E4E011F55DD3500CABD37 /* R.generated.swift */,
 			);
@@ -396,6 +399,7 @@
 				F0C294611F51FA6A00CDA442 /* EmptyOrErrorView.xib in Resources */,
 				F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */,
 				F0C294631F51FCF500CDA442 /* LoadingView.xib in Resources */,
+				F02E4E041F55E22B00CABD37 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
