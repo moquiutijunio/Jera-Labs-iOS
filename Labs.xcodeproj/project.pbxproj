@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		053FB848AC0DD91B00391969 /* Pods_Labs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08609AD3F3A032A564D89C38 /* Pods_Labs.framework */; };
 		2AB3182F1E8E40B1F4B3E813 /* Pods_LabsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */; };
+		F02E4E001F55D84A00CABD37 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E4DFF1F55D84A00CABD37 /* R.generated.swift */; };
 		F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */; };
 		F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */; };
 		F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */; };
@@ -17,7 +18,6 @@
 		F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F034E7E81F4A1FD100276796 /* Assets.xcassets */; };
 		F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F034E7EA1F4A1FD100276796 /* LaunchScreen.storyboard */; };
 		F034E7F71F4A1FD100276796 /* LabsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E7F61F4A1FD100276796 /* LabsUITests.swift */; };
-		F06DFF0A1F535FA3006B1A40 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F06DFF091F535FA3006B1A40 /* R.generated.swift */; };
 		F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */; };
 		F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294521F51ED2A00CDA442 /* Lab.swift */; };
 		F0C294561F51EE2300CDA442 /* LabAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294551F51EE2300CDA442 /* LabAPI.swift */; };
@@ -56,6 +56,7 @@
 		518C0CE7684939A1381C36B5 /* Pods-LabsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC529B56B2AD9CF70AC54E6E /* Pods-LabsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F02E4DFF1F55D84A00CABD37 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
@@ -68,7 +69,6 @@
 		F034E7F21F4A1FD100276796 /* LabsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034E7F61F4A1FD100276796 /* LabsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsUITests.swift; sourceTree = "<group>"; };
 		F034E7F81F4A1FD100276796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F06DFF091F535FA3006B1A40 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResponse.swift; sourceTree = "<group>"; };
 		F0C294521F51ED2A00CDA442 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
 		F0C294551F51EE2300CDA442 /* LabAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabAPI.swift; sourceTree = "<group>"; };
@@ -162,7 +162,7 @@
 				F034E7EA1F4A1FD100276796 /* LaunchScreen.storyboard */,
 				F034E7ED1F4A1FD100276796 /* Info.plist */,
 				F0C294661F52074B00CDA442 /* Localizable.strings */,
-				F06DFF091F535FA3006B1A40 /* R.generated.swift */,
+				F02E4DFF1F55D84A00CABD37 /* R.generated.swift */,
 			);
 			path = Labs;
 			sourceTree = "<group>";
@@ -306,12 +306,12 @@
 			buildConfigurationList = F034E7FB1F4A1FD100276796 /* Build configuration list for PBXNativeTarget "Labs" */;
 			buildPhases = (
 				46F4A5C4F9F46C2113012574 /* [CP] Check Pods Manifest.lock */,
+				F0C2945D1F51F83500CDA442 /* ShellScript */,
 				F034E7DA1F4A1FD100276796 /* Sources */,
 				F034E7DB1F4A1FD100276796 /* Frameworks */,
 				F034E7DC1F4A1FD100276796 /* Resources */,
 				1A2D8069DED120049315DB6F /* [CP] Embed Pods Frameworks */,
 				81199EDE99D86C9F5DF84569 /* [CP] Copy Pods Resources */,
-				F0C2945D1F51F83500CDA442 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -462,7 +462,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		51C4D1708B60E97B0BE327DC /* [CP] Embed Pods Frameworks */ = {
@@ -525,7 +525,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F0C2945D1F51F83500CDA442 /* ShellScript */ = {
@@ -556,7 +556,7 @@
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
 				F0C2945A1F51F61900CDA442 /* PlaceholderView.swift in Sources */,
 				F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */,
-				F06DFF0A1F535FA3006B1A40 /* R.generated.swift in Sources */,
+				F02E4E001F55D84A00CABD37 /* R.generated.swift in Sources */,
 				F0C294691F52147A00CDA442 /* DomainHelper.swift in Sources */,
 				F0C2945C1F51F64D00CDA442 /* EmptyOrErrorView.swift in Sources */,
 				F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */,
