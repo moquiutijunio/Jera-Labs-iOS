@@ -27,28 +27,20 @@ extension Lab {
     static func map(labAPI: LabAPI) -> Lab? {
         if let id = labAPI.id,
             let name = labAPI.name,
-            let avatarURL = labAPI.avatar?.convertToURL(),
+            let avatar = labAPI.avatar,
             let description = labAPI.description,
-            let backgroundURL = labAPI.background?.convertToURL() {
-            
-            var teamURL = [URL]()
-            if let team = labAPI.team {
-                teamURL = team
-                    .map { $0.convertToURL() }
-                    .filter { $0 != nil }
-                    .map {$0!}
-            }
+            let background = labAPI.background {
             
             return Lab(id: id,
                        name: name,
-                       avatar: avatarURL,
+                       avatar: avatar,
                        description: description,
-                       background: backgroundURL,
-                       team: teamURL,
-                       appleStore: labAPI.appleStore?.convertToURL(),
-                       playStore: labAPI.playStore?.convertToURL(),
-                       github: labAPI.github?.convertToURL(),
-                       gitlab: labAPI.gitlab?.convertToURL())
+                       background: background,
+                       team: labAPI.team,
+                       appleStore: labAPI.appleStore,
+                       playStore: labAPI.playStore,
+                       github: labAPI.github,
+                       gitlab: labAPI.gitlab)
         }
         
         return nil

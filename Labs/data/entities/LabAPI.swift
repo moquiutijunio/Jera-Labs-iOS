@@ -12,14 +12,14 @@ class LabAPI: Mappable {
     
     var id: Int?
     var name: String?
-    var avatar: String?
+    var avatar: URL?
     var description: String?
-    var background: String?
-    var team: [String]?
-    var appleStore: String?
-    var playStore: String?
-    var github: String?
-    var gitlab: String?
+    var background: URL?
+    var team: [URL]?
+    var appleStore: URL?
+    var playStore: URL?
+    var github: URL?
+    var gitlab: URL?
     
     required init?(map: Map) {
         mapping(map: map)
@@ -28,13 +28,13 @@ class LabAPI: Mappable {
     func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]
-        avatar <- map["avatar"]
+        avatar <- (map["avatar"], URLTransform())
         description <- map["description"]
-        background <- map["background"]
-        team <- map["team"]
-        appleStore <- map["link.apple_store"]
-        playStore <- map["link.play_store"]
-        github <- map["link.github"]
-        gitlab <- map["link.gitlab"]
+        background <- (map["background"], URLTransform())
+        team <- (map["team"], URLTransform())
+        appleStore <- (map["link.apple_store"], URLTransform())
+        playStore <- (map["link.play_store"], URLTransform())
+        github <- (map["link.github"], URLTransform())
+        gitlab <- (map["link.gitlab"], URLTransform())
     }
 }
