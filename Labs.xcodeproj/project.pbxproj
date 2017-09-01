@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		053FB848AC0DD91B00391969 /* Pods_Labs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08609AD3F3A032A564D89C38 /* Pods_Labs.framework */; };
 		2AB3182F1E8E40B1F4B3E813 /* Pods_LabsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */; };
+		F02D1A581F58774E00361C5B /* FirebaseRealtimeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02D1A571F58774E00361C5B /* FirebaseRealtimeDatabase.swift */; };
 		F02E4E021F55DD3500CABD37 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E4E011F55DD3500CABD37 /* R.generated.swift */; };
 		F02E4E041F55E22B00CABD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */; };
 		F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */; };
@@ -57,6 +58,7 @@
 		518C0CE7684939A1381C36B5 /* Pods-LabsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC529B56B2AD9CF70AC54E6E /* Pods-LabsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F02D1A571F58774E00361C5B /* FirebaseRealtimeDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabase.swift; sourceTree = "<group>"; };
 		F02E4E011F55DD3500CABD37 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
@@ -130,6 +132,14 @@
 				518C0CE7684939A1381C36B5 /* Pods-LabsUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		F02D1A561F5876E700361C5B /* firebaseRD */ = {
+			isa = PBXGroup;
+			children = (
+				F02D1A571F58774E00361C5B /* FirebaseRealtimeDatabase.swift */,
+			);
+			path = firebaseRD;
 			sourceTree = "<group>";
 		};
 		F034E7D51F4A1FD100276796 = {
@@ -219,6 +229,7 @@
 		F0FA0E571F4DEF48002CDA39 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				F02D1A561F5876E700361C5B /* firebaseRD */,
 				F0C294541F51EE0D00CDA442 /* entities */,
 			);
 			path = data;
@@ -565,6 +576,7 @@
 				F0C2945C1F51F64D00CDA442 /* EmptyOrErrorView.swift in Sources */,
 				F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */,
 				F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */,
+				F02D1A581F58774E00361C5B /* FirebaseRealtimeDatabase.swift in Sources */,
 				F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */,
 				F0C294651F51FD1100CDA442 /* LoadingView.swift in Sources */,
 				F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */,

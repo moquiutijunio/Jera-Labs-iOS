@@ -15,9 +15,45 @@ protocol LabsDescriptionInteractorProtocol {
 }
 
 class LabsDescriptionInteractor: BaseInteractor {
-    
     let labsDescriptinResponseVariable = Variable<RequestResponse<[Lab]>>(.new)
     
+    var firebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol! {
+        didSet{
+            bind()
+        }
+    }
+    
+    fileprivate var disposeBag = DisposeBag()
+    
+    private func bind() {
+        firebaseRealtimeDatabase.labsResponse
+            .asObservable()
+            .subscribe(onNext: { [weak self] (event) in
+                guard let strongSelf = self else { return }
+                
+                switch event {
+                case .success(let labsAPI):
+                    guard let labsAPI = labsAPI else {
+                        strongSelf.labsDescriptinResponseVariable.value = .failure(error: "TODO Error")
+                        return
+                    }
+                    
+                    guard let labs = Lab.mapArray(labsAPI: labsAPI) else {
+                        strongSelf.labsDescriptinResponseVariable.value = .failure(error: "TODO Error")
+                        return
+                    }
+                    
+                    strongSelf.labsDescriptinResponseVariable.value = .success(responseObject: labs)
+                case .loading:
+                    strongSelf.labsDescriptinResponseVariable.value = .loading
+                case .failure(let error):
+                    strongSelf.labsDescriptinResponseVariable.value = .failure(error: error)
+                default:
+                    break
+                }
+            })
+            .disposed(by: disposeBag)
+    }
 }
 
 extension LabsDescriptionInteractor: LabsDescriptionInteractorProtocol {
@@ -27,51 +63,6 @@ extension LabsDescriptionInteractor: LabsDescriptionInteractorProtocol {
     }
     
     func makeRequestLabs() {
-        //        disposeBag = DisposeBag()
-        //
-        //        labsDescriptinResponseVariable.value = .loading
-        
-        var labs = [Lab]()
-        for index in 1...10 {
-            
-            if index % 2 == 0 {
-                
-                let avatar = URL(string: "https://avatars2.githubusercontent.com/u/1772207?v=3&s=400")
-                
-                let lab = Lab(id: index,
-                              name: "Naka bebe \(index)",
-                    avatar: avatar!,
-                    description: "Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste ",
-                    background: avatar!,
-                    team: nil,
-                    appleStore: nil,
-                    playStore: nil,
-                    github: nil,
-                    gitlab: nil)
-                
-                labs.append(lab)
-                
-            } else {
-                
-                let avatar = URL(string: "https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA2uAAAAJGI5ZjRhZjdmLWRjMGYtNDUwZC05YWIzLWJjOGE5OGIzYzNjOA.jpg")
-                
-                let lab = Lab(id: index,
-                    name: "Parça Bolado \(index)",
-                    avatar: avatar!,
-                    description: "Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste Teste ",
-                    background: avatar!,
-                    team: nil,
-                    appleStore: nil,
-                    playStore: nil,
-                    github: nil,
-                    gitlab: nil)
-                
-                labs.append(lab)
-            }
-            
-        }
-        
-        labsDescriptinResponseVariable.value = .success(responseObject: labs)
-        
+        firebaseRealtimeDatabase.getAllLabsInDB()
     }
 }

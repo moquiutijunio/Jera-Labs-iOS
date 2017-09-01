@@ -54,7 +54,7 @@ extension Lab {
         return nil
     }
     
-    static func mapArray(labsAPI: [LabAPI]) -> [Lab] {
+    static func mapArray(labsAPI: [LabAPI]) -> [Lab]? {
         return labsAPI
             .map { Lab.map(labAPI: $0) }
             .filter { $0 != nil }

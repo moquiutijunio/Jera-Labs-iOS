@@ -22,22 +22,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FirebaseApp.configure()
         
-        //TODO Test
-//        var ref: DatabaseReference!
-//        
-//        ref = Database.database().reference()
-//        
-//        ref.child("projects").observe(.childAdded, with: { (snapshot) in
-//            
-//            let value = snapshot.value as? [String: Any]
-//            let post = LabAPI(JSON: value!)
-//            
-//            if let post = post {
-//                print("Foi? \(post.name)")
-//            }
-//            
-//        })
-        
         Appearance.applyUIAppearence()
         
         let window = UIWindow()
