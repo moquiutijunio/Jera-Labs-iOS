@@ -28,6 +28,7 @@ class LabsDescriptionPresenter: BasePresenter {
     
     let disposeBag = DisposeBag()
     var labsDescriptionTableViewModel = [LabsDescriptionTableViewModel]()
+    var currentLabs = [Lab]()
     
     private func bind() {
         
@@ -54,8 +55,9 @@ class LabsDescriptionPresenter: BasePresenter {
     }
     
     private func buildTableViewSectionsWith(_ labs: [Lab]) {
-        
+    
         for lab in labs {
+            currentLabs.append(lab)
             let viewModel = LabsDescriptionTableViewModel(lab: lab)
             labsDescriptionTableViewModel.append(viewModel)
         }
@@ -81,6 +83,7 @@ extension LabsDescriptionPresenter: LabsDescriptionPresenterProtocol {
     }
 
     func didSelectedRow(at indexPath: IndexPath) {
-        print("DidTapRow-> \(indexPath.row)")
+        print("DidTapRow-> \(currentLabs[indexPath.row].name)")
+        router?.openLabInformation()
     }
 }

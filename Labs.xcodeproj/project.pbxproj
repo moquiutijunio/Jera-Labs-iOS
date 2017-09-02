@@ -15,6 +15,10 @@
 		F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */; };
 		F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */; };
 		F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */; };
+		F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */; };
+		F033F7251F5A3130001B3A89 /* LabInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */; };
+		F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */; };
+		F033F7291F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7281F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift */; };
 		F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E7E11F4A1FD100276796 /* AppDelegate.swift */; };
 		F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F034E7E81F4A1FD100276796 /* Assets.xcassets */; };
 		F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F034E7EA1F4A1FD100276796 /* LaunchScreen.storyboard */; };
@@ -63,6 +67,10 @@
 		F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationWireFrame.swift; sourceTree = "<group>"; };
+		F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationViewController.swift; sourceTree = "<group>"; };
+		F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationPresenter.swift; sourceTree = "<group>"; };
+		F033F7281F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNavigationControllerDelegateProxy.swift; sourceTree = "<group>"; };
 		F034E7DE1F4A1FD100276796 /* Labs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Labs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034E7E11F4A1FD100276796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F034E7E81F4A1FD100276796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -140,6 +148,16 @@
 			path = firebaseRD;
 			sourceTree = "<group>";
 		};
+		F033F7211F5A309D001B3A89 /* labInformations */ = {
+			isa = PBXGroup;
+			children = (
+				F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */,
+				F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */,
+				F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */,
+			);
+			path = labInformations;
+			sourceTree = "<group>";
+		};
 		F034E7D51F4A1FD100276796 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +209,7 @@
 			children = (
 				F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */,
 				F0C294681F52147A00CDA442 /* DomainHelper.swift */,
+				F033F7281F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -250,6 +269,7 @@
 				F0FA0E5B1F4DEF95002CDA39 /* utils */,
 				F0FA0E5A1F4DEF8A002CDA39 /* base */,
 				F0FA0E671F4DF2A2002CDA39 /* labsDescription */,
+				F033F7211F5A309D001B3A89 /* labInformations */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -571,6 +591,7 @@
 				F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */,
 				F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */,
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
+				F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */,
 				F0C2945A1F51F61900CDA442 /* PlaceholderView.swift in Sources */,
 				F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */,
 				F02E4E021F55DD3500CABD37 /* R.generated.swift in Sources */,
@@ -586,7 +607,10 @@
 				F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */,
 				F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */,
 				F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */,
+				F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */,
+				F033F7291F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift in Sources */,
 				F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */,
+				F033F7251F5A3130001B3A89 /* LabInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
