@@ -16,12 +16,12 @@ protocol LabInformationWireFrameProtocol: class {
 class LabInformationWireFrame: BaseWireFrame {
     
     var navigationController: UINavigationController?
-    let viewController = LabInformationViewController()
+    let viewController = LabInformationViewController(nibName: "LabInformationViewController", bundle: nil)
 
     let presenter: LabInformationPresenterProtocol
     
-    override init() {
-        let presenter = LabInformationPresenter()
+    init(lab: Lab) {
+        let presenter = LabInformationPresenter(lab: lab)
 
         self.presenter = presenter
         

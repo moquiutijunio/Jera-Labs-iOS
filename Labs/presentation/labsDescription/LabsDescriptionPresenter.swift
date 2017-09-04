@@ -83,7 +83,6 @@ extension LabsDescriptionPresenter: LabsDescriptionPresenterProtocol {
     }
 
     func didSelectedRow(at indexPath: IndexPath) {
-        print("DidTapRow-> \(currentLabs[indexPath.row].name)")
-        router?.openLabInformation()
+        router?.openLabInformation(currentLabs[indexPath.row])
     }
 }
