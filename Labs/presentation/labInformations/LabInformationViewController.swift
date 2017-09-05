@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxGesture
 
 protocol LabInformationViewProtocol: BaseViewProtocol {
     
@@ -53,12 +54,12 @@ class LabInformationViewController: BaseViewController {
         fifthPersonImageView.clipsToBounds = true
         
         appleStoreImageView.image = #imageLiteral(resourceName: "ic_apple").withRenderingMode(.alwaysTemplate)
-        githubImageView.image = #imageLiteral(resourceName: "ic_git").withRenderingMode(.alwaysTemplate)
-        gitlabImageView.image = #imageLiteral(resourceName: "ic_gitlab").withRenderingMode(.alwaysTemplate)
-        playStoreImageView.image = #imageLiteral(resourceName: "ic_playstore").withRenderingMode(.alwaysTemplate)
         appleStoreImageView.tintColor = .gray
+        githubImageView.image = #imageLiteral(resourceName: "ic_git").withRenderingMode(.alwaysTemplate)
         githubImageView.tintColor = .gray
+        gitlabImageView.image = #imageLiteral(resourceName: "ic_gitlab").withRenderingMode(.alwaysTemplate)
         gitlabImageView.tintColor = .gray
+        playStoreImageView.image = #imageLiteral(resourceName: "ic_playstore").withRenderingMode(.alwaysTemplate)
         playStoreImageView.tintColor = .gray
 
         descriptionLabel.font = UIFont.systemFont(ofSize: 16)
@@ -80,7 +81,6 @@ class LabInformationViewController: BaseViewController {
             .asObservable()
             .bind(to: descriptionLabel.rx.text)
             .disposed(by: disposeBag)
-        
         
         presenter.firtPerson
             .asObservable()
@@ -140,6 +140,7 @@ class LabInformationViewController: BaseViewController {
         
         presenter.gitlab
             .asObservable()
+            .filter {$0}
             .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else { return }
                 strongSelf.gitlabImageView.tintColor = .black
@@ -148,7 +149,8 @@ class LabInformationViewController: BaseViewController {
         
         presenter.github
             .asObservable()
-            .subscribe(onNext: { [weak self] (photoURL) in
+            .filter {$0}
+            .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else { return }
                 strongSelf.githubImageView.tintColor = .black
             })
@@ -156,7 +158,8 @@ class LabInformationViewController: BaseViewController {
         
         presenter.playStore
             .asObservable()
-            .subscribe(onNext: { [weak self] (photoURL) in
+            .filter {$0}
+            .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else { return }
                 strongSelf.playStoreImageView.tintColor = .black
             })
@@ -164,9 +167,18 @@ class LabInformationViewController: BaseViewController {
         
         presenter.appleStore
             .asObservable()
-            .subscribe(onNext: { [weak self] (photoURL) in
+            .filter {$0}
+            .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else { return }
                 strongSelf.appleStoreImageView.tintColor = .black
+            })
+            .disposed(by: disposeBag)
+        
+        appleStoreImageView.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { (_) in
+                print("Tap appleStoreImageView ")
             })
             .disposed(by: disposeBag)
     }

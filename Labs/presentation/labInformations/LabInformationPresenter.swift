@@ -10,18 +10,18 @@ import UIKit
 import RxSwift
 
 protocol LabInformationPresenterProtocol {
+    var name: Variable<String?> {get}
+    var description: Variable<String?> {get}
+    var background: Variable<URL?> {get}
     var firtPerson: Variable<URL?> {get}
     var secondPerson : Variable<URL?> {get}
     var thirdPerson: Variable<URL?> {get}
     var fourthPerson: Variable<URL?> {get}
     var fifthPerson: Variable<URL?> {get}
-    var appleStore: Variable<URL?> {get}
-    var playStore: Variable<URL?> {get}
-    var gitlab: Variable<URL?> {get}
-    var github: Variable<URL?> {get}
-    var background: Variable<URL?> {get}
-    var description: Variable<String?> {get}
-    var name: Variable<String?> {get}
+    var appleStore: Variable<Bool> {get}
+    var playStore: Variable<Bool> {get}
+    var gitlab: Variable<Bool> {get}
+    var github: Variable<Bool> {get}
 }
 
 class LabInformationPresenter: BasePresenter {
@@ -33,18 +33,18 @@ class LabInformationPresenter: BasePresenter {
         }
     }
     
+    let name = Variable<String?>(nil)
+    let description = Variable<String?>(nil)
+    let background = Variable<URL?>(nil)
     let firtPerson = Variable<URL?>(nil)
     let secondPerson = Variable<URL?>(nil)
     let thirdPerson = Variable<URL?>(nil)
     let fourthPerson = Variable<URL?>(nil)
     let fifthPerson = Variable<URL?>(nil)
-    let appleStore = Variable<URL?>(nil)
-    let playStore = Variable<URL?>(nil)
-    let gitlab = Variable<URL?>(nil)
-    let github = Variable<URL?>(nil)
-    let background = Variable<URL?>(nil)
-    let description = Variable<String?>(nil)
-    let name = Variable<String?>(nil)
+    let appleStore = Variable<Bool>(false)
+    let playStore = Variable<Bool>(false)
+    let gitlab = Variable<Bool>(false)
+    let github = Variable<Bool>(false)
     
     let disposeBag = DisposeBag()
     var labVariable: Variable<Lab>
@@ -62,30 +62,15 @@ class LabInformationPresenter: BasePresenter {
                 strongSelf.name.value = lab.name
                 strongSelf.description.value = lab.description
                 strongSelf.background.value = lab.background
-                strongSelf.github.value = lab.github
-                strongSelf.gitlab.value = lab.gitlab
-                strongSelf.appleStore.value = lab.appleStore
-                strongSelf.playStore.value = lab.playStore
-                
-                if let firtPersonURL = lab.team?[0] {
-                    strongSelf.firtPerson.value = firtPersonURL
-                }
-                
-                if let secondPersonURL = lab.team?[1] {
-                    strongSelf.secondPerson.value = secondPersonURL
-                }
-                
-                if let thirdPersonURL = lab.team?[2] {
-                    strongSelf.thirdPerson.value = thirdPersonURL
-                }
-                
-                if let fourthPersonURL = lab.team?[3] {
-                    strongSelf.fourthPerson.value = fourthPersonURL
-                }
-                
-                if let fifthPersonURL = lab.team?[4] {
-                    strongSelf.fifthPerson.value = fifthPersonURL
-                }
+                strongSelf.firtPerson.value = lab.team?.first
+                strongSelf.secondPerson.value = lab.team?.second
+                strongSelf.thirdPerson.value = lab.team?.third
+                strongSelf.fourthPerson.value = lab.team?.fourth
+                strongSelf.fifthPerson.value = lab.team?.fifth
+                strongSelf.github.value = lab.github != nil ? true : false
+                strongSelf.gitlab.value = lab.gitlab != nil ? true : false
+                strongSelf.appleStore.value = lab.appleStore != nil ? true : false
+                strongSelf.playStore.value = lab.playStore != nil ? true : false
             })
             .disposed(by: disposeBag)
     }

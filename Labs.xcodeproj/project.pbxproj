@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		053FB848AC0DD91B00391969 /* Pods_Labs.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08609AD3F3A032A564D89C38 /* Pods_Labs.framework */; };
 		2AB3182F1E8E40B1F4B3E813 /* Pods_LabsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */; };
+		F02CF8F41F5F0EFA00916244 /* TeamAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02CF8F31F5F0EFA00916244 /* TeamAPI.swift */; };
+		F02CF8F61F5F123A00916244 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02CF8F51F5F123A00916244 /* Team.swift */; };
 		F02D1A581F58774E00361C5B /* FirebaseRealtimeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02D1A571F58774E00361C5B /* FirebaseRealtimeDatabase.swift */; };
 		F02E4E021F55DD3500CABD37 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E4E011F55DD3500CABD37 /* R.generated.swift */; };
 		F02E4E041F55E22B00CABD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */; };
@@ -62,6 +64,8 @@
 		518C0CE7684939A1381C36B5 /* Pods-LabsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CC529B56B2AD9CF70AC54E6E /* Pods-LabsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabsUITests/Pods-LabsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		D9F07CC9B9B07B0FCBF1AC46 /* Pods_LabsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F02CF8F31F5F0EFA00916244 /* TeamAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamAPI.swift; sourceTree = "<group>"; };
+		F02CF8F51F5F123A00916244 /* Team.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		F02D1A571F58774E00361C5B /* FirebaseRealtimeDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabase.swift; sourceTree = "<group>"; };
 		F02E4E011F55DD3500CABD37 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				F0C294521F51ED2A00CDA442 /* Lab.swift */,
+				F02CF8F51F5F123A00916244 /* Team.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -229,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				F0C294551F51EE2300CDA442 /* LabAPI.swift */,
+				F02CF8F31F5F0EFA00916244 /* TeamAPI.swift */,
 			);
 			path = entities;
 			sourceTree = "<group>";
@@ -504,7 +510,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		51C4D1708B60E97B0BE327DC /* [CP] Embed Pods Frameworks */ = {
@@ -567,7 +573,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F0C2945D1F51F83500CDA442 /* ShellScript */ = {
@@ -595,6 +601,7 @@
 				F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */,
 				F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */,
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
+				F02CF8F41F5F0EFA00916244 /* TeamAPI.swift in Sources */,
 				F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */,
 				F0C2945A1F51F61900CDA442 /* PlaceholderView.swift in Sources */,
 				F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */,
@@ -607,6 +614,7 @@
 				F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */,
 				F0C294651F51FD1100CDA442 /* LoadingView.swift in Sources */,
 				F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */,
+				F02CF8F61F5F123A00916244 /* Team.swift in Sources */,
 				F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */,
 				F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */,
 				F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */,

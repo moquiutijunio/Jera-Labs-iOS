@@ -15,7 +15,7 @@ class LabAPI: Mappable {
     var avatar: URL?
     var description: String?
     var background: URL?
-    var team: [URL]?
+    var team: TeamAPI?
     var appleStore: URL?
     var playStore: URL?
     var github: URL?
@@ -31,7 +31,7 @@ class LabAPI: Mappable {
         avatar <- (map["avatar"], URLTransform())
         description <- map["description"]
         background <- (map["background"], URLTransform())
-        team <- (map["team"], URLTransform())
+        team <- map["team"]
         appleStore <- (map["link.apple_store"], URLTransform())
         playStore <- (map["link.play_store"], URLTransform())
         github <- (map["link.github"], URLTransform())

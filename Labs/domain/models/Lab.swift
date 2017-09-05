@@ -15,7 +15,7 @@ struct Lab {
     var avatar: URL
     var description: String
     var background: URL
-    var team: [URL]?
+    var team: Team?
     var appleStore: URL?
     var playStore: URL?
     var github: URL?
@@ -36,7 +36,7 @@ extension Lab {
                        avatar: avatar,
                        description: description,
                        background: background,
-                       team: labAPI.team,
+                       team: Team.map(teamAPI: labAPI.team),
                        appleStore: labAPI.appleStore,
                        playStore: labAPI.playStore,
                        github: labAPI.github,
