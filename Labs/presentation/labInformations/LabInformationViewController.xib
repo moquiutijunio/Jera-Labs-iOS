@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,22 +11,33 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LabInformationViewController" customModule="Labs" customModuleProvider="target">
             <connections>
+                <outlet property="appleStoreImageView" destination="k1I-Ia-btT" id="RQl-JK-ds3"/>
+                <outlet property="backgroundImageView" destination="JMz-Tk-eQd" id="wI8-eA-ZpK"/>
+                <outlet property="descriptionLabel" destination="1lp-Gl-8XJ" id="gdT-NE-X2p"/>
+                <outlet property="fifthPersonImageView" destination="8IT-QB-30k" id="4hF-PP-zWD"/>
+                <outlet property="firstPersonImageView" destination="WPa-Ru-H6A" id="lmW-pi-4h4"/>
+                <outlet property="fourthPersonImageView" destination="3L4-hY-Bhd" id="X0m-aN-7Ns"/>
+                <outlet property="githubImageView" destination="DIJ-vS-OJe" id="UH9-u0-D6m"/>
+                <outlet property="gitlabImageView" destination="vgh-aF-Ixl" id="mZ2-hD-OA5"/>
+                <outlet property="playStoreImageView" destination="612-ia-U8R" id="mDG-JN-9UM"/>
+                <outlet property="secondPersonImageView" destination="cKs-sB-aRs" id="w4u-I2-2pZ"/>
+                <outlet property="thirdPersonImageView" destination="F9g-Od-jGa" id="ajL-m1-yp3"/>
                 <outlet property="view" destination="iN0-l3-epB" id="z4i-Te-Fz4"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="320" height="516"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oav-jN-4RA">
-                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="516"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfu-H8-2Fs">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="516"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6KK-pX-HRp">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="88"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WPa-Ru-H6A">
                                             <rect key="frame" x="18" y="12" width="64" height="64"/>
@@ -83,14 +94,14 @@
                                         <constraint firstItem="3L4-hY-Bhd" firstAttribute="leading" secondItem="F9g-Od-jGa" secondAttribute="trailing" constant="8" id="yuk-tO-6WH"/>
                                     </constraints>
                                 </view>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lp-Gl-8XJ">
-                                    <rect key="frame" x="16" y="93" width="382" height="244.33333333333331"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label Label " textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1lp-Gl-8XJ">
+                                    <rect key="frame" x="16" y="93" width="288" height="24.333333333333329"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IZn-vU-P9k">
-                                    <rect key="frame" x="0.0" y="342" width="414" height="68"/>
+                                    <rect key="frame" x="0.0" y="122" width="320" height="68"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="k1I-Ia-btT">
                                             <rect key="frame" x="18" y="10" width="46" height="46"/>
@@ -138,9 +149,9 @@
                                     </constraints>
                                 </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JMz-Tk-eQd">
-                                    <rect key="frame" x="47" y="418" width="320" height="318"/>
+                                    <rect key="frame" x="47" y="198" width="226" height="318"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="320" id="Cg7-N9-wzt"/>
+                                        <constraint firstAttribute="width" constant="226" id="S5N-tO-amf"/>
                                         <constraint firstAttribute="height" constant="318" id="SMh-x8-Q9i"/>
                                     </constraints>
                                 </imageView>
@@ -179,7 +190,8 @@
                 <constraint firstAttribute="bottom" secondItem="oav-jN-4RA" secondAttribute="bottom" id="oCO-fl-qk6"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
-            <point key="canvasLocation" x="-160" y="-51"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-160" y="-161"/>
         </view>
     </objects>
 </document>

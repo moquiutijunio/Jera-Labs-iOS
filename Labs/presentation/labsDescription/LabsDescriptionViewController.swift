@@ -22,7 +22,7 @@ class LabsDescriptionViewController: BaseViewController {
         configureTableView()
         
         addLogoOnNav()
-        addRightBarButton(image: #imageLiteral(resourceName: "ic_info_outline").withRenderingMode(.alwaysTemplate)) {
+        addRightBarButton(image: #imageLiteral(resourceName: "ic_info_outline").withRenderingMode(.alwaysTemplate).tint(with: .gray)!) {
             print("TODO Show about view")
         }
         

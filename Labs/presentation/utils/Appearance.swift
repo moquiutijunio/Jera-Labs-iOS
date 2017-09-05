@@ -11,7 +11,7 @@ import UIKit
 struct Appearance {
 
     static func applyUIAppearence() {
-        UINavigationBar.appearance().tintColor = .gray
+        UINavigationBar.appearance().tintColor = .primaryColor
         UINavigationBar.appearance().barTintColor = .white
         UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.primaryColor]
         
