@@ -55,7 +55,9 @@ class LabsDescriptionPresenter: BasePresenter {
     }
     
     private func buildTableViewSectionsWith(_ labs: [Lab]) {
-    
+        currentLabs.removeAll()
+        labsDescriptionTableViewModel.removeAll()
+        
         for lab in labs {
             currentLabs.append(lab)
             let viewModel = LabsDescriptionTableViewModel(lab: lab)
