@@ -26,7 +26,6 @@ class LabInformationViewController: BaseViewController {
     @IBOutlet weak var gitlabImageView: UIImageView!
     @IBOutlet weak var playStoreImageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
     
     let disposeBag = DisposeBag()
@@ -54,13 +53,9 @@ class LabInformationViewController: BaseViewController {
         fifthPersonImageView.clipsToBounds = true
         
         appleStoreImageView.image = #imageLiteral(resourceName: "ic_apple").withRenderingMode(.alwaysTemplate)
-        appleStoreImageView.tintColor = .gray
         githubImageView.image = #imageLiteral(resourceName: "ic_git").withRenderingMode(.alwaysTemplate)
-        githubImageView.tintColor = .gray
         gitlabImageView.image = #imageLiteral(resourceName: "ic_gitlab").withRenderingMode(.alwaysTemplate)
-        gitlabImageView.tintColor = .gray
         playStoreImageView.image = #imageLiteral(resourceName: "ic_playstore").withRenderingMode(.alwaysTemplate)
-        playStoreImageView.tintColor = .gray
 
         descriptionLabel.font = UIFont.systemFont(ofSize: 16)
     }
@@ -140,37 +135,33 @@ class LabInformationViewController: BaseViewController {
         
         presenter.gitlabState
             .asObservable()
-            .filter {$0}
-            .subscribe(onNext: { [weak self] (_) in
-                guard let strongSelf = self else { return }
-                strongSelf.gitlabImageView.tintColor = .black
+            .subscribe(onNext: { [weak self] (state) in
+                guard let strongSelf = self else {return}
+                strongSelf.gitlabImageView.tintColor = state == true ? .black : .gray
             })
             .disposed(by: disposeBag)
         
         presenter.githubState
             .asObservable()
-            .filter {$0}
-            .subscribe(onNext: { [weak self] (_) in
-                guard let strongSelf = self else { return }
-                strongSelf.githubImageView.tintColor = .black
+            .subscribe(onNext: { [weak self] (state) in
+                guard let strongSelf = self else {return}
+                strongSelf.githubImageView.tintColor = state == true ? .black : .gray
             })
             .disposed(by: disposeBag)
         
         presenter.playStoreState
             .asObservable()
-            .filter {$0}
-            .subscribe(onNext: { [weak self] (_) in
-                guard let strongSelf = self else { return }
-                strongSelf.playStoreImageView.tintColor = .black
+            .subscribe(onNext: { [weak self] (state) in
+                guard let strongSelf = self else {return}
+                strongSelf.playStoreImageView.tintColor = state == true ? .black : .gray
             })
             .disposed(by: disposeBag)
         
         presenter.appleStoreState
             .asObservable()
-            .filter {$0}
-            .subscribe(onNext: { [weak self] (_) in
-                guard let strongSelf = self else { return }
-                strongSelf.appleStoreImageView.tintColor = .black
+            .subscribe(onNext: { [weak self] (state) in
+                guard let strongSelf = self else {return}
+                strongSelf.appleStoreImageView.tintColor = state == true ? .black : .gray
             })
             .disposed(by: disposeBag)
         
