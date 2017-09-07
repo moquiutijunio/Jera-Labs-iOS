@@ -10,7 +10,7 @@ import UIKit
 import RxCocoa
 
 protocol LabInformationWireFrameProtocol: class {
-    
+    func openWebViewWith(url: URL, title: String)
 }
 
 class LabInformationWireFrame: BaseWireFrame {
@@ -41,5 +41,10 @@ class LabInformationWireFrame: BaseWireFrame {
 }
 
 extension LabInformationWireFrame: LabInformationWireFrameProtocol {
-    
+    func openWebViewWith(url: URL, title: String) {
+        guard let navigationController = navigationController else { return }
+        let webViewWireFrame = WebViewWireFrame(url: url, title: title)
+        webViewWireFrame.presentOn(navigationController: navigationController)
+        presentedWireFrame = webViewWireFrame
+    }
 }

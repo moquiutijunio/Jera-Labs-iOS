@@ -36,6 +36,10 @@
 		F0C294651F51FD1100CDA442 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294641F51FD1100CDA442 /* LoadingView.swift */; };
 		F0C294671F52074B00CDA442 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0C294661F52074B00CDA442 /* Localizable.strings */; };
 		F0C294691F52147A00CDA442 /* DomainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294681F52147A00CDA442 /* DomainHelper.swift */; };
+		F0F8FF591F60BCD800A906F9 /* WebViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */; };
+		F0F8FF5B1F60BCE800A906F9 /* WebViewPreseter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8FF5A1F60BCE800A906F9 /* WebViewPreseter.swift */; };
+		F0F8FF5D1F60BCFA00A906F9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8FF5C1F60BCFA00A906F9 /* WebViewViewController.swift */; };
+		F0F8FF5F1F60C1A500A906F9 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0F8FF5E1F60C1A500A906F9 /* WebViewController.xib */; };
 		F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E5D1F4DF0EB002CDA39 /* BasePresenter.swift */; };
 		F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */; };
 		F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */; };
@@ -95,6 +99,10 @@
 		F0C294641F51FD1100CDA442 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F0C294661F52074B00CDA442 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F0C294681F52147A00CDA442 /* DomainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainHelper.swift; sourceTree = "<group>"; };
+		F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewWireFrame.swift; sourceTree = "<group>"; };
+		F0F8FF5A1F60BCE800A906F9 /* WebViewPreseter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPreseter.swift; sourceTree = "<group>"; };
+		F0F8FF5C1F60BCFA00A906F9 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
+		F0F8FF5E1F60C1A500A906F9 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 		F0FA0E5D1F4DF0EB002CDA39 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
 		F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireFrame.swift; sourceTree = "<group>"; };
@@ -251,6 +259,17 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		F0F8FF571F60BC8E00A906F9 /* webView */ = {
+			isa = PBXGroup;
+			children = (
+				F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */,
+				F0F8FF5A1F60BCE800A906F9 /* WebViewPreseter.swift */,
+				F0F8FF5C1F60BCFA00A906F9 /* WebViewViewController.swift */,
+				F0F8FF5E1F60C1A500A906F9 /* WebViewController.xib */,
+			);
+			path = webView;
+			sourceTree = "<group>";
+		};
 		F0FA0E571F4DEF48002CDA39 /* data */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,6 +298,7 @@
 				F0FA0E5A1F4DEF8A002CDA39 /* base */,
 				F0FA0E671F4DF2A2002CDA39 /* labsDescription */,
 				F033F7211F5A309D001B3A89 /* labInformations */,
+				F0F8FF571F60BC8E00A906F9 /* webView */,
 			);
 			path = presentation;
 			sourceTree = "<group>";
@@ -433,6 +453,7 @@
 				F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */,
 				F0C294671F52074B00CDA442 /* Localizable.strings in Resources */,
 				F042DD7A1F5DC21400924057 /* LabInformationViewController.xib in Resources */,
+				F0F8FF5F1F60C1A500A906F9 /* WebViewController.xib in Resources */,
 				F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */,
 				F0C294611F51FA6A00CDA442 /* EmptyOrErrorView.xib in Resources */,
 				F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */,
@@ -608,12 +629,15 @@
 				F0C2945A1F51F61900CDA442 /* PlaceholderView.swift in Sources */,
 				F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */,
 				F02E4E021F55DD3500CABD37 /* R.generated.swift in Sources */,
+				F0F8FF5D1F60BCFA00A906F9 /* WebViewViewController.swift in Sources */,
 				F0C294691F52147A00CDA442 /* DomainHelper.swift in Sources */,
 				F0C2945C1F51F64D00CDA442 /* EmptyOrErrorView.swift in Sources */,
+				F0F8FF5B1F60BCE800A906F9 /* WebViewPreseter.swift in Sources */,
 				F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */,
 				F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */,
 				F02D1A581F58774E00361C5B /* FirebaseRealtimeDatabase.swift in Sources */,
 				F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */,
+				F0F8FF591F60BCD800A906F9 /* WebViewWireFrame.swift in Sources */,
 				F0C294651F51FD1100CDA442 /* LoadingView.swift in Sources */,
 				F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */,
 				F02CF8F61F5F123A00916244 /* Team.swift in Sources */,

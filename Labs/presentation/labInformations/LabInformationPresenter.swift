@@ -18,20 +18,21 @@ protocol LabInformationPresenterProtocol {
     var thirdPerson: Variable<URL?> {get}
     var fourthPerson: Variable<URL?> {get}
     var fifthPerson: Variable<URL?> {get}
-    var appleStore: Variable<Bool> {get}
-    var playStore: Variable<Bool> {get}
-    var gitlab: Variable<Bool> {get}
-    var github: Variable<Bool> {get}
+    var appleStoreState: Variable<Bool> {get}
+    var playStoreState: Variable<Bool> {get}
+    var gitlabState: Variable<Bool> {get}
+    var githubState: Variable<Bool> {get}
+    
+    func appleStoreDidTap()
+    func playStoreDidTap()
+    func githubDidTap()
+    func gitlabDidTap()
 }
 
 class LabInformationPresenter: BasePresenter {
     
     weak var viewProtocol: LabInformationViewProtocol?
-    weak var router: LabInformationWireFrameProtocol? {
-        didSet {
-            bind()
-        }
-    }
+    weak var router: LabInformationWireFrameProtocol?
     
     let name = Variable<String?>(nil)
     let description = Variable<String?>(nil)
@@ -41,16 +42,18 @@ class LabInformationPresenter: BasePresenter {
     let thirdPerson = Variable<URL?>(nil)
     let fourthPerson = Variable<URL?>(nil)
     let fifthPerson = Variable<URL?>(nil)
-    let appleStore = Variable<Bool>(false)
-    let playStore = Variable<Bool>(false)
-    let gitlab = Variable<Bool>(false)
-    let github = Variable<Bool>(false)
+    let appleStoreState = Variable<Bool>(false)
+    let playStoreState = Variable<Bool>(false)
+    let gitlabState = Variable<Bool>(false)
+    let githubState = Variable<Bool>(false)
     
     let disposeBag = DisposeBag()
     var labVariable: Variable<Lab>
 
     init(lab: Lab) {
         labVariable = Variable(lab)
+        super.init()
+        bind()
     }
     
     private func bind() {
@@ -67,16 +70,38 @@ class LabInformationPresenter: BasePresenter {
                 strongSelf.thirdPerson.value = lab.team?.third
                 strongSelf.fourthPerson.value = lab.team?.fourth
                 strongSelf.fifthPerson.value = lab.team?.fifth
-                strongSelf.github.value = lab.github != nil ? true : false
-                strongSelf.gitlab.value = lab.gitlab != nil ? true : false
-                strongSelf.appleStore.value = lab.appleStore != nil ? true : false
-                strongSelf.playStore.value = lab.playStore != nil ? true : false
+                strongSelf.githubState.value = lab.github != nil ? true : false
+                strongSelf.gitlabState.value = lab.gitlab != nil ? true : false
+                strongSelf.appleStoreState.value = lab.appleStore != nil ? true : false
+                strongSelf.playStoreState.value = lab.playStore != nil ? true : false
             })
             .disposed(by: disposeBag)
     }
 }
 
 extension LabInformationPresenter: LabInformationPresenterProtocol {
+    func appleStoreDidTap() {
+        if appleStoreState.value, let appleStoreURL = labVariable.value.appleStore {
+            router?.openWebViewWith(url: appleStoreURL, title: labVariable.value.name)
+        }
+    }
     
+    func playStoreDidTap() {
+        if playStoreState.value, let playStoreURL = labVariable.value.playStore {
+            router?.openWebViewWith(url: playStoreURL, title: labVariable.value.name)
+        }
+    }
+    
+    func githubDidTap() {
+        if githubState.value, let githubURL = labVariable.value.github {
+            router?.openWebViewWith(url: githubURL, title: labVariable.value.name)
+        }
+    }
+    
+    func gitlabDidTap() {
+        if gitlabState.value, let gitlabURL = labVariable.value.gitlab {
+            router?.openWebViewWith(url: gitlabURL, title: labVariable.value.name)
+        }
+    }
 }
 

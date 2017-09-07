@@ -138,7 +138,7 @@ class LabInformationViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        presenter.gitlab
+        presenter.gitlabState
             .asObservable()
             .filter {$0}
             .subscribe(onNext: { [weak self] (_) in
@@ -147,7 +147,7 @@ class LabInformationViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        presenter.github
+        presenter.githubState
             .asObservable()
             .filter {$0}
             .subscribe(onNext: { [weak self] (_) in
@@ -156,7 +156,7 @@ class LabInformationViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        presenter.playStore
+        presenter.playStoreState
             .asObservable()
             .filter {$0}
             .subscribe(onNext: { [weak self] (_) in
@@ -165,7 +165,7 @@ class LabInformationViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        presenter.appleStore
+        presenter.appleStoreState
             .asObservable()
             .filter {$0}
             .subscribe(onNext: { [weak self] (_) in
@@ -177,8 +177,36 @@ class LabInformationViewController: BaseViewController {
         appleStoreImageView.rx
             .tapGesture()
             .when(.recognized)
-            .subscribe(onNext: { (_) in
-                print("Tap appleStoreImageView ")
+            .subscribe(onNext: { [weak self] (_) in
+                guard let strongSelf = self else {return}
+                strongSelf.presenterProtocol.appleStoreDidTap()
+            })
+            .disposed(by: disposeBag)
+        
+        playStoreImageView.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] (_) in
+                guard let strongSelf = self else {return}
+                strongSelf.presenterProtocol.playStoreDidTap()
+            })
+            .disposed(by: disposeBag)
+        
+        githubImageView.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] (_) in
+                guard let strongSelf = self else {return}
+                strongSelf.presenterProtocol.githubDidTap()
+            })
+            .disposed(by: disposeBag)
+        
+        gitlabImageView.rx
+            .tapGesture()
+            .when(.recognized)
+            .subscribe(onNext: { [weak self] (_) in
+                guard let strongSelf = self else {return}
+                strongSelf.presenterProtocol.gitlabDidTap()
             })
             .disposed(by: disposeBag)
     }

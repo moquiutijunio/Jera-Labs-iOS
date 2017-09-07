@@ -49,5 +49,6 @@ extension LabsDescriptionWireFrame: LabsDescriptionWireFrameProtocol {
     func openLabInformation(_ lab: Lab) {
         let labInformationWireFrame = LabInformationWireFrame(lab: lab)
         labInformationWireFrame.presentOn(navigationController: navigationController)
+        presentedWireFrame = labInformationWireFrame
     }
 }
