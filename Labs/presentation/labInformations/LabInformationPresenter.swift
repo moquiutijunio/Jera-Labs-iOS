@@ -12,7 +12,6 @@ import RxSwift
 protocol LabInformationPresenterProtocol {
     var name: Variable<String?> {get}
     var description: Variable<String?> {get}
-    var background: Variable<URL?> {get}
     var firtPerson: Variable<URL?> {get}
     var secondPerson : Variable<URL?> {get}
     var thirdPerson: Variable<URL?> {get}
@@ -22,6 +21,7 @@ protocol LabInformationPresenterProtocol {
     var playStoreState: Variable<Bool> {get}
     var gitlabState: Variable<Bool> {get}
     var githubState: Variable<Bool> {get}
+    var background: Variable<UIImage?> {get}
     
     func appleStoreDidTap()
     func playStoreDidTap()
@@ -36,7 +36,6 @@ class LabInformationPresenter: BasePresenter {
     
     let name = Variable<String?>(nil)
     let description = Variable<String?>(nil)
-    let background = Variable<URL?>(nil)
     let firtPerson = Variable<URL?>(nil)
     let secondPerson = Variable<URL?>(nil)
     let thirdPerson = Variable<URL?>(nil)
@@ -46,6 +45,8 @@ class LabInformationPresenter: BasePresenter {
     let playStoreState = Variable<Bool>(false)
     let gitlabState = Variable<Bool>(false)
     let githubState = Variable<Bool>(false)
+    let background = Variable<UIImage?>(nil)
+    let backgroundURL = Variable<URL?>(nil)
     
     let disposeBag = DisposeBag()
     var labVariable: Variable<Lab>
@@ -64,7 +65,7 @@ class LabInformationPresenter: BasePresenter {
                 
                 strongSelf.name.value = lab.name
                 strongSelf.description.value = lab.description
-                strongSelf.background.value = lab.background
+                strongSelf.backgroundURL.value = lab.background
                 strongSelf.firtPerson.value = lab.team?.first
                 strongSelf.secondPerson.value = lab.team?.second
                 strongSelf.thirdPerson.value = lab.team?.third
@@ -74,32 +75,43 @@ class LabInformationPresenter: BasePresenter {
                 strongSelf.gitlabState.value = lab.gitlab != nil ? true : false
                 strongSelf.appleStoreState.value = lab.appleStore != nil ? true : false
                 strongSelf.playStoreState.value = lab.playStore != nil ? true : false
+            
             })
+            .disposed(by: disposeBag)
+        
+        backgroundURL
+            .asObservable()
+            .downloadImage(ignoreCache: true)
+            .bind(to: background)
             .disposed(by: disposeBag)
     }
 }
 
 extension LabInformationPresenter: LabInformationPresenterProtocol {
     func appleStoreDidTap() {
-        if appleStoreState.value, let appleStoreURL = labVariable.value.appleStore {
+        if appleStoreState.value,
+            let appleStoreURL = labVariable.value.appleStore {
             router?.openWebViewWith(url: appleStoreURL, title: labVariable.value.name)
         }
     }
     
     func playStoreDidTap() {
-        if playStoreState.value, let playStoreURL = labVariable.value.playStore {
+        if playStoreState.value,
+            let playStoreURL = labVariable.value.playStore {
             router?.openWebViewWith(url: playStoreURL, title: labVariable.value.name)
         }
     }
     
     func githubDidTap() {
-        if githubState.value, let githubURL = labVariable.value.github {
+        if githubState.value,
+            let githubURL = labVariable.value.github {
             router?.openWebViewWith(url: githubURL, title: labVariable.value.name)
         }
     }
     
     func gitlabDidTap() {
-        if gitlabState.value, let gitlabURL = labVariable.value.gitlab {
+        if gitlabState.value,
+            let gitlabURL = labVariable.value.gitlab {
             router?.openWebViewWith(url: gitlabURL, title: labVariable.value.name)
         }
     }

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxGesture
+import UIImageColors
 
 protocol LabInformationViewProtocol: BaseViewProtocol {
     
@@ -30,6 +31,7 @@ class LabInformationViewController: BaseViewController {
     
     let disposeBag = DisposeBag()
     var presenterProtocol: LabInformationPresenterProtocol!
+    var mainColors = Variable<UIImageColors?>(nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +41,6 @@ class LabInformationViewController: BaseViewController {
     }
     
     private func applyLayout() {
-        
         firstPersonImageView.layer.cornerRadius = firstPersonImageView.frame.size.width/2
         secondPersonImageView.layer.cornerRadius = secondPersonImageView.frame.size.width/2
         thirdPersonImageView.layer.cornerRadius = thirdPersonImageView.frame.size.width/2
@@ -63,6 +64,30 @@ class LabInformationViewController: BaseViewController {
     private func bind() {
         guard let presenter = presenterProtocol else { return }
         
+        mainColors
+            .asObservable()
+            .subscribe(onNext: { [weak self] (imageColors) in
+                guard let strongSelf = self else {return}
+                guard let colors = imageColors else {return}
+                
+                strongSelf.view.backgroundColor = colors.background
+                strongSelf.descriptionLabel.textColor = colors.primary
+                strongSelf.navigationController?.navigationBar.tintColor = colors.primary
+                strongSelf.navigationController?.navigationBar.barTintColor = colors.background
+                strongSelf.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: colors.primary]
+            })
+            .disposed(by: disposeBag)
+        
+        presenter.background
+            .asObservable()
+            .subscribe(onNext: { [weak self] (image) in
+                guard let strongSelf = self else {return}
+                guard let image = image else {return}
+                strongSelf.backgroundImageView.image = image
+                strongSelf.mainColors.value = image.getColors()
+            })
+            .disposed(by: disposeBag)
+        
         presenter.name
             .asObservable()
             .subscribe(onNext: { [weak self] (title) in
@@ -85,7 +110,6 @@ class LabInformationViewController: BaseViewController {
                 strongSelf.firstPersonImageView.kf.setImage(with: photoURL)
             })
             .disposed(by: disposeBag)
-        
         
         presenter.secondPerson
             .asObservable()
@@ -121,15 +145,6 @@ class LabInformationViewController: BaseViewController {
                 guard let strongSelf = self else { return }
                 guard let photoURL = photoURL else { return }
                 strongSelf.fifthPersonImageView.kf.setImage(with: photoURL)
-            })
-            .disposed(by: disposeBag)
-        
-        presenter.background
-            .asObservable()
-            .subscribe(onNext: { [weak self] (photoURL) in
-                guard let strongSelf = self else { return }
-                guard let photoURL = photoURL else { return }
-                strongSelf.backgroundImageView.kf.setImage(with: photoURL)
             })
             .disposed(by: disposeBag)
         

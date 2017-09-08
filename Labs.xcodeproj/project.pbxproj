@@ -17,6 +17,7 @@
 		F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */; };
 		F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */; };
 		F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */; };
+		F0328EBF1F63127E00FAF51F /* ImageDownloadOperator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0328EBE1F63127E00FAF51F /* ImageDownloadOperator.swift */; };
 		F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */; };
 		F033F7251F5A3130001B3A89 /* LabInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */; };
 		F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */; };
@@ -76,6 +77,7 @@
 		F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F0328EBE1F63127E00FAF51F /* ImageDownloadOperator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadOperator.swift; sourceTree = "<group>"; };
 		F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationWireFrame.swift; sourceTree = "<group>"; };
 		F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationViewController.swift; sourceTree = "<group>"; };
 		F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationPresenter.swift; sourceTree = "<group>"; };
@@ -225,6 +227,7 @@
 				F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */,
 				F0C294681F52147A00CDA442 /* DomainHelper.swift */,
 				F033F7281F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift */,
+				F0328EBE1F63127E00FAF51F /* ImageDownloadOperator.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -533,7 +536,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		51C4D1708B60E97B0BE327DC /* [CP] Embed Pods Frameworks */ = {
@@ -596,7 +599,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F0C2945D1F51F83500CDA442 /* ShellScript */ = {
@@ -621,6 +624,7 @@
 			files = (
 				F0C294561F51EE2300CDA442 /* LabAPI.swift in Sources */,
 				F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */,
+				F0328EBF1F63127E00FAF51F /* ImageDownloadOperator.swift in Sources */,
 				F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */,
 				F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */,
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
