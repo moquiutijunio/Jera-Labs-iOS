@@ -9,7 +9,6 @@
 import UIKit
 import RxSwift
 import RxGesture
-import UIImageColors
 
 protocol LabInformationViewProtocol: BaseViewProtocol {
     
@@ -31,7 +30,6 @@ class LabInformationViewController: BaseViewController {
     
     let disposeBag = DisposeBag()
     var presenterProtocol: LabInformationPresenterProtocol!
-    var mainColors = Variable<UIImageColors?>(nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,27 +62,11 @@ class LabInformationViewController: BaseViewController {
     private func bind() {
         guard let presenter = presenterProtocol else { return }
         
-        mainColors
+        presenter.backgroundURL
             .asObservable()
-            .subscribe(onNext: { [weak self] (imageColors) in
+            .subscribe(onNext: { [weak self] (imageURL) in
                 guard let strongSelf = self else {return}
-                guard let colors = imageColors else {return}
-                
-                strongSelf.view.backgroundColor = colors.background
-                strongSelf.descriptionLabel.textColor = colors.primary
-                strongSelf.navigationController?.navigationBar.tintColor = colors.primary
-                strongSelf.navigationController?.navigationBar.barTintColor = colors.background
-                strongSelf.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: colors.primary]
-            })
-            .disposed(by: disposeBag)
-        
-        presenter.background
-            .asObservable()
-            .subscribe(onNext: { [weak self] (image) in
-                guard let strongSelf = self else {return}
-                guard let image = image else {return}
-                strongSelf.backgroundImageView.image = image
-                strongSelf.mainColors.value = image.getColors()
+                strongSelf.backgroundImageView.kf.setImage(with: imageURL)
             })
             .disposed(by: disposeBag)
         
@@ -107,7 +89,7 @@ class LabInformationViewController: BaseViewController {
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
                 guard let photoURL = photoURL else { return }
-                strongSelf.firstPersonImageView.kf.setImage(with: photoURL)
+                strongSelf.firstPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         
@@ -116,7 +98,7 @@ class LabInformationViewController: BaseViewController {
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
                 guard let photoURL = photoURL else { return }
-                strongSelf.secondPersonImageView.kf.setImage(with: photoURL)
+                strongSelf.secondPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         
@@ -126,7 +108,7 @@ class LabInformationViewController: BaseViewController {
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
                 guard let photoURL = photoURL else { return }
-                strongSelf.thirdPersonImageView.kf.setImage(with: photoURL)
+                strongSelf.thirdPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         
@@ -135,7 +117,7 @@ class LabInformationViewController: BaseViewController {
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
                 guard let photoURL = photoURL else { return }
-                strongSelf.fourthPersonImageView.kf.setImage(with: photoURL)
+                strongSelf.fourthPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         
@@ -144,7 +126,7 @@ class LabInformationViewController: BaseViewController {
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
                 guard let photoURL = photoURL else { return }
-                strongSelf.fifthPersonImageView.kf.setImage(with: photoURL)
+                strongSelf.fifthPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         

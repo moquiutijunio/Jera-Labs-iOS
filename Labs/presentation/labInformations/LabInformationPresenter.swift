@@ -12,6 +12,7 @@ import RxSwift
 protocol LabInformationPresenterProtocol {
     var name: Variable<String?> {get}
     var description: Variable<String?> {get}
+    var backgroundURL: Variable<URL?> {get}
     var firtPerson: Variable<URL?> {get}
     var secondPerson : Variable<URL?> {get}
     var thirdPerson: Variable<URL?> {get}
@@ -21,7 +22,6 @@ protocol LabInformationPresenterProtocol {
     var playStoreState: Variable<Bool> {get}
     var gitlabState: Variable<Bool> {get}
     var githubState: Variable<Bool> {get}
-    var background: Variable<UIImage?> {get}
     
     func appleStoreDidTap()
     func playStoreDidTap()
@@ -45,7 +45,6 @@ class LabInformationPresenter: BasePresenter {
     let playStoreState = Variable<Bool>(false)
     let gitlabState = Variable<Bool>(false)
     let githubState = Variable<Bool>(false)
-    let background = Variable<UIImage?>(nil)
     let backgroundURL = Variable<URL?>(nil)
     
     let disposeBag = DisposeBag()
@@ -77,12 +76,6 @@ class LabInformationPresenter: BasePresenter {
                 strongSelf.playStoreState.value = lab.playStore != nil ? true : false
             
             })
-            .disposed(by: disposeBag)
-        
-        backgroundURL
-            .asObservable()
-            .downloadImage(ignoreCache: true)
-            .bind(to: background)
             .disposed(by: disposeBag)
     }
 }
