@@ -74,7 +74,6 @@ class LabInformationPresenter: BasePresenter {
                 strongSelf.gitlabState.value = lab.gitlab != nil ? true : false
                 strongSelf.appleStoreState.value = lab.appleStore != nil ? true : false
                 strongSelf.playStoreState.value = lab.playStore != nil ? true : false
-            
             })
             .disposed(by: disposeBag)
     }

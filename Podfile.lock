@@ -60,7 +60,6 @@ PODS:
     - RxCocoa (~> 3.4)
     - RxSwift (~> 3.4)
   - RxSwift (3.6.1)
-  - UIImageColors (1.4.0)
 
 DEPENDENCIES:
   - Cartography
@@ -71,7 +70,6 @@ DEPENDENCIES:
   - R.swift (~> 3.2)
   - RxCocoa (~> 3.4)
   - RxGesture (~> 1.0)
-  - UIImageColors
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
@@ -95,8 +93,7 @@ SPEC CHECKSUMS:
   RxCocoa: 84a08739ab186248c7f31ce4ee92d6f8a947d690
   RxGesture: 1f770b247c69e8133fb8f4ef263571efd0ae91a1
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
-  UIImageColors: 1f891e1a3224efebb01ad476df3a5aed4220ee24
 
-PODFILE CHECKSUM: e3e071b81e34856904a20cdd6bb71bdc9871d474
+PODFILE CHECKSUM: 78568d5db87ed0f1dc3cad38a5c9870ff3fbc69d
 
 COCOAPODS: 1.2.1
