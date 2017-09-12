@@ -37,6 +37,17 @@ class WebViewWireFrame: BaseWireFrame {
     func presentOn(navigationController: UINavigationController) {
         navigationController.pushViewController(viewController, animated: true)
         self.navigationController = navigationController
+        
+        _ = self.navigationController!.rx
+            .didShowViewController
+            .takeUntil(rx.deallocated)
+            .subscribe(onNext: { [weak self] (viewController) in
+                guard let strongSelf = self else { return }
+                
+                if strongSelf.viewController.isEqual(viewController) {
+                    strongSelf.presentedWireFrame = nil
+                }
+            })
     }
 }
 

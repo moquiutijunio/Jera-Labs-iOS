@@ -37,6 +37,8 @@ class LabsDescriptionWireFrame: BaseWireFrame {
         presenter.viewProtocol = viewController
         presenter.interactor = interactor
         presenter.router = self
+        
+        self.presenterWireFrame = self
     }
     
     func present(window: UIWindow) {

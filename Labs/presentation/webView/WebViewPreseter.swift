@@ -41,7 +41,7 @@ extension WebViewPresenter: WebViewPresenterProtocol {
         viewProtocol?.hidePlaceholder()
     }
     
-    func webViewDidFailLoadWithError(error: Error) { //TODO Error
+    func webViewDidFailLoadWithError(error: Error) {
 //        Crashlytics.sharedInstance().recordError(error)
         
         viewProtocol?.placeholder(type: .error(text: error.localizedDescription, buttonText: R.string.localizable.alertTryAgain()), buttonAction: { [weak self] in

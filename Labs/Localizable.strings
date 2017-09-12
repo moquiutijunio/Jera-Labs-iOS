@@ -10,3 +10,8 @@
 "alert.title" = "Ops...";
 "alert.loading" = "Carregando...";
 "alert.tryAgain" = "Tentar novamente";
+
+//LabInformations
+"lab.info.repository" = "Repositório";
+"lab.info.playStore" = "Play Store";
+"lab.info.appleStore" = "Apple Store";

@@ -83,28 +83,28 @@ extension LabInformationPresenter: LabInformationPresenterProtocol {
     func appleStoreDidTap() {
         if appleStoreState.value,
             let appleStoreURL = labVariable.value.appleStore {
-            router?.openWebViewWith(url: appleStoreURL, title: labVariable.value.name)
+            router?.openWebViewWith(url: appleStoreURL, title: R.string.localizable.labInfoAppleStore())
         }
     }
     
     func playStoreDidTap() {
         if playStoreState.value,
             let playStoreURL = labVariable.value.playStore {
-            router?.openWebViewWith(url: playStoreURL, title: labVariable.value.name)
+            router?.openWebViewWith(url: playStoreURL, title: R.string.localizable.labInfoPlayStore())
         }
     }
     
     func githubDidTap() {
         if githubState.value,
             let githubURL = labVariable.value.github {
-            router?.openWebViewWith(url: githubURL, title: labVariable.value.name)
+            router?.openWebViewWith(url: githubURL, title: R.string.localizable.labInfoRepository())
         }
     }
     
     func gitlabDidTap() {
         if gitlabState.value,
             let gitlabURL = labVariable.value.gitlab {
-            router?.openWebViewWith(url: gitlabURL, title: labVariable.value.name)
+            router?.openWebViewWith(url: gitlabURL, title: R.string.localizable.labInfoRepository())
         }
     }
 }
