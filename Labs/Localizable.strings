@@ -15,3 +15,6 @@
 "lab.info.repository" = "Repositório";
 "lab.info.playStore" = "Play Store";
 "lab.info.appleStore" = "Apple Store";
+
+//About
+"about.title" = "Sobre";

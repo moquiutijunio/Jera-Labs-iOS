@@ -22,9 +22,11 @@ class LabsDescriptionViewController: BaseViewController {
         configureTableView()
         
         addLogoOnNav()
-        addRightBarButton(image: #imageLiteral(resourceName: "ic_info_outline").withRenderingMode(.alwaysTemplate).tint(with: .gray)!) {
-            print("TODO Show about view")
+        addRightBarButton(image: #imageLiteral(resourceName: "ic_info_outline").withRenderingMode(.alwaysTemplate).tint(with: .gray)!) { [weak self] in
+            guard let strongSelf = self else {return}
+            strongSelf.presenterProtocol.aboutIconDidTapped()
         }
+
         
         presenterProtocol.makeRequestLabs()
     }

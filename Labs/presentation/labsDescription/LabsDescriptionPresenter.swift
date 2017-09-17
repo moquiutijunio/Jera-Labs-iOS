@@ -14,6 +14,7 @@ protocol LabsDescriptionPresenterProtocol {
     func numberOfRows(section: Int) -> Int
     func cellForRow(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
     func didSelectedRow(at indexPath: IndexPath)
+    func aboutIconDidTapped()
 }
 
 class LabsDescriptionPresenter: BasePresenter {
@@ -86,5 +87,9 @@ extension LabsDescriptionPresenter: LabsDescriptionPresenterProtocol {
 
     func didSelectedRow(at indexPath: IndexPath) {
         router?.openLabInformation(currentLabs[indexPath.row])
+    }
+    
+    func aboutIconDidTapped() {
+        router?.openAboutApp()
     }
 }

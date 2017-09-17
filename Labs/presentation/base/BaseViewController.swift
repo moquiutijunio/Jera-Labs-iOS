@@ -12,6 +12,7 @@ import Cartography
 protocol BaseViewProtocol: class {
     func addLogoOnNav()
     func addRightBarButton(image: UIImage, block: @escaping () -> Void )
+    func addLeftBarButton(image: UIImage, block: @escaping () -> Void )
     func reloadTableView()
     func placeholder(type: PlaceholderType, buttonAction: (() -> ())?)
     func hidePlaceholder()
@@ -79,6 +80,15 @@ extension BaseViewController: BaseViewProtocol {
                 block()
             })
         navigationItem.rightBarButtonItem = rightBarButton
+    }
+    
+    func addLeftBarButton(image: UIImage, block: @escaping () -> Void ) {
+        let leftBarButton = UIBarButtonItem(image: image, style: .done, target: nil, action: nil)
+        _ = leftBarButton.rx.tap
+            .subscribe(onNext: { (_) in
+                block()
+            })
+        navigationItem.leftBarButtonItem = leftBarButton
     }
     
     func addLogoOnNav() {

@@ -26,6 +26,10 @@
 		F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F034E7EA1F4A1FD100276796 /* LaunchScreen.storyboard */; };
 		F034E7F71F4A1FD100276796 /* LabsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E7F61F4A1FD100276796 /* LabsUITests.swift */; };
 		F042DD7A1F5DC21400924057 /* LabInformationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F042DD791F5DC21400924057 /* LabInformationViewController.xib */; };
+		F0465E6D1F6D94FA0013CED2 /* AboutWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0465E6C1F6D94FA0013CED2 /* AboutWireFrame.swift */; };
+		F0465E6F1F6D95090013CED2 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */; };
+		F0465E711F6D95200013CED2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0465E701F6D95200013CED2 /* AboutViewController.swift */; };
+		F0465E731F6D95330013CED2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0465E721F6D95320013CED2 /* AboutViewController.xib */; };
 		F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */; };
 		F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294521F51ED2A00CDA442 /* Lab.swift */; };
 		F0C294561F51EE2300CDA442 /* LabAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294551F51EE2300CDA442 /* LabAPI.swift */; };
@@ -89,6 +93,10 @@
 		F034E7F61F4A1FD100276796 /* LabsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsUITests.swift; sourceTree = "<group>"; };
 		F034E7F81F4A1FD100276796 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F042DD791F5DC21400924057 /* LabInformationViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabInformationViewController.xib; sourceTree = "<group>"; };
+		F0465E6C1F6D94FA0013CED2 /* AboutWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutWireFrame.swift; sourceTree = "<group>"; };
+		F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
+		F0465E701F6D95200013CED2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		F0465E721F6D95320013CED2 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
 		F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResponse.swift; sourceTree = "<group>"; };
 		F0C294521F51ED2A00CDA442 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
 		F0C294551F51EE2300CDA442 /* LabAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabAPI.swift; sourceTree = "<group>"; };
@@ -219,6 +227,17 @@
 			path = LabsUITests;
 			sourceTree = "<group>";
 		};
+		F0465E6B1F6D94840013CED2 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */,
+				F0465E721F6D95320013CED2 /* AboutViewController.xib */,
+				F0465E701F6D95200013CED2 /* AboutViewController.swift */,
+				F0465E6C1F6D94FA0013CED2 /* AboutWireFrame.swift */,
+			);
+			path = about;
+			sourceTree = "<group>";
+		};
 		F0C2944E1F51EC9000CDA442 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,10 +281,10 @@
 		F0F8FF571F60BC8E00A906F9 /* webView */ = {
 			isa = PBXGroup;
 			children = (
-				F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */,
 				F0F8FF5A1F60BCE800A906F9 /* WebViewPreseter.swift */,
-				F0F8FF5C1F60BCFA00A906F9 /* WebViewViewController.swift */,
 				F0F8FF5E1F60C1A500A906F9 /* WebViewController.xib */,
+				F0F8FF5C1F60BCFA00A906F9 /* WebViewViewController.swift */,
+				F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */,
 			);
 			path = webView;
 			sourceTree = "<group>";
@@ -297,6 +316,7 @@
 				F0FA0E5B1F4DEF95002CDA39 /* utils */,
 				F0FA0E5A1F4DEF8A002CDA39 /* base */,
 				F0FA0E671F4DF2A2002CDA39 /* labsDescription */,
+				F0465E6B1F6D94840013CED2 /* about */,
 				F033F7211F5A309D001B3A89 /* labInformations */,
 				F0F8FF571F60BC8E00A906F9 /* webView */,
 			);
@@ -454,6 +474,7 @@
 				F0C294671F52074B00CDA442 /* Localizable.strings in Resources */,
 				F042DD7A1F5DC21400924057 /* LabInformationViewController.xib in Resources */,
 				F0F8FF5F1F60C1A500A906F9 /* WebViewController.xib in Resources */,
+				F0465E731F6D95330013CED2 /* AboutViewController.xib in Resources */,
 				F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */,
 				F0C294611F51FA6A00CDA442 /* EmptyOrErrorView.xib in Resources */,
 				F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */,
@@ -533,7 +554,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		51C4D1708B60E97B0BE327DC /* [CP] Embed Pods Frameworks */ = {
@@ -596,7 +617,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F0C2945D1F51F83500CDA442 /* ShellScript */ = {
@@ -621,8 +642,10 @@
 			files = (
 				F0C294561F51EE2300CDA442 /* LabAPI.swift in Sources */,
 				F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */,
+				F0465E6F1F6D95090013CED2 /* AboutPresenter.swift in Sources */,
 				F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */,
 				F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */,
+				F0465E6D1F6D94FA0013CED2 /* AboutWireFrame.swift in Sources */,
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
 				F02CF8F41F5F0EFA00916244 /* TeamAPI.swift in Sources */,
 				F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */,
@@ -641,6 +664,7 @@
 				F0C294651F51FD1100CDA442 /* LoadingView.swift in Sources */,
 				F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */,
 				F02CF8F61F5F123A00916244 /* Team.swift in Sources */,
+				F0465E711F6D95200013CED2 /* AboutViewController.swift in Sources */,
 				F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */,
 				F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */,
 				F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */,

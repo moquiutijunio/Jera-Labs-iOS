@@ -10,6 +10,7 @@ import UIKit
 
 protocol LabsDescriptionWireFrameProtocol: class {
     func openLabInformation(_ lab: Lab)
+    func openAboutApp()
 }
 
 class LabsDescriptionWireFrame: BaseWireFrame {
@@ -52,5 +53,11 @@ extension LabsDescriptionWireFrame: LabsDescriptionWireFrameProtocol {
         let labInformationWireFrame = LabInformationWireFrame(lab: lab)
         labInformationWireFrame.presentOn(navigationController: navigationController)
         presentedWireFrame = labInformationWireFrame
+    }
+    
+    func openAboutApp() {
+        let aboutWireFrame = AboutWireFrame(presenterWireFrame: self)
+        aboutWireFrame.presentOn(viewController: viewController)
+        presentedWireFrame = aboutWireFrame
     }
 }
