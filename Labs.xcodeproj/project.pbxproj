@@ -17,6 +17,14 @@
 		F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */; };
 		F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */; };
 		F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */; };
+		F0302D101F7434CA00858929 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D081F74340D00858929 /* Montserrat-Black.otf */; };
+		F0302D111F7434CA00858929 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D091F74340D00858929 /* Montserrat-Bold.otf */; };
+		F0302D121F7434CA00858929 /* Montserrat-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D0A1F74340D00858929 /* Montserrat-ExtraBold.otf */; };
+		F0302D131F7434CA00858929 /* Montserrat-Hairline.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D0B1F74340D00858929 /* Montserrat-Hairline.otf */; };
+		F0302D141F7434CA00858929 /* Montserrat-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D0C1F74340E00858929 /* Montserrat-Light.otf */; };
+		F0302D151F7434CA00858929 /* Montserrat-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D0D1F74340E00858929 /* Montserrat-Regular.otf */; };
+		F0302D161F7434CA00858929 /* Montserrat-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D0E1F74340E00858929 /* Montserrat-SemiBold.otf */; };
+		F0302D171F7434CA00858929 /* Montserrat-UltraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D0F1F74340E00858929 /* Montserrat-UltraLight.otf */; };
 		F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */; };
 		F033F7251F5A3130001B3A89 /* LabInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */; };
 		F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */; };
@@ -80,6 +88,14 @@
 		F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
 		F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		F0302D081F74340D00858929 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
+		F0302D091F74340D00858929 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
+		F0302D0A1F74340D00858929 /* Montserrat-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-ExtraBold.otf"; sourceTree = "<group>"; };
+		F0302D0B1F74340D00858929 /* Montserrat-Hairline.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Hairline.otf"; sourceTree = "<group>"; };
+		F0302D0C1F74340E00858929 /* Montserrat-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Light.otf"; sourceTree = "<group>"; };
+		F0302D0D1F74340E00858929 /* Montserrat-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.otf"; sourceTree = "<group>"; };
+		F0302D0E1F74340E00858929 /* Montserrat-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.otf"; sourceTree = "<group>"; };
+		F0302D0F1F74340E00858929 /* Montserrat-UltraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-UltraLight.otf"; sourceTree = "<group>"; };
 		F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationWireFrame.swift; sourceTree = "<group>"; };
 		F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationViewController.swift; sourceTree = "<group>"; };
 		F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationPresenter.swift; sourceTree = "<group>"; };
@@ -170,6 +186,21 @@
 			path = firebaseRD;
 			sourceTree = "<group>";
 		};
+		F0302D071F7433B500858929 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				F0302D081F74340D00858929 /* Montserrat-Black.otf */,
+				F0302D091F74340D00858929 /* Montserrat-Bold.otf */,
+				F0302D0A1F74340D00858929 /* Montserrat-ExtraBold.otf */,
+				F0302D0B1F74340D00858929 /* Montserrat-Hairline.otf */,
+				F0302D0C1F74340E00858929 /* Montserrat-Light.otf */,
+				F0302D0D1F74340E00858929 /* Montserrat-Regular.otf */,
+				F0302D0E1F74340E00858929 /* Montserrat-SemiBold.otf */,
+				F0302D0F1F74340E00858929 /* Montserrat-UltraLight.otf */,
+			);
+			path = font;
+			sourceTree = "<group>";
+		};
 		F033F7211F5A309D001B3A89 /* labInformations */ = {
 			isa = PBXGroup;
 			children = (
@@ -214,6 +245,7 @@
 				F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */,
 				F0C294661F52074B00CDA442 /* Localizable.strings */,
 				F02E4E011F55DD3500CABD37 /* R.generated.swift */,
+				F0302D071F7433B500858929 /* font */,
 			);
 			path = Labs;
 			sourceTree = "<group>";
@@ -470,6 +502,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0302D101F7434CA00858929 /* Montserrat-Black.otf in Resources */,
+				F0302D111F7434CA00858929 /* Montserrat-Bold.otf in Resources */,
+				F0302D121F7434CA00858929 /* Montserrat-ExtraBold.otf in Resources */,
+				F0302D131F7434CA00858929 /* Montserrat-Hairline.otf in Resources */,
+				F0302D141F7434CA00858929 /* Montserrat-Light.otf in Resources */,
+				F0302D151F7434CA00858929 /* Montserrat-Regular.otf in Resources */,
+				F0302D161F7434CA00858929 /* Montserrat-SemiBold.otf in Resources */,
+				F0302D171F7434CA00858929 /* Montserrat-UltraLight.otf in Resources */,
 				F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */,
 				F0C294671F52074B00CDA442 /* Localizable.strings in Resources */,
 				F042DD7A1F5DC21400924057 /* LabInformationViewController.xib in Resources */,
@@ -554,7 +594,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		51C4D1708B60E97B0BE327DC /* [CP] Embed Pods Frameworks */ = {
@@ -617,7 +657,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		F0C2945D1F51F83500CDA442 /* ShellScript */ = {

@@ -9,7 +9,7 @@ target 'Labs' do
   pod 'RxCocoa', '~> 3.4'
   pod 'RxGesture', '~> 1.0'
   pod 'Cartography'
-  pod 'Kingfisher'
+  pod 'Kingfisher', '~> 3'
   pod 'Moya-ObjectMapper/RxSwift', '~> 2.3'
   pod 'Firebase/Database'
 

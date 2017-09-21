@@ -27,7 +27,7 @@ class AboutWireFrame: BaseWireFrame {
         
         super.init()
         
-        viewController.presenterProtocol = presenter
+        viewController.presenter = presenter
         presenter.viewProtocol = viewController
         presenter.router = self
         self.presenterWireFrame = presenterWireFrame
