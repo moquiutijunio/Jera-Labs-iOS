@@ -29,7 +29,7 @@ class LabsDescriptionWireFrame: BaseWireFrame {
         self.interactor = interactor
         
         viewController.presenterProtocol = presenter
-        interactor.firebaseRealtimeDatabase = FirebaseRealtimeDatabase()
+        interactor.repository = LabsDescriptionRepository(firebaseRealtimeDatabase: FirebaseRealtimeDatabase())
         
         navigationController = UINavigationController(rootViewController: viewController)
         

@@ -15,34 +15,33 @@ protocol LabsDescriptionInteractorProtocol {
 }
 
 class LabsDescriptionInteractor: BaseInteractor {
-    let labsDescriptinResponseVariable = Variable<RequestResponse<[Lab]>>(.new)
-    
-    var firebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol! {
-        didSet{
-            bind()
-        }
+    var repository: LabsDescriptionRepositoryProtocol! {
+        didSet { bind() }
     }
     
-    fileprivate var disposeBag = DisposeBag()
+    fileprivate var disposeBag: DisposeBag!
+    fileprivate let labsDescriptinResponseVariable = Variable<RequestResponse<[Lab]>>(.new)
     
     private func bind() {
-        firebaseRealtimeDatabase.labsResponse
+        disposeBag = DisposeBag()
+        
+        repository.labsResponse
             .asObservable()
             .subscribe(onNext: { [weak self] (event) in
                 guard let strongSelf = self else { return }
-                
+
                 switch event {
                 case .success(let labsAPI):
                     guard let labsAPI = labsAPI else {
                         strongSelf.labsDescriptinResponseVariable.value = .failure(error: "TODO Error")
                         return
                     }
-                    
+
                     guard let labs = Lab.mapArray(labsAPI: labsAPI) else {
                         strongSelf.labsDescriptinResponseVariable.value = .failure(error: "TODO Error")
                         return
                     }
-                    
+
                     strongSelf.labsDescriptinResponseVariable.value = .success(responseObject: labs)
                 case .loading:
                     strongSelf.labsDescriptinResponseVariable.value = .loading
@@ -63,6 +62,6 @@ extension LabsDescriptionInteractor: LabsDescriptionInteractorProtocol {
     }
     
     func makeRequestLabs() {
-        firebaseRealtimeDatabase.getAllLabsInDB()
+        repository.getAllLabsInDB()
     }
 }

@@ -38,6 +38,8 @@
 		F0465E6F1F6D95090013CED2 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */; };
 		F0465E711F6D95200013CED2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0465E701F6D95200013CED2 /* AboutViewController.swift */; };
 		F0465E731F6D95330013CED2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0465E721F6D95320013CED2 /* AboutViewController.xib */; };
+		F09EA1D11FA7B7A700393C37 /* LabsDescriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09EA1D01FA7B7A700393C37 /* LabsDescriptionRepository.swift */; };
+		F09EA1D41FA7B80100393C37 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09EA1D31FA7B80100393C37 /* BaseRepository.swift */; };
 		F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */; };
 		F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294521F51ED2A00CDA442 /* Lab.swift */; };
 		F0C294561F51EE2300CDA442 /* LabAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294551F51EE2300CDA442 /* LabAPI.swift */; };
@@ -113,6 +115,8 @@
 		F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
 		F0465E701F6D95200013CED2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F0465E721F6D95320013CED2 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
+		F09EA1D01FA7B7A700393C37 /* LabsDescriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsDescriptionRepository.swift; sourceTree = "<group>"; };
+		F09EA1D31FA7B80100393C37 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResponse.swift; sourceTree = "<group>"; };
 		F0C294521F51ED2A00CDA442 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
 		F0C294551F51EE2300CDA442 /* LabAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabAPI.swift; sourceTree = "<group>"; };
@@ -270,6 +274,22 @@
 			path = about;
 			sourceTree = "<group>";
 		};
+		F09EA1CF1FA7B74800393C37 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				F09EA1D01FA7B7A700393C37 /* LabsDescriptionRepository.swift */,
+			);
+			path = repository;
+			sourceTree = "<group>";
+		};
+		F09EA1D21FA7B7E900393C37 /* base */ = {
+			isa = PBXGroup;
+			children = (
+				F09EA1D31FA7B80100393C37 /* BaseRepository.swift */,
+			);
+			path = base;
+			sourceTree = "<group>";
+		};
 		F0C2944E1F51EC9000CDA442 /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -324,8 +344,10 @@
 		F0FA0E571F4DEF48002CDA39 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				F09EA1D21FA7B7E900393C37 /* base */,
 				F02D1A561F5876E700361C5B /* firebaseRD */,
 				F0C294541F51EE0D00CDA442 /* entities */,
+				F09EA1CF1FA7B74800393C37 /* repository */,
 			);
 			path = data;
 			sourceTree = "<group>";
@@ -688,6 +710,7 @@
 				F0465E6D1F6D94FA0013CED2 /* AboutWireFrame.swift in Sources */,
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
 				F02CF8F41F5F0EFA00916244 /* TeamAPI.swift in Sources */,
+				F09EA1D41FA7B80100393C37 /* BaseRepository.swift in Sources */,
 				F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */,
 				F0C2945A1F51F61900CDA442 /* PlaceholderView.swift in Sources */,
 				F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */,
@@ -712,6 +735,7 @@
 				F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */,
 				F033F7291F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift in Sources */,
 				F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */,
+				F09EA1D11FA7B7A700393C37 /* LabsDescriptionRepository.swift in Sources */,
 				F033F7251F5A3130001B3A89 /* LabInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
