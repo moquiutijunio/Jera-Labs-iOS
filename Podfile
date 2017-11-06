@@ -1,4 +1,4 @@
-platform :ios, ‘9.1’
+platform :ios, '9.1'
 
 target 'Labs' do
   use_frameworks!
