@@ -8,7 +8,7 @@ team_name "SAULO A COELHO"
 
 # To select a team for iTunes Connect use
 itc_team_name "Saulo Arruda"
-itc_team_id "830099
+itc_team_id "830099"
 
 # you can even provide different app identifiers, Apple IDs and team names per lane:
 # More information: https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Appfile.md
