@@ -47,10 +47,10 @@ class LabsDescriptionTableViewCell: BaseTableViewCell {
         labsLogoImageView.clipsToBounds = true
         
         labsNameLabel.font = UIFont.systemFont(ofSize: 16)
-        labsNameLabel.textColor = UIColor(red:0.2, green:0.77, blue:0.37, alpha:1)
+        labsNameLabel.textColor = UIColor(red: 0.2, green: 0.77, blue: 0.37, alpha: 1)
         
         labsDescriptionLabel.font = UIFont.systemFont(ofSize: 14)
-        labsDescriptionLabel.textColor = UIColor(red:0.13, green:0.13, blue:0.13, alpha:0.87)
+        labsDescriptionLabel.textColor = UIColor(red: 0.13, green: 0.13, blue: 0.13, alpha: 0.87)
     }
     
     private func bind() {

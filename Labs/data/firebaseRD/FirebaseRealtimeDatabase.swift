@@ -27,11 +27,10 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
     private func bind() {
         
         ref.queryOrdered(byChild: "projects").observe(.childChanged, with: { [weak self] (snapshot) in
-            
             guard let strongSelf = self else {return}
             guard let values = snapshot.value as? [Any] else {return}
-            var labsAPI = [LabAPI]()
             
+            var labsAPI = [LabAPI]()
             for value in values {
                 guard let valueJson = value as? [String: Any] else {return}
                 guard let labAPI = LabAPI(JSON: valueJson) else {return}
@@ -41,16 +40,16 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
             
             strongSelf.labsResponseVariable.value = .success(responseObject: labsAPI)
         
-        }) { (error) in
-            print("Error get childChanged -> \(error.localizedDescription)")
+        }) { [weak self] (error) in
+            guard let strongSelf = self else {return}
+            strongSelf.labsResponseVariable.value = .failure(error: error.localizedDescription) //TODO Adding moya translate error
         }
         
         ref.queryOrdered(byChild: "projects").observe(.childRemoved, with: { [weak self] (snapshot) in
-      
             guard let strongSelf = self else {return}
             guard let values = snapshot.value as? [Any] else {return}
-            var labsAPI = [LabAPI]()
             
+            var labsAPI = [LabAPI]()
             for value in values {
                 guard let valueJson = value as? [String: Any] else {return}
                 guard let labAPI = LabAPI(JSON: valueJson) else {return}
@@ -59,8 +58,10 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
             }
             
             strongSelf.labsResponseVariable.value = .success(responseObject: labsAPI)
-        }) { (error) in
-            print("Error get childChanged -> \(error.localizedDescription)")
+        }) { [weak self] (error) in
+            guard let strongSelf = self else {return}
+            strongSelf.labsResponseVariable.value = .failure(error: error.localizedDescription)
+            
         }
     }
     
@@ -72,8 +73,8 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
         ref.queryOrdered(byChild: "projects").observe(.childAdded, with: { [weak self] (snapshot) in
             guard let strongSelf = self else {return}
             guard let values = snapshot.value as? [Any] else {return}
-            var labsAPI = [LabAPI]()
             
+            var labsAPI = [LabAPI]()
             for value in values {
                 guard let valueJson = value as? [String: Any] else {return}
                 guard let labAPI = LabAPI(JSON: valueJson) else {return}
@@ -82,6 +83,7 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
             }
             
             strongSelf.labsResponseVariable.value = .success(responseObject: labsAPI)
+            
         }) { [weak self] (error) in
             guard let strongSelf = self else {return}
             strongSelf.labsResponseVariable.value = .failure(error: error.localizedDescription)

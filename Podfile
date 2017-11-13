@@ -12,6 +12,7 @@ target 'Labs' do
   pod 'Kingfisher', '~> 3'
   pod 'Moya-ObjectMapper/RxSwift', '~> 2.3'
   pod 'Firebase/Database'
+  pod 'SwiftLint'
 
   target 'LabsUITests' do
     inherit! :search_paths

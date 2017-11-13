@@ -24,7 +24,7 @@ class LabAPI: Mappable {
     required init?(map: Map) {
         mapping(map: map)
     }
-    
+
     func mapping(map: Map) {
         id <- map["id"]
         name <- map["name"]

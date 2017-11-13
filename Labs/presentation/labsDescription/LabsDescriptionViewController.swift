@@ -27,7 +27,6 @@ class LabsDescriptionViewController: BaseViewController {
             strongSelf.presenterProtocol.aboutIconDidTapped()
         }
 
-        
         presenterProtocol.makeRequestLabs()
     }
     

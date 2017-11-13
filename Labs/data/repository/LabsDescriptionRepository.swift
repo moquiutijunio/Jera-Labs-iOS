@@ -16,7 +16,6 @@ protocol LabsDescriptionRepositoryProtocol: class {
 
 class LabsDescriptionRepository: BaseRepository, LabsDescriptionRepositoryProtocol {
     
-    
     var labsResponse: Observable<RequestResponse<[LabAPI]?>> {
         return firebaseRealtimeDatabase.labsResponseVariable.asObservable()
     }

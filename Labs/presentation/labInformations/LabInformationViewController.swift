@@ -102,7 +102,6 @@ class LabInformationViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        
         presenter.thirdPerson
             .asObservable()
             .subscribe(onNext: { [weak self] (photoURL) in

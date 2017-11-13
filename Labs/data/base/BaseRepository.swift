@@ -24,4 +24,3 @@ class BaseRepository: BaseRepositoryProtocol {
         print("dealloc ---> \(String(describing: type(of: self)))")
     }
 }
-

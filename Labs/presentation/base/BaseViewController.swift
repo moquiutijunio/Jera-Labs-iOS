@@ -96,7 +96,6 @@ extension BaseViewController: BaseViewProtocol {
         self.navigationItem.titleView = imageView
     }
     
-    
     func reloadTableView() {
         tableView.reloadData()
     }

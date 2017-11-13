@@ -61,4 +61,3 @@ public class RxNavigationControllerDelegateProxy: DelegateProxy, UINavigationCon
     }
     
 }
-

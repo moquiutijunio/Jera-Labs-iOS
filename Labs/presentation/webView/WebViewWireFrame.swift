@@ -6,7 +6,6 @@
 //  Copyright © 2017 Jera. All rights reserved.
 //
 
-
 import UIKit
 
 protocol WebViewWireFrameProtocol: PresenterWireFrameProtocol {
@@ -54,4 +53,3 @@ class WebViewWireFrame: BaseWireFrame {
 extension WebViewWireFrame: WebViewWireFrameProtocol {
     
 }
-

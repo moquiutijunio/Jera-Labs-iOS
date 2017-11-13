@@ -14,7 +14,7 @@ protocol LabInformationPresenterProtocol {
     var description: Variable<String?> {get}
     var backgroundURL: Variable<URL?> {get}
     var firtPerson: Variable<URL?> {get}
-    var secondPerson : Variable<URL?> {get}
+    var secondPerson: Variable<URL?> {get}
     var thirdPerson: Variable<URL?> {get}
     var fourthPerson: Variable<URL?> {get}
     var fifthPerson: Variable<URL?> {get}
@@ -108,4 +108,3 @@ extension LabInformationPresenter: LabInformationPresenterProtocol {
         }
     }
 }
-

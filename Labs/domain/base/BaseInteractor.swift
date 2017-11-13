@@ -14,4 +14,3 @@ class BaseInteractor: NSObject {
         print("dealloc ---> \(String(describing: type(of: self)))")
     }
 }
-
