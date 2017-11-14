@@ -8,6 +8,7 @@
 
 import UIKit
 import Cartography
+import Spruce
 
 protocol BaseViewProtocol: class {
     func addLogoOnNav()
@@ -24,11 +25,17 @@ class BaseViewController: UIViewController {
     lazy var tableView: UITableView = self.initializeTableView()
     var tableViewConstraints: [NSLayoutConstraint]?
     
+    private let sortFunction = LinearSortFunction(direction: .bottomToTop, interObjectDelay: 0.1) //TODO Jogar no base
+    private let spruceAnimations: [StockAnimation] = [.fadeIn, .expand(.slightly)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         view.backgroundColor = .white
         workArroundToBackButton()
+        
+        self.view.spruce.prepare(with: spruceAnimations)
+        self.view.spruce.animate(spruceAnimations, sortFunction: sortFunction)
     }
     
     private func workArroundToBackButton() {

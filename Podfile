@@ -13,6 +13,7 @@ target 'Labs' do
   pod 'Moya-ObjectMapper/RxSwift', '~> 2.3'
   pod 'Firebase/Database'
   pod 'SwiftLint'
+  pod 'Spruce', '~> 1.0.0'
 
   target 'LabsUITests' do
     inherit! :search_paths
