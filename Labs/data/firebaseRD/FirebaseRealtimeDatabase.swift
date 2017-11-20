@@ -13,7 +13,10 @@ import FirebaseDatabase
 
 protocol FirebaseRealtimeDatabaseProtocol {
     var labsResponseVariable: Variable<RequestResponse<[LabAPI]?>> {get}
+    var aboutResponseVariable: Variable<RequestResponse<AboutAPI?>> {get}
+    
     func getAllLabsInDB()
+    func getAboutInformationInDB()
 }
 
 class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
@@ -23,6 +26,7 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
     }
     
     var labsResponseVariable = Variable<RequestResponse<[LabAPI]?>>(.new)
+    var aboutResponseVariable = Variable<RequestResponse<AboutAPI?>>(.new)
     
     private func bind() {
         
@@ -87,6 +91,24 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
         }) { [weak self] (error) in
             guard let strongSelf = self else {return}
             strongSelf.labsResponseVariable.value = .failure(error: error.localizedDescription)
+        }
+    }
+    
+    func getAboutInformationInDB() {
+        ref = Database.database().reference()
+        
+        aboutResponseVariable.value = .loading
+        
+        ref.queryOrdered(byChild: "about").observe(.childAdded, with: { [weak self] (snapshot) in
+            guard let strongSelf = self else {return}
+            guard let valueJson = snapshot.value as? [String: Any] else {return}
+            guard let aboutAPI = AboutAPI(JSON: valueJson) else {return}
+            
+            strongSelf.aboutResponseVariable.value = .success(responseObject: aboutAPI)
+            
+        }) { [weak self] (error) in
+            guard let strongSelf = self else {return}
+            strongSelf.aboutResponseVariable.value = .failure(error: error.localizedDescription)
         }
     }
 }

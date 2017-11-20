@@ -17,18 +17,24 @@ class AboutWireFrame: BaseWireFrame {
     var navigationController: UINavigationController?
     let viewController = AboutViewController(nibName: "AboutViewController", bundle: nil)
     let presenter: AboutPresenterProtocol
+    let interactor: AboutInteractorProtocol
     
     init(presenterWireFrame: PresenterWireFrameProtocol) {
         let presenter = AboutPresenter()
+        let interactor = AboutInteractor()
         
         self.presenter = presenter
+        self.interactor = interactor
+        
+        viewController.presenter = presenter
+        interactor.repository = AboutRepository(firebaseRealtimeDatabase: FirebaseRealtimeDatabase())
         
         navigationController = UINavigationController(rootViewController: viewController)
         
         super.init()
         
-        viewController.presenter = presenter
         presenter.viewProtocol = viewController
+        presenter.interactor = interactor
         presenter.router = self
         self.presenterWireFrame = presenterWireFrame
     }

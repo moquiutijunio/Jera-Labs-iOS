@@ -50,6 +50,10 @@
 		F0C294651F51FD1100CDA442 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294641F51FD1100CDA442 /* LoadingView.swift */; };
 		F0C294671F52074B00CDA442 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F0C294661F52074B00CDA442 /* Localizable.strings */; };
 		F0C294691F52147A00CDA442 /* DomainHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294681F52147A00CDA442 /* DomainHelper.swift */; };
+		F0E4A75D1FC33D4100D43927 /* AboutInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4A75C1FC33D4100D43927 /* AboutInteractor.swift */; };
+		F0E4A75F1FC33DC200D43927 /* AboutAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4A75E1FC33DC200D43927 /* AboutAPI.swift */; };
+		F0E4A7611FC33F5B00D43927 /* AboutRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4A7601FC33F5B00D43927 /* AboutRepository.swift */; };
+		F0E4A7631FC3414100D43927 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0E4A7621FC3414100D43927 /* About.swift */; };
 		F0F8FF591F60BCD800A906F9 /* WebViewWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */; };
 		F0F8FF5B1F60BCE800A906F9 /* WebViewPreseter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8FF5A1F60BCE800A906F9 /* WebViewPreseter.swift */; };
 		F0F8FF5D1F60BCFA00A906F9 /* WebViewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F8FF5C1F60BCFA00A906F9 /* WebViewViewController.swift */; };
@@ -127,6 +131,10 @@
 		F0C294641F51FD1100CDA442 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
 		F0C294661F52074B00CDA442 /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		F0C294681F52147A00CDA442 /* DomainHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DomainHelper.swift; sourceTree = "<group>"; };
+		F0E4A75C1FC33D4100D43927 /* AboutInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutInteractor.swift; sourceTree = "<group>"; };
+		F0E4A75E1FC33DC200D43927 /* AboutAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutAPI.swift; sourceTree = "<group>"; };
+		F0E4A7601FC33F5B00D43927 /* AboutRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutRepository.swift; sourceTree = "<group>"; };
+		F0E4A7621FC3414100D43927 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewWireFrame.swift; sourceTree = "<group>"; };
 		F0F8FF5A1F60BCE800A906F9 /* WebViewPreseter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewPreseter.swift; sourceTree = "<group>"; };
 		F0F8FF5C1F60BCFA00A906F9 /* WebViewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewViewController.swift; sourceTree = "<group>"; };
@@ -278,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				F09EA1D01FA7B7A700393C37 /* LabsDescriptionRepository.swift */,
+				F0E4A7601FC33F5B00D43927 /* AboutRepository.swift */,
 			);
 			path = repository;
 			sourceTree = "<group>";
@@ -305,6 +314,7 @@
 			children = (
 				F0C294521F51ED2A00CDA442 /* Lab.swift */,
 				F02CF8F51F5F123A00916244 /* Team.swift */,
+				F0E4A7621FC3414100D43927 /* About.swift */,
 			);
 			path = models;
 			sourceTree = "<group>";
@@ -314,6 +324,7 @@
 			children = (
 				F0C294551F51EE2300CDA442 /* LabAPI.swift */,
 				F02CF8F31F5F0EFA00916244 /* TeamAPI.swift */,
+				F0E4A75E1FC33DC200D43927 /* AboutAPI.swift */,
 			);
 			path = entities;
 			sourceTree = "<group>";
@@ -328,6 +339,14 @@
 				F0C294621F51FCF500CDA442 /* LoadingView.xib */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		F0E4A75B1FC33D1100D43927 /* about */ = {
+			isa = PBXGroup;
+			children = (
+				F0E4A75C1FC33D4100D43927 /* AboutInteractor.swift */,
+			);
+			path = about;
 			sourceTree = "<group>";
 		};
 		F0F8FF571F60BC8E00A906F9 /* webView */ = {
@@ -359,6 +378,7 @@
 				F0C2944E1F51EC9000CDA442 /* utils */,
 				F0FA0E5C1F4DEFC6002CDA39 /* base */,
 				F0FA0E701F4DF4B9002CDA39 /* labsDescription */,
+				F0E4A75B1FC33D1100D43927 /* about */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -370,8 +390,8 @@
 				F0FA0E5B1F4DEF95002CDA39 /* utils */,
 				F0FA0E5A1F4DEF8A002CDA39 /* base */,
 				F0FA0E671F4DF2A2002CDA39 /* labsDescription */,
-				F0465E6B1F6D94840013CED2 /* about */,
 				F033F7211F5A309D001B3A89 /* labInformations */,
+				F0465E6B1F6D94840013CED2 /* about */,
 				F0F8FF571F60BC8E00A906F9 /* webView */,
 			);
 			path = presentation;
@@ -724,7 +744,9 @@
 				F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */,
 				F0465E6F1F6D95090013CED2 /* AboutPresenter.swift in Sources */,
 				F0FA0E611F4DF0EB002CDA39 /* BasePresenter.swift in Sources */,
+				F0E4A7631FC3414100D43927 /* About.swift in Sources */,
 				F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */,
+				F0E4A7611FC33F5B00D43927 /* AboutRepository.swift in Sources */,
 				F0465E6D1F6D94FA0013CED2 /* AboutWireFrame.swift in Sources */,
 				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
 				F02CF8F41F5F0EFA00916244 /* TeamAPI.swift in Sources */,
@@ -749,7 +771,9 @@
 				F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */,
 				F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */,
 				F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */,
+				F0E4A75F1FC33DC200D43927 /* AboutAPI.swift in Sources */,
 				F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */,
+				F0E4A75D1FC33D4100D43927 /* AboutInteractor.swift in Sources */,
 				F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */,
 				F033F7291F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift in Sources */,
 				F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */,

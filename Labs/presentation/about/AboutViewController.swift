@@ -33,6 +33,8 @@ class AboutViewController: BaseViewController {
         
         applyLayout()
         bind()
+        
+        presenter.makeRequestAbout()
     }
     
     private func applyLayout() {
