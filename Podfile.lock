@@ -61,7 +61,7 @@ PODS:
     - RxSwift (~> 3.4)
   - RxSwift (3.6.1)
   - Spruce (1.0.0)
-  - SwiftLint (0.23.1)
+  - SwiftLint (0.24.0)
 
 DEPENDENCIES:
   - Cartography
@@ -98,7 +98,7 @@ SPEC CHECKSUMS:
   RxGesture: 1f770b247c69e8133fb8f4ef263571efd0ae91a1
   RxSwift: f9de85ea20cd2f7716ee5409fc13523dc638e4e4
   Spruce: 07ffdb990923f500111fcbf13d102e16075b230e
-  SwiftLint: 1b670ce79284c76520f84060e87d645078fd32fa
+  SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
 
 PODFILE CHECKSUM: 0cbb2ac92d8a1d17f73bdf8496207e91b54594a4
 
