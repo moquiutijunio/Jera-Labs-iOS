@@ -1,5 +1,5 @@
 
-#Jera Labs iOS
+# Jera Labs iOS
 
 <p align="center">
     <img src="https://i.imgur.com/zQkfVAO.png" width="250" max-width="50%" alt="Jera Labs" />
@@ -28,7 +28,7 @@ Welcome to **Jera Labs**, an ongoing project that aims to list all the tools dev
 git clone git@bitbucket.org:jerasoftware/mesalva-ios.git
 ```
 
-* To compile the project you must have the [CocoaPods] (https://cocoapods.org/) and Xcode installed.
+* To compile the project you must have the [CocoaPods](https://cocoapods.org/) and Xcode installed.
 * After this do the following command within the IOS project folder and within the MacOS project folder.
   
 ```
@@ -42,7 +42,7 @@ pod install
 
 ## Utilized
 
-- Architecture [Viper] (https://www.objc.io/issues/13-architecture/viper/)
+- Architecture [Viper](https://www.objc.io/issues/13-architecture/viper/)
 - Firebase Data base
 - RxSwift - RxCocoa
 - SwiftLint
