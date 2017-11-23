@@ -15,8 +15,12 @@
     </a>
 </p>
 
-Welcome to **Jera Labs**, an ongoing project that aims to list all the tools developed by Jera’s employees.
+Welcome to **Jera Labs**, where ideas gain form. Labs is our repository of ideas from our team that have been taken from the paper and have become more entertaining internal designs.
 
+
+## Our team's projects
+
+We encourage our team to have their own designs, stimulating creativity and business understanding.
 
 ## Getting started
 * Download the project at your terminal.
@@ -50,8 +54,8 @@ pod install
 ## Application
 
 <p align="center">
-    <img src="https://i.imgur.com/HSN8PXU.png" width="150" max-width="50%" alt="Jera Labs" />
-    <img src="https://i.imgur.com/NFv0nNR.png" width="150" max-width="50%" alt="Jera Labs" />
-    <img src="https://i.imgur.com/MYQBq8v.png" width="150" max-width="50%" alt="Jera Labs" />
-    <img src="https://i.imgur.com/uQpdUsA.png" width="150" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/HSN8PXU.png" width="200" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/NFv0nNR.png" width="200" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/MYQBq8v.png" width="200" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/uQpdUsA.png" width="200" max-width="50%" alt="Jera Labs" />
 </p>
