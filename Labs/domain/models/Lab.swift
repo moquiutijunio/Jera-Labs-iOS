@@ -12,9 +12,9 @@ struct Lab {
     
     var id: Int
     var name: String
-    var avatar: URL
+    var avatar: URL?
     var description: String
-    var background: URL
+    var background: URL?
     var team: Team?
     var appleStore: URL?
     var playStore: URL?
@@ -27,15 +27,13 @@ extension Lab {
     static func map(labAPI: LabAPI) -> Lab? {
         if let id = labAPI.id,
             let name = labAPI.name,
-            let avatar = labAPI.avatar,
-            let description = labAPI.description,
-            let background = labAPI.background {
+            let description = labAPI.description {
             
             return Lab(id: id,
                        name: name,
-                       avatar: avatar,
+                       avatar: labAPI.avatar,
                        description: description,
-                       background: background,
+                       background: labAPI.background,
                        team: Team.map(teamAPI: labAPI.team),
                        appleStore: labAPI.appleStore,
                        playStore: labAPI.playStore,
