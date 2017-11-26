@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  Labs
+
+  Created by Junio Moquiuti on 26/08/17.
+  Copyright © 2017 Jera. All rights reserved.
+*/
+
+//Alert
+"alert.title" = "Ops...";
+"alert.loading" = "Carregando...";
+"alert.tryAgain" = "Tentar novamente";
+
+//LabInformations
+"lab.info.repository" = "Repositório";
+"lab.info.playStore" = "Play Store";
+"lab.info.appleStore" = "Apple Store";
+
+//About
+"about.title" = "Sobre";
+"about.version" = "V.1";
+"about.description" = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a nulla dolor. Aliquam ultrices erat eu purus vulputate gravida. Suspendisse feugiat dui arcu, porta semper sapien consectetur ac. Donec eu elementum nisl. In pellentesque est vitae commodo consectetur. Morbi bibendum diam ac orci porta sagittis. Donec eu leo non risus facilisis sollicitudin. Maecenas luctus, justo et ullamcorper ullamcorper, ante erat dignissim ante, a placerat ante ipsum ac sem. Nulla sed semper lectus. Sed sit amet tristique velit.";
