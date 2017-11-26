@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="https://i.imgur.com/xhIV0vH.png" width="250" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/UpvJ3Bj.png" width="3000" max-width="50%" alt="Jera Labs" />
 </p>
 
 <p align="center">
@@ -10,8 +10,8 @@
     <a href="https://cocoapods.org/">
         <img src="https://img.shields.io/badge/cocoapods-compatible-4BC51D.svg?style=flat" alt="Cocoapods" />
     </a>
-    <a href="https://twitter.com/MoquiutiJunio">
-        <img src="https://img.shields.io/badge/contact-@moquiutijunio-blue.svg?style=flat" alt="Twitter: @moquiutijunio" />
+    <a href="https://br.linkedin.com/in/junio-moquiuti-578741a1">
+        <img src="https://img.shields.io/badge/contact-@moquiutijunio-blue.svg?style=flat" alt="Linkedin: @moquiutijunio" />
     </a>
 </p>
 
@@ -39,17 +39,16 @@ pod install
 
 ## Platform support
 
-- ✅ 📱 iOS 8 or later 
+- ✅ 📱 iOS 9 or later 
 
 ## Utilized
 
-- Architecture [Viper](https://www.objc.io/issues/13-architecture/viper/)
+- [Viper architecture](https://www.objc.io/issues/13-architecture/viper/)
 - [Firebase Realtime Database](https://firebase.google.com/docs/database/?hl=en-us)
-- RxSwift - RxCocoa
+- [ReactiveX](https://github.com/ReactiveX/RxSwift) - [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveSwift)
 - [SwiftLint](https://github.com/realm/SwiftLint)
 - [Spruce](https://github.com/willowtreeapps/spruce-ios)
 - [Fastlane](https://fastlane.tools/)
-- Bitrise
 
 ## Application
 
