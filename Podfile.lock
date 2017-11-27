@@ -26,9 +26,9 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - Kingfisher (3.10.4)
   - leveldb-library (1.18.3)
-  - Material (2.9.3):
-    - Material/Core (= 2.9.3)
-  - Material/Core (2.9.3)
+  - Material (2.7.1):
+    - Material/Core (= 2.7.1)
+  - Material/Core (2.7.1)
   - Moya (8.0.5):
     - Moya/Core (= 8.0.5)
   - Moya-ObjectMapper/Core (2.3.2):
@@ -67,7 +67,7 @@ DEPENDENCIES:
   - Cartography
   - Firebase/Database
   - Kingfisher (~> 3)
-  - Material (~> 2.9)
+  - Material (~> 2.7.0)
   - Moya-ObjectMapper/RxSwift (~> 2.3)
   - R.swift (~> 3.2)
   - RxCocoa (~> 3.4)
@@ -86,7 +86,7 @@ SPEC CHECKSUMS:
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
   Kingfisher: dc3a4983e86d2dfa89513664983a82340c11a289
   leveldb-library: 10fb39c39e243db4af1828441162405bbcec1404
-  Material: 4af954f1417b3adb5e3113fe3df45473deabb7c6
+  Material: 13071c7cd340d54b4f9c839b386338a1e082b25e
   Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   Moya-ObjectMapper: 1b05f10bb69fb6c8750d497d2974c1c63c08c3a9
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
@@ -100,6 +100,6 @@ SPEC CHECKSUMS:
   Spruce: 07ffdb990923f500111fcbf13d102e16075b230e
   SwiftLint: a014c92b4664e8b13f380f8640a51bb1733778ba
 
-PODFILE CHECKSUM: 273433c3dc109db7b8de3ac9504c62e087e0ac19
+PODFILE CHECKSUM: 6867605f4b8ee31be5700911bb1d27be86288ba8
 
 COCOAPODS: 1.3.1

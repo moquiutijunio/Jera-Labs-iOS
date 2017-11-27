@@ -33,7 +33,7 @@ class LabInformationViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         applyLayout()
         bind()
     }

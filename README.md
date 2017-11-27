@@ -45,7 +45,7 @@ pod install
 
 - [Viper architecture](https://www.objc.io/issues/13-architecture/viper/)
 - [Firebase Realtime Database](https://firebase.google.com/docs/database/?hl=en-us)
-- [ReactiveX](https://github.com/ReactiveX/RxSwift) - [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveSwift)
+- [ReactiveX](https://github.com/ReactiveX/RxSwift) - [ReactiveCocoa](https://github.com/ReactiveCocoa/ReactiveSwift) - [RxGesture](https://github.com/RxSwiftCommunity/RxGesture)
 - [SwiftLint](https://github.com/realm/SwiftLint)
 - [Spruce](https://github.com/willowtreeapps/spruce-ios)
 - [Fastlane](https://fastlane.tools/)
