@@ -83,7 +83,7 @@ extension LabInformationPresenter: LabInformationPresenterProtocol {
     func appleStoreDidTap() {
         if appleStoreState.value,
             let appleStoreURL = labVariable.value.appleStore {
-            router?.openWebViewWith(url: appleStoreURL, title: R.string.localizable.labInfoAppleStore())
+            router?.openAppleStoreWith(url: appleStoreURL, title: R.string.localizable.labInfoAppleStore())
         }
     }
     

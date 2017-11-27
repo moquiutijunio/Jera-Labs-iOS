@@ -11,6 +11,7 @@ import RxCocoa
 
 protocol LabInformationWireFrameProtocol: class {
     func openWebViewWith(url: URL, title: String)
+    func openAppleStoreWith(url: URL, title: String)
 }
 
 class LabInformationWireFrame: BaseWireFrame {
@@ -57,5 +58,14 @@ extension LabInformationWireFrame: LabInformationWireFrameProtocol {
         let webViewWireFrame = WebViewWireFrame(url: url, title: title)
         webViewWireFrame.presentOn(navigationController: navigationController)
         presentedWireFrame = webViewWireFrame
+    }
+    
+    func openAppleStoreWith(url: URL, title: String) {
+        guard UIApplication.shared.canOpenURL(url) else {
+            openWebViewWith(url: url, title: title)
+            return
+        }
+        
+        UIApplication.shared.openURL(url)
     }
 }
