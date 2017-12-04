@@ -10,10 +10,10 @@ import UIKit
 import RxSwift
 
 protocol LabsDescriptionPresenterProtocol {
+    var labsDescriptionModel: Variable<[LabsDescriptionTableViewModel]> {get}
+    
     func makeRequestLabs()
-    func numberOfRows(section: Int) -> Int
-    func cellForRow(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell
-    func didSelectedRow(at indexPath: IndexPath)
+    func didSelectedRow(at row: Int)
     func aboutIconDidTapped()
 }
 
@@ -22,14 +22,11 @@ class LabsDescriptionPresenter: BasePresenter {
     weak var viewProtocol: LabsDescriptionViewProtocol?
     weak var router: LabsDescriptionWireFrameProtocol?
     var interactor: LabsDescriptionInteractorProtocol! {
-        didSet {
-            bind()
-        }
+        didSet {bind()}
     }
     
     let disposeBag = DisposeBag()
-    var labsDescriptionTableViewModel = [LabsDescriptionTableViewModel]()
-    var currentLabs = [Lab]()
+    var labsDescriptionModel = Variable<[LabsDescriptionTableViewModel]>([])
     
     private func bind() {
         
@@ -56,14 +53,16 @@ class LabsDescriptionPresenter: BasePresenter {
     }
     
     private func buildTableViewSectionsWith(_ labs: [Lab]) {
-        currentLabs.removeAll()
-        labsDescriptionTableViewModel.removeAll()
+        labsDescriptionModel.value.removeAll()
+        
+        var labsDescription = [LabsDescriptionTableViewModel]()
         
         for lab in labs {
-            currentLabs.append(lab)
             let viewModel = LabsDescriptionTableViewModel(lab: lab)
-            labsDescriptionTableViewModel.append(viewModel)
+            labsDescription.append(viewModel)
         }
+        
+        labsDescriptionModel.value = labsDescription
         
         viewProtocol?.reloadTableView()
     }
@@ -75,18 +74,8 @@ extension LabsDescriptionPresenter: LabsDescriptionPresenterProtocol {
         interactor.makeRequestLabs()
     }
     
-    func numberOfRows(section: Int) -> Int {
-        return labsDescriptionTableViewModel.count
-    }
-    
-    func cellForRow(tableView: UITableView, indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LabsDescriptionTableViewCell.nibName(), for: indexPath) as! LabsDescriptionTableViewCell
-        cell.viewModel = labsDescriptionTableViewModel[indexPath.row]
-        return cell
-    }
-
-    func didSelectedRow(at indexPath: IndexPath) {
-        router?.openLabInformation(currentLabs[indexPath.row])
+    func didSelectedRow(at row: Int) {
+        router?.openLabInformation(labsDescriptionModel.value[row].lab)
     }
     
     func aboutIconDidTapped() {

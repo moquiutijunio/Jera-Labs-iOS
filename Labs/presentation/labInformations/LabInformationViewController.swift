@@ -28,7 +28,7 @@ class LabInformationViewController: BaseViewController {
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var descriptionLabel: UILabel!
     
-    let disposeBag = DisposeBag()
+    var disposeBag: DisposeBag!
     var presenterProtocol: LabInformationPresenterProtocol!
     
     override func viewDidLoad() {
@@ -62,6 +62,8 @@ class LabInformationViewController: BaseViewController {
     private func bind() {
         guard let presenter = presenterProtocol else { return }
         
+        disposeBag = DisposeBag()
+        
         presenter.backgroundURL
             .asObservable()
             .subscribe(onNext: { [weak self] (imageURL) in
@@ -72,9 +74,10 @@ class LabInformationViewController: BaseViewController {
         
         presenter.name
             .asObservable()
+            .filter {$0 != nil}
+            .map {$0!}
             .subscribe(onNext: { [weak self] (title) in
                 guard let strongSelf = self else {return}
-                guard let title = title else {return}
                 strongSelf.title = title
             })
             .disposed(by: disposeBag)
@@ -86,45 +89,50 @@ class LabInformationViewController: BaseViewController {
         
         presenter.firtPerson
             .asObservable()
+            .filter {$0 != nil}
+            .map {$0!}
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
-                guard let photoURL = photoURL else { return }
                 strongSelf.firstPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         
         presenter.secondPerson
             .asObservable()
+            .filter {$0 != nil}
+            .map {$0!}
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
-                guard let photoURL = photoURL else { return }
                 strongSelf.secondPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         
         presenter.thirdPerson
             .asObservable()
+            .filter {$0 != nil}
+            .map {$0!}
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
-                guard let photoURL = photoURL else { return }
                 strongSelf.thirdPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         
         presenter.fourthPerson
             .asObservable()
+            .filter {$0 != nil}
+            .map {$0!}
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
-                guard let photoURL = photoURL else { return }
                 strongSelf.fourthPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)
         
         presenter.fifthPerson
             .asObservable()
+            .filter {$0 != nil}
+            .map {$0!}
             .subscribe(onNext: { [weak self] (photoURL) in
                 guard let strongSelf = self else { return }
-                guard let photoURL = photoURL else { return }
                 strongSelf.fifthPersonImageView.kf.setImage(with: photoURL, placeholder: #imageLiteral(resourceName: "place_avatar"))
             })
             .disposed(by: disposeBag)

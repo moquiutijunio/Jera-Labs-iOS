@@ -21,7 +21,7 @@ class LabInformationWireFrame: BaseWireFrame {
 
     let presenter: LabInformationPresenterProtocol
     
-    init(lab: Lab) {
+    init(lab: Lab, presenterWireFrame: PresenterWireFrameProtocol) {
         let presenter = LabInformationPresenter(lab: lab)
 
         self.presenter = presenter
@@ -32,6 +32,8 @@ class LabInformationWireFrame: BaseWireFrame {
 
         presenter.viewProtocol = viewController
         presenter.router = self
+        
+        self.presenterWireFrame = presenterWireFrame
     }
     
     func presentOn(navigationController: UINavigationController) {
@@ -55,7 +57,7 @@ class LabInformationWireFrame: BaseWireFrame {
 extension LabInformationWireFrame: LabInformationWireFrameProtocol {
     func openWebViewWith(url: URL, title: String) {
         guard let navigationController = navigationController else { return }
-        let webViewWireFrame = WebViewWireFrame(url: url, title: title)
+        let webViewWireFrame = WebViewWireFrame(url: url, title: title, presenterWireFrame: self)
         webViewWireFrame.presentOn(navigationController: navigationController)
         presentedWireFrame = webViewWireFrame
     }

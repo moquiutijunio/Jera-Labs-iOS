@@ -19,7 +19,7 @@ class WebViewWireFrame: BaseWireFrame {
     
     let presenter: WebViewPresenterProtocol
     
-    init(url: URL, title: String) {
+    init(url: URL, title: String, presenterWireFrame: PresenterWireFrameProtocol) {
         let presenter = WebViewPresenter(currentURL: url)
         
         self.presenter = presenter
@@ -31,6 +31,8 @@ class WebViewWireFrame: BaseWireFrame {
         
         presenter.viewProtocol = viewController
         presenter.router = self
+        
+        self.presenterWireFrame = presenterWireFrame
     }
     
     func presentOn(navigationController: UINavigationController) {

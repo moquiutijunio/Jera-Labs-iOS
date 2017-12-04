@@ -11,14 +11,16 @@ import RxSwift
 import Kingfisher
 
 class LabsDescriptionTableViewModel {
-    var labsAvatar: Variable<URL?>
-    var labsName: Variable<String?>
-    var labsDescription: Variable<String?>
+    var lab: Lab
+    var labAvatar: Variable<URL?>
+    var labName: Variable<String?>
+    var labDescription: Variable<String?>
     
     init(lab: Lab) {
-        self.labsAvatar = Variable(lab.avatar)
-        self.labsName = Variable(lab.name)
-        self.labsDescription = Variable(lab.description)
+        self.lab = lab
+        self.labAvatar = Variable(lab.avatar)
+        self.labName = Variable(lab.name)
+        self.labDescription = Variable(lab.description)
     }
 }
 
@@ -58,7 +60,7 @@ class LabsDescriptionTableViewCell: BaseTableViewCell {
         
         disposeBag = DisposeBag()
         
-        viewModel.labsAvatar
+        viewModel.labAvatar
             .asObservable()
             .subscribe(onNext: { [weak self] (avatarURL) in
                 guard let strongSelf = self else { return }
@@ -68,12 +70,12 @@ class LabsDescriptionTableViewCell: BaseTableViewCell {
             })
             .disposed(by: disposeBag)
         
-        viewModel.labsName
+        viewModel.labName
             .asObservable()
             .bind(to: labsNameLabel.rx.text)
             .disposed(by: disposeBag)
         
-        viewModel.labsDescription
+        viewModel.labDescription
             .asObservable()
             .bind(to: labsDescriptionLabel.rx.text)
             .disposed(by: disposeBag)

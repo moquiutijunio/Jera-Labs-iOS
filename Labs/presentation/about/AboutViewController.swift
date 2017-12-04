@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import Spruce
 
 protocol AboutViewProtocol: BaseViewProtocol {
     
@@ -22,6 +23,9 @@ class AboutViewController: BaseViewController {
     fileprivate var disposeBag: DisposeBag!
     var presenter: AboutPresenterProtocol!
     
+    let sortFunction = LinearSortFunction(direction: .bottomToTop, interObjectDelay: 0.1)
+    let spruceAnimations: [StockAnimation] = [.fadeIn, .expand(.slightly)]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +39,9 @@ class AboutViewController: BaseViewController {
         bind()
         
         presenter.makeRequestAbout()
+        
+        view.spruce.prepare(with: spruceAnimations)
+        view.spruce.animate(spruceAnimations, sortFunction: sortFunction)
     }
     
     private func applyLayout() {

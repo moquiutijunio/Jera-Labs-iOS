@@ -50,7 +50,7 @@ class LabsDescriptionWireFrame: BaseWireFrame {
 
 extension LabsDescriptionWireFrame: LabsDescriptionWireFrameProtocol {
     func openLabInformation(_ lab: Lab) {
-        let labInformationWireFrame = LabInformationWireFrame(lab: lab)
+        let labInformationWireFrame = LabInformationWireFrame(lab: lab, presenterWireFrame: self)
         labInformationWireFrame.presentOn(navigationController: navigationController)
         presentedWireFrame = labInformationWireFrame
     }

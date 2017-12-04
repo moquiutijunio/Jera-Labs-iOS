@@ -47,15 +47,17 @@ extension LabsDescriptionViewController: LabsDescriptionViewProtocol {
 extension LabsDescriptionViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenterProtocol.numberOfRows(section: section)
+        return presenterProtocol.labsDescriptionModel.value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return presenterProtocol.cellForRow(tableView: tableView, indexPath: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: LabsDescriptionTableViewCell.nibName(), for: indexPath) as! LabsDescriptionTableViewCell
+        cell.viewModel = presenterProtocol.labsDescriptionModel.value[indexPath.row]
+        return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenterProtocol.didSelectedRow(at: indexPath)
+        presenterProtocol.didSelectedRow(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
