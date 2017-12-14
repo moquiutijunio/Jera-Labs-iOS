@@ -10,6 +10,9 @@
     <a href="https://cocoapods.org/">
         <img src="https://img.shields.io/badge/cocoapods-compatible-4BC51D.svg?style=flat" alt="Cocoapods" />
     </a>
+    <a href="https://itunes.apple.com/br/app/jera-labs/id1273795118?l=en&mt=8">
+        <img src="https://img.shields.io/badge/Apple Store-1.0-4BC51D.svg?style=flat" alt="Cocoapods" />
+    </a>
     <a href="https://br.linkedin.com/in/junio-moquiuti-578741a1">
         <img src="https://img.shields.io/badge/contact-@moquiutijunio-blue.svg?style=flat" alt="Linkedin: @moquiutijunio" />
     </a>
