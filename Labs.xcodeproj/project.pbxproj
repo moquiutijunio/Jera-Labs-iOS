@@ -862,8 +862,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jera.Labs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "e00b09cb-0f19-427e-a003-dad42f770d81";
-				PROVISIONING_PROFILE_SPECIFIER = "br.com.jera.Labs Development";
+				PROVISIONING_PROFILE = "e330f058-461e-4c63-b33e-2555e7c10bc2";
+				PROVISIONING_PROFILE_SPECIFIER = "br.com.jera.Labs Development 1517852990";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
