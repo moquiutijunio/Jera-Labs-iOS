@@ -10,6 +10,8 @@ import UIKit
 
 protocol LabsDescriptionWireFrameProtocol: class {
     func openLabInformation(_ lab: Lab)
+    func previewViewControllerFor(lab: Lab) -> UIViewController
+    func finishPreviewingViewController()
     func openAboutApp()
 }
 
@@ -17,9 +19,9 @@ class LabsDescriptionWireFrame: BaseWireFrame {
     
     let navigationController: UINavigationController
     let viewController = LabsDescriptionViewController()
-    
     let presenter: LabsDescriptionPresenterProtocol
     let interactor: LabsDescriptionInteractorProtocol
+    var labInformationWireFramePreviewing: LabInformationWireFrame?
     
     override init() {
         let interactor = LabsDescriptionInteractor()
@@ -28,7 +30,7 @@ class LabsDescriptionWireFrame: BaseWireFrame {
         self.presenter = presenter
         self.interactor = interactor
         
-        viewController.presenterProtocol = presenter
+        viewController.presenter = presenter
         interactor.repository = LabsDescriptionRepository(firebaseRealtimeDatabase: FirebaseRealtimeDatabase())
         
         navigationController = UINavigationController(rootViewController: viewController)
@@ -50,9 +52,22 @@ class LabsDescriptionWireFrame: BaseWireFrame {
 
 extension LabsDescriptionWireFrame: LabsDescriptionWireFrameProtocol {
     func openLabInformation(_ lab: Lab) {
-        let labInformationWireFrame = LabInformationWireFrame(lab: lab, presenterWireFrame: self)
-        labInformationWireFrame.presentOn(navigationController: navigationController)
+        let labInformationWireFrame = LabInformationWireFrame(lab: lab)
+        labInformationWireFrame.presentOn(navigationController: navigationController, presenterWireFrame: self)
         presentedWireFrame = labInformationWireFrame
+    }
+    
+    func previewViewControllerFor(lab: Lab) -> UIViewController {
+        let labInformationWireFrame = LabInformationWireFrame(lab: lab)
+        labInformationWireFramePreviewing = labInformationWireFrame
+        return labInformationWireFrame.viewController
+    }
+    
+    func finishPreviewingViewController() {
+        guard let labInformationWireFramePreviewing = labInformationWireFramePreviewing else { return }
+        labInformationWireFramePreviewing.presentOn(navigationController: navigationController, presenterWireFrame: self)
+        self.presentedWireFrame = labInformationWireFramePreviewing
+        self.labInformationWireFramePreviewing = nil
     }
     
     func openAboutApp() {

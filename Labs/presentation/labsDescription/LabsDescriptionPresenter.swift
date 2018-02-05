@@ -14,6 +14,8 @@ protocol LabsDescriptionPresenterProtocol {
     
     func makeRequestLabs()
     func didSelectedRow(at row: Int)
+    func viewControllerPreviewing(at row: Int) -> UIViewController?
+    func finishViewControllerPreviewing()
     func aboutIconDidTapped()
 }
 
@@ -76,6 +78,14 @@ extension LabsDescriptionPresenter: LabsDescriptionPresenterProtocol {
     
     func didSelectedRow(at row: Int) {
         router?.openLabInformation(labsDescriptionModel.value[row].lab)
+    }
+    
+    func viewControllerPreviewing(at row: Int) -> UIViewController? {
+        return router?.previewViewControllerFor(lab: labsDescriptionModel.value[row].lab)
+    }
+    
+    func finishViewControllerPreviewing() {
+        router?.finishPreviewingViewController()
     }
     
     func aboutIconDidTapped() {

@@ -21,7 +21,7 @@ class LabInformationWireFrame: BaseWireFrame {
 
     let presenter: LabInformationPresenterProtocol
     
-    init(lab: Lab, presenterWireFrame: PresenterWireFrameProtocol) {
+    init(lab: Lab) {
         let presenter = LabInformationPresenter(lab: lab)
 
         self.presenter = presenter
@@ -32,13 +32,12 @@ class LabInformationWireFrame: BaseWireFrame {
 
         presenter.viewProtocol = viewController
         presenter.router = self
-        
-        self.presenterWireFrame = presenterWireFrame
     }
     
-    func presentOn(navigationController: UINavigationController) {
+    func presentOn(navigationController: UINavigationController, presenterWireFrame: PresenterWireFrameProtocol) {
         navigationController.pushViewController(viewController, animated: true)
         self.navigationController = navigationController
+        self.presenterWireFrame = presenterWireFrame
         
         _ = self.navigationController!.rx
             .didShowViewController

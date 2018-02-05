@@ -15,7 +15,7 @@ protocol LabsDescriptionViewProtocol: BaseViewProtocol {
 
 class LabsDescriptionViewController: BaseViewController {
     
-    var presenterProtocol: LabsDescriptionPresenterProtocol!
+    var presenter: LabsDescriptionPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,10 +24,14 @@ class LabsDescriptionViewController: BaseViewController {
         addLogoOnNav()
         addRightBarButton(image: #imageLiteral(resourceName: "ic_info_outline").withRenderingMode(.alwaysTemplate).tint(with: .gray)!) { [weak self] in
             guard let strongSelf = self else {return}
-            strongSelf.presenterProtocol.aboutIconDidTapped()
+            strongSelf.presenter.aboutIconDidTapped()
+        }
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: tableView)
         }
 
-        presenterProtocol.makeRequestLabs()
+        presenter.makeRequestLabs()
     }
     
     override func configureTableView() {
@@ -44,20 +48,33 @@ extension LabsDescriptionViewController: LabsDescriptionViewProtocol {
     
 }
 
+extension LabsDescriptionViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
+        return presenter.viewControllerPreviewing(at: indexPath.row)
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        presenter.finishViewControllerPreviewing()
+    }
+    
+}
+
 extension LabsDescriptionViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenterProtocol.labsDescriptionModel.value.count
+        return presenter.labsDescriptionModel.value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: LabsDescriptionTableViewCell.nibName(), for: indexPath) as! LabsDescriptionTableViewCell
-        cell.viewModel = presenterProtocol.labsDescriptionModel.value[indexPath.row]
+        cell.viewModel = presenter.labsDescriptionModel.value[indexPath.row]
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        presenterProtocol.didSelectedRow(at: indexPath.row)
+        presenter.didSelectedRow(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
