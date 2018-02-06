@@ -13,7 +13,7 @@ struct Appearance {
     static func applyUIAppearence() {
         UINavigationBar.appearance().tintColor = .primaryColor
         UINavigationBar.appearance().barTintColor = .white
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.primaryColor]
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.primaryColor]
         
         UIActivityIndicatorView.appearance().color = .primaryColor
     }

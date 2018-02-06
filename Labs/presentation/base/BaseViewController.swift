@@ -23,7 +23,6 @@ class BaseViewController: UIViewController {
     
     fileprivate var placeholderView: PlaceholderView?
     lazy var tableView: UITableView = self.initializeTableView()
-    var tableViewConstraints: [NSLayoutConstraint]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,13 +47,24 @@ extension BaseViewController: UITableViewDataSource, UITableViewDelegate {
         let tableView = UITableView()
         view.addSubview(tableView)
         view.sendSubview(toBack: tableView)
-        constrain(tableView, view) { (tableView, view) in
-            self.tableViewConstraints = tableView.edges == view.edges
+        constrain(view, tableView, car_topLayoutGuide, car_bottomLayoutGuide) { (view, tableView, topGuide, bottomGuide) in
+            tableView.left == view.left
+            tableView.right == view.right
+            
+            if #available(iOS 11.0, *) {
+                tableView.top == view.safeAreaLayoutGuide.top
+                tableView.bottom == view.safeAreaLayoutGuide.bottom
+                
+            } else {
+                tableView.top == topGuide.bottom
+                tableView.bottom == bottomGuide.top
+            }
         }
+        
         return tableView
     }
     
-    func configureTableView() {
+    @objc func configureTableView() {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.tableFooterView = UIView()

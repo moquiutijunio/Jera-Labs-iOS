@@ -44,7 +44,7 @@ class AboutWireFrame: BaseWireFrame {
         viewController.present(navigationController, animated: true, completion: nil)
         
         _ = navigationController.rx
-            .didShowViewController
+            .didShow
             .takeUntil(rx.deallocated)
             .subscribe(onNext: { [weak self] (viewController) in
                 guard let strongSelf = self else { return }

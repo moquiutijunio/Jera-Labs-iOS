@@ -6,7 +6,7 @@
 	<a href="https://fastlane.tools/">
         <img src="https://fastlane.tools/assets/img/logo-desktop.png" width="60" max-width="100%"/>
     </a>
-    <img src="https://img.shields.io/badge/Swift-3.0-4BC51D.svg" />
+    <img src="https://img.shields.io/badge/Swift-4.0-4BC51D.svg" />
     <a href="https://cocoapods.org/">
         <img src="https://img.shields.io/badge/cocoapods-compatible-4BC51D.svg?style=flat" alt="Cocoapods" />
     </a>
@@ -56,8 +56,8 @@ pod install
 ## Application
 
 <p align="center">
-    <img src="https://i.imgur.com/HSN8PXU.png" width="200" max-width="50%" alt="Jera Labs" />
-    <img src="https://i.imgur.com/NFv0nNR.png" width="200" max-width="50%" alt="Jera Labs" />
-    <img src="https://i.imgur.com/MYQBq8v.png" width="200" max-width="50%" alt="Jera Labs" />
-    <img src="https://i.imgur.com/uQpdUsA.png" width="200" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/Vnmh70E.png" width="200" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/NfTuWRW.png" width="200" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/eZHPfta.png" width="203" max-width="50%" alt="Jera Labs" />
+    <img src="https://i.imgur.com/lMxa06s.png" width="205" max-width="50%" alt="Jera Labs" />
 </p>

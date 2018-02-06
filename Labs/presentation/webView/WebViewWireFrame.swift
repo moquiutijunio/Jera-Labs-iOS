@@ -40,7 +40,7 @@ class WebViewWireFrame: BaseWireFrame {
         self.navigationController = navigationController
         
         _ = self.navigationController!.rx
-            .didShowViewController
+            .didShow
             .takeUntil(rx.deallocated)
             .subscribe(onNext: { [weak self] (viewController) in
                 guard let strongSelf = self else { return }

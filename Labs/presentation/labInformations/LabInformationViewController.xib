@@ -154,10 +154,9 @@
                                     </constraints>
                                 </view>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QKA-Ae-hTV">
-                                    <rect key="frame" x="47" y="245.5" width="226" height="230"/>
+                                    <rect key="frame" x="8" y="245.5" width="304" height="230"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="230" id="0YI-Cc-jRp"/>
-                                        <constraint firstAttribute="width" constant="226" id="xqa-Vx-5BE"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
@@ -167,7 +166,9 @@
                                 <constraint firstItem="Ffs-J1-rtQ" firstAttribute="top" secondItem="gDu-aF-iYr" secondAttribute="bottom" id="7jy-xC-Iaq"/>
                                 <constraint firstItem="g7T-R8-a4G" firstAttribute="centerX" secondItem="2H0-5X-UnE" secondAttribute="centerX" id="AiD-rK-mLx"/>
                                 <constraint firstItem="g7T-R8-a4G" firstAttribute="centerX" secondItem="Ffs-J1-rtQ" secondAttribute="centerX" id="BPe-jc-mcT"/>
+                                <constraint firstItem="QKA-Ae-hTV" firstAttribute="leading" secondItem="2H0-5X-UnE" secondAttribute="leading" constant="8" id="Tsx-Bc-Loo"/>
                                 <constraint firstItem="QKA-Ae-hTV" firstAttribute="top" secondItem="g7T-R8-a4G" secondAttribute="bottom" constant="8" id="bMT-wv-7Q2"/>
+                                <constraint firstAttribute="trailing" secondItem="QKA-Ae-hTV" secondAttribute="trailing" constant="8" id="ekW-lZ-4ip"/>
                                 <constraint firstItem="gDu-aF-iYr" firstAttribute="centerX" secondItem="2H0-5X-UnE" secondAttribute="centerX" id="hyV-PA-FPp"/>
                                 <constraint firstAttribute="bottom" secondItem="QKA-Ae-hTV" secondAttribute="bottom" id="m4U-TJ-zhA"/>
                                 <constraint firstItem="QKA-Ae-hTV" firstAttribute="centerX" secondItem="2H0-5X-UnE" secondAttribute="centerX" id="sxK-If-7YM"/>

@@ -27,7 +27,6 @@
 		F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */; };
 		F033F7251F5A3130001B3A89 /* LabInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */; };
 		F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */; };
-		F033F7291F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = F033F7281F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift */; };
 		F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F034E7E11F4A1FD100276796 /* AppDelegate.swift */; };
 		F034E7E91F4A1FD100276796 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F034E7E81F4A1FD100276796 /* Assets.xcassets */; };
 		F034E7EC1F4A1FD100276796 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F034E7EA1F4A1FD100276796 /* LaunchScreen.storyboard */; };
@@ -102,7 +101,6 @@
 		F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationWireFrame.swift; sourceTree = "<group>"; };
 		F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationViewController.swift; sourceTree = "<group>"; };
 		F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabInformationPresenter.swift; sourceTree = "<group>"; };
-		F033F7281F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RxNavigationControllerDelegateProxy.swift; sourceTree = "<group>"; };
 		F034E7DE1F4A1FD100276796 /* Labs.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Labs.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F034E7E11F4A1FD100276796 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F034E7E81F4A1FD100276796 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -298,7 +296,6 @@
 			children = (
 				F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */,
 				F0C294681F52147A00CDA442 /* DomainHelper.swift */,
-				F033F7281F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -502,13 +499,13 @@
 					F034E7DD1F4A1FD100276796 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = E234QZ5Z6G;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Manual;
 					};
 					F034E7F11F4A1FD100276796 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = E234QZ5Z6G;
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 						TestTargetID = F034E7DD1F4A1FD100276796;
 					};
@@ -581,6 +578,7 @@
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Material/Material.framework",
+				"${BUILT_PRODUCTS_DIR}/Motion/Motion.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya-ObjectMapper/Moya_ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
@@ -600,6 +598,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Material.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Motion.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya_ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
@@ -674,7 +673,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"$PODS_ROOT/R.swift/rswift\" \"$SRCROOT\"";
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -718,7 +717,6 @@
 				F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */,
 				F0E4A75D1FC33D4100D43927 /* AboutInteractor.swift in Sources */,
 				F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */,
-				F033F7291F5A357F001B3A89 /* RxNavigationControllerDelegateProxy.swift in Sources */,
 				F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */,
 				F09EA1D11FA7B7A700393C37 /* LabsDescriptionRepository.swift in Sources */,
 				F033F7251F5A3130001B3A89 /* LabInformationViewController.swift in Sources */,
@@ -864,7 +862,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "e330f058-461e-4c63-b33e-2555e7c10bc2";
 				PROVISIONING_PROFILE_SPECIFIER = "br.com.jera.Labs Development 1517852990";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -883,7 +882,8 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "c474a28a-1867-481f-997f-3d401b1d82bd";
 				PROVISIONING_PROFILE_SPECIFIER = "br.com.jera.Labs AppStore";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -897,7 +897,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jera.LabsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Labs;
 			};
 			name = Debug;
@@ -911,7 +912,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.jera.LabsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Labs;
 			};
 			name = Release;
