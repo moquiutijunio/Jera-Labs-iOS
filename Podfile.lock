@@ -1,37 +1,28 @@
 PODS:
-  - Alamofire (4.6.0)
-  - Cartography (3.0.1)
-  - Firebase/Core (4.8.2):
-    - FirebaseAnalytics (= 4.0.9)
-    - FirebaseCore (= 4.0.14)
-  - Firebase/Database (4.8.2):
-    - Firebase/Core
-    - FirebaseDatabase (= 4.1.4)
-  - FirebaseAnalytics (4.0.9):
-    - FirebaseCore (~> 4.0)
-    - FirebaseInstanceID (~> 2.0)
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-    - nanopb (~> 0.3)
-  - FirebaseCore (4.0.14):
-    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
-  - FirebaseDatabase (4.1.4):
-    - FirebaseAnalytics (~> 4.0)
-    - FirebaseCore (~> 4.0)
+  - Alamofire (4.7.2)
+  - Cartography (3.0.2)
+  - Firebase/CoreOnly (5.0.1):
+    - FirebaseCore (= 5.0.1)
+  - Firebase/Database (5.0.1):
+    - Firebase/CoreOnly
+    - FirebaseDatabase (= 5.0.0)
+  - FirebaseCore (5.0.1):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseDatabase (5.0.0):
+    - FirebaseCore (~> 5.0)
     - leveldb-library (~> 1.18)
-  - FirebaseInstanceID (2.0.8):
-    - FirebaseCore (~> 4.0)
-  - GoogleToolboxForMac/Defines (2.1.3)
-  - GoogleToolboxForMac/NSData+zlib (2.1.3):
-    - GoogleToolboxForMac/Defines (= 2.1.3)
-  - Kingfisher (4.6.1)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - Kingfisher (4.8.0)
   - leveldb-library (1.20)
-  - Material (2.13.5):
-    - Material/Core (= 2.13.5)
-  - Material/Core (2.13.5):
+  - Material (2.15.0):
+    - Material/Core (= 2.15.0)
+  - Material/Core (2.15.0):
     - Motion (~> 1.3.0)
-  - Motion (1.3.4):
-    - Motion/Core (= 1.3.4)
-  - Motion/Core (1.3.4)
+  - Motion (1.3.5):
+    - Motion/Core (= 1.3.5)
+  - Motion/Core (1.3.5)
   - Moya (10.0.2):
     - Moya/Core (= 10.0.2)
   - Moya-ObjectMapper/Core (2.5):
@@ -47,11 +38,6 @@ PODS:
   - Moya/RxSwift (10.0.2):
     - Moya/Core
     - RxSwift (~> 4.0)
-  - nanopb (0.3.8):
-    - nanopb/decode (= 0.3.8)
-    - nanopb/encode (= 0.3.8)
-  - nanopb/decode (0.3.8)
-  - nanopb/encode (0.3.8)
   - ObjectMapper (3.0.0)
   - R.swift (4.0.0):
     - R.swift.Library (~> 4.0.0)
@@ -64,7 +50,7 @@ PODS:
     - RxSwift (~> 4.0)
   - RxSwift (4.0.0)
   - Spruce (1.0.0)
-  - SwiftLint (0.24.2)
+  - SwiftLint (0.25.1)
 
 DEPENDENCIES:
   - Cartography (~> 3)
@@ -76,25 +62,46 @@ DEPENDENCIES:
   - RxCocoa (~> 4)
   - RxGesture (~> 1.2)
   - RxSwift (~> 4)
-  - Spruce (~> 1.0.0)
+  - Spruce (~> 1)
   - SwiftLint
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Cartography
+    - Firebase
+    - FirebaseCore
+    - FirebaseDatabase
+    - GoogleToolboxForMac
+    - Kingfisher
+    - leveldb-library
+    - Material
+    - Motion
+    - Moya
+    - Moya-ObjectMapper
+    - ObjectMapper
+    - R.swift
+    - R.swift.Library
+    - Result
+    - RxCocoa
+    - RxGesture
+    - RxSwift
+    - Spruce
+    - SwiftLint
+
 SPEC CHECKSUMS:
-  Alamofire: f41a599bd63041760b26d393ec1069d9d7b917f4
-  Cartography: f8c899bb0f5cf20758644a8eea59a75e98a03a5d
-  Firebase: 7d3b8cd837ad9fcd391657734c0d56dab8e9a5a3
-  FirebaseAnalytics: 388b630c15713f5dbf364071f5f3d6077fb52f4e
-  FirebaseCore: 2e0b98fb2d64ca8140136beff15772bdd14d2dd7
-  FirebaseDatabase: de4446507ccd3257fca37d16f40e1540324571fd
-  FirebaseInstanceID: 81df5805a08001e69138664bdd02c6719a9ac80f
-  GoogleToolboxForMac: 2501e2ad72a52eb3dfe7bd9aee7dad11b858bd20
-  Kingfisher: 1f9157d9c02b380cbd0b7cc890161195164eb634
+  Alamofire: e4fa87002c137ba2d8d634d2c51fabcda0d5c223
+  Cartography: 231190d7d0b3107ce8d67c54189f059a509b3760
+  Firebase: d6861c2059d8c32d1e6dd8932e22ada346d90a3a
+  FirebaseCore: cafc814b2d84fc8733f09e653041cc2165332ad7
+  FirebaseDatabase: 697eb53e5b4fe7cd4fa8756c1f82a9fca011345f
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  Material: ced3fd11882147b135f897ca20227174bb104ad0
-  Motion: 85b8777db2e68801c03a5c629e918c35dd184c8d
+  Material: 00e32bb5e61b3f749044897b2d93acd8bf33faa4
+  Motion: 9f74d115d7f72bb5380a8e3cde2f8a1fc898ac36
   Moya: 2b0531a9fef318e0bc484030c3db1e6f279ccb66
   Moya-ObjectMapper: 167adf69db0298bf3a19ea05cb9a16ee117c8ef5
-  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   ObjectMapper: 92230db59bf8f341a5c3a3cf0b9fbdde3cf0d87f
   R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
   R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
@@ -103,8 +110,8 @@ SPEC CHECKSUMS:
   RxGesture: c278eb05b187abd47e11e65464ae4de53ab71d95
   RxSwift: fd680d75283beb5e2559486f3c0ff852f0d35334
   Spruce: 07ffdb990923f500111fcbf13d102e16075b230e
-  SwiftLint: 2aa21b96c8d13396a051bc1cb659d2ce1e0075b0
+  SwiftLint: ce933681be10c3266e82576dad676fa815a602e9
 
-PODFILE CHECKSUM: 067a6bd913d47cce1a081fd420b64e8dbeaf40db
+PODFILE CHECKSUM: b3a0aebcb001fe914e540d740a7b6bc8cbb972d3
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3

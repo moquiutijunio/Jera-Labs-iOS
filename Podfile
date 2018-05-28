@@ -2,6 +2,7 @@ platform :ios, '9.1'
 
 target 'Labs' do
     use_frameworks!
+    inhibit_all_warnings!
     
     # Pods for Labs
     
@@ -10,9 +11,7 @@ target 'Labs' do
     pod 'Cartography', '~> 3'
     
     #Animations
-    pod 'Spruce', '~> 1.0.0'
-#    pod 'Hero'
-#    pod 'Motion', '~> 1.2'
+    pod 'Spruce', '~> 1'
 
     #Utilities
     pod 'Kingfisher', '~> 4'
