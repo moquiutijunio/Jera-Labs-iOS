@@ -43,7 +43,7 @@ class WebViewController: BaseViewController {
                 strongSelf.webView.loadRequest(URLRequest(url: currentURL))
                 strongSelf.presenterProtocol?.webViewDidStartLoad()
             })
-            .addDisposableTo(presenterDisposeBag)
+            .disposed(by: presenterDisposeBag)
     }
 }
 

@@ -22,4 +22,3 @@ class AboutAPI: Mappable {
         description <- map["description"]
     }
 }
-
