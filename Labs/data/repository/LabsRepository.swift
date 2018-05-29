@@ -1,5 +1,5 @@
 //
-//  LabsDescriptionRepository.swift
+//  LabsRepository.swift
 //  Labs
 //
 //  Created by Junio Moquiuti on 30/10/17.
@@ -9,12 +9,12 @@
 import UIKit
 import RxSwift
 
-protocol LabsDescriptionRepositoryProtocol: class {
+protocol LabsRepositoryProtocol: class {
     var labsResponse: Observable<RequestResponse<[LabAPI]?>> {get}
     func getAllLabsInDB()
 }
 
-class LabsDescriptionRepository: BaseRepository, LabsDescriptionRepositoryProtocol {
+class LabsRepository: BaseRepository, LabsRepositoryProtocol {
     
     var labsResponse: Observable<RequestResponse<[LabAPI]?>> {
         return firebaseRealtimeDatabase.labsResponseVariable.asObservable()

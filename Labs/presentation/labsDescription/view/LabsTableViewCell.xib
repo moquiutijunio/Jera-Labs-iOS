@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jXK-e3-cdw" customClass="LabsDescriptionTableViewCell" customModule="Labs" customModuleProvider="target">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="jXK-e3-cdw" customClass="LabsTableViewCell" customModule="Labs" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="360" height="88"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jXK-e3-cdw" id="B1l-zR-fIp">
@@ -58,7 +58,7 @@
                 <outlet property="labsLogoImageView" destination="jlm-wf-HQm" id="rdD-rR-G9L"/>
                 <outlet property="labsNameLabel" destination="9BX-uy-axL" id="fNX-qA-uT4"/>
             </connections>
-            <point key="canvasLocation" x="-202" y="137"/>
+            <point key="canvasLocation" x="-539" y="117"/>
         </tableViewCell>
     </objects>
 </document>

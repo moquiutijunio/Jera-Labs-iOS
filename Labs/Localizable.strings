@@ -11,6 +11,9 @@
 "alert.loading" = "Carregando...";
 "alert.tryAgain" = "Tentar novamente";
 
+//Message
+"message.error" = "Um erro desconhecido ocorreu";
+
 //LabInformations
 "lab.info.repository" = "Repositório";
 "lab.info.playStore" = "Play Store";

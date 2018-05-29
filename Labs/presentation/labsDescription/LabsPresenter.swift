@@ -1,5 +1,5 @@
 //
-//  LabsDescriptionPresenter.swift
+//  LabsPresenter.swift
 //  Labs
 //
 //  Created by Junio Moquiuti on 23/08/17.
@@ -9,8 +9,8 @@
 import UIKit
 import RxSwift
 
-protocol LabsDescriptionPresenterProtocol {
-    var labsDescriptionModel: Variable<[LabsDescriptionTableViewModel]> {get}
+protocol LabsPresenterProtocol {
+    var labsModel: Variable<[LabsTableViewModel]> {get}
     
     func makeRequestLabs()
     func didSelectedRow(at row: Int)
@@ -19,20 +19,20 @@ protocol LabsDescriptionPresenterProtocol {
     func aboutIconDidTapped()
 }
 
-class LabsDescriptionPresenter: BasePresenter {
+class LabsPresenter: BasePresenter {
     
-    weak var viewProtocol: LabsDescriptionViewProtocol?
-    weak var router: LabsDescriptionWireFrameProtocol?
-    var interactor: LabsDescriptionInteractorProtocol! {
+    weak var viewProtocol: LabsViewProtocol?
+    weak var router: LabsWireFrameProtocol?
+    var interactor: LabsInteractorProtocol! {
         didSet {bind()}
     }
     
     let disposeBag = DisposeBag()
-    var labsDescriptionModel = Variable<[LabsDescriptionTableViewModel]>([])
+    var labsModel = Variable<[LabsTableViewModel]>([])
     
     private func bind() {
         
-        interactor.labsDescriptinResponse
+        interactor.labsRequestResponse
             .asObservable()
             .subscribe(onNext: { [weak self] (event) in
                 guard let strongSelf = self else { return }
@@ -41,12 +41,15 @@ class LabsDescriptionPresenter: BasePresenter {
                 case .success(let labs):
                     strongSelf.buildTableViewSectionsWith(labs)
                     strongSelf.viewProtocol?.hidePlaceholder()
+                    
                 case .loading:
                     strongSelf.viewProtocol?.placeholder(type: .loading(text: R.string.localizable.alertLoading()), buttonAction: nil)
+                    
                 case .failure(let error):
                     strongSelf.viewProtocol?.placeholder(type: .error(text: error, buttonText: R.string.localizable.alertTryAgain()), buttonAction: {
                         strongSelf.interactor.makeRequestLabs()
                     })
+                    
                 default:
                     break
                 }
@@ -55,33 +58,33 @@ class LabsDescriptionPresenter: BasePresenter {
     }
     
     private func buildTableViewSectionsWith(_ labs: [Lab]) {
-        labsDescriptionModel.value.removeAll()
+        labsModel.value.removeAll()
         
-        var labsDescription = [LabsDescriptionTableViewModel]()
+        var labsViewModel = [LabsTableViewModel]()
         
         for lab in labs {
-            let viewModel = LabsDescriptionTableViewModel(lab: lab)
-            labsDescription.append(viewModel)
+            let viewModel = LabsTableViewModel(lab: lab)
+            labsViewModel.append(viewModel)
         }
         
-        labsDescriptionModel.value = labsDescription
+        labsModel.value = labsViewModel
         
         viewProtocol?.reloadTableView()
     }
 }
 
-extension LabsDescriptionPresenter: LabsDescriptionPresenterProtocol {
+extension LabsPresenter: LabsPresenterProtocol {
     
     func makeRequestLabs() {
         interactor.makeRequestLabs()
     }
     
     func didSelectedRow(at row: Int) {
-        router?.openLabInformation(labsDescriptionModel.value[row].lab)
+        router?.openLabInformation(labsModel.value[row].lab)
     }
     
     func viewControllerPreviewing(at row: Int) -> UIViewController? {
-        return router?.previewViewControllerFor(lab: labsDescriptionModel.value[row].lab)
+        return router?.previewViewControllerFor(lab: labsModel.value[row].lab)
     }
     
     func finishViewControllerPreviewing() {

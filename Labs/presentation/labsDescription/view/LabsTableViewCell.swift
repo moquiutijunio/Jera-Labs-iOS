@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import Kingfisher
 
-class LabsDescriptionTableViewModel {
+class LabsTableViewModel {
     var lab: Lab
     var labAvatar: Variable<URL?>
     var labName: Variable<String?>
@@ -24,7 +24,7 @@ class LabsDescriptionTableViewModel {
     }
 }
 
-class LabsDescriptionTableViewCell: BaseTableViewCell {
+class LabsTableViewCell: BaseTableViewCell {
     
     @IBOutlet weak var labsLogoImageView: UIImageView!
     
@@ -32,7 +32,7 @@ class LabsDescriptionTableViewCell: BaseTableViewCell {
     @IBOutlet weak var labsDescriptionLabel: UILabel!
     
     fileprivate var disposeBag: DisposeBag!
-    var viewModel: LabsDescriptionTableViewModel? {
+    var viewModel: LabsTableViewModel? {
         didSet {bind()}
     }
     

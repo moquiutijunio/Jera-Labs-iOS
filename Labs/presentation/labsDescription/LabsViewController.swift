@@ -1,5 +1,5 @@
 //
-//  LabsDescriptionViewController.swift
+//  LabsViewController.swift
 //  Labs
 //
 //  Created by Junio Moquiuti on 23/08/17.
@@ -9,13 +9,13 @@
 import UIKit
 import RxCocoa
 
-protocol LabsDescriptionViewProtocol: BaseViewProtocol {
+protocol LabsViewProtocol: BaseViewProtocol {
     
 }
 
-class LabsDescriptionViewController: BaseViewController {
+class LabsViewController: BaseViewController {
     
-    var presenter: LabsDescriptionPresenterProtocol!
+    var presenter: LabsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,15 +40,15 @@ class LabsDescriptionViewController: BaseViewController {
         tableView.separatorColor = .clear
         tableView.estimatedRowHeight = 71
         
-        tableView.register(UINib(nibName: LabsDescriptionTableViewCell.nibName(), bundle: nil), forCellReuseIdentifier: LabsDescriptionTableViewCell.nibName())
+        tableView.register(UINib(nibName: LabsTableViewCell.nibName(), bundle: nil), forCellReuseIdentifier: LabsTableViewCell.nibName())
     }
 }
 
-extension LabsDescriptionViewController: LabsDescriptionViewProtocol {
+extension LabsViewController: LabsViewProtocol {
     
 }
 
-extension LabsDescriptionViewController: UIViewControllerPreviewingDelegate {
+extension LabsViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
@@ -61,15 +61,15 @@ extension LabsDescriptionViewController: UIViewControllerPreviewingDelegate {
     
 }
 
-extension LabsDescriptionViewController {
+extension LabsViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return presenter.labsDescriptionModel.value.count
+        return presenter.labsModel.value.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: LabsDescriptionTableViewCell.nibName(), for: indexPath) as! LabsDescriptionTableViewCell
-        cell.viewModel = presenter.labsDescriptionModel.value[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: LabsTableViewCell.nibName(), for: indexPath) as! LabsTableViewCell
+        cell.viewModel = presenter.labsModel.value[indexPath.row]
         return cell
     }
     

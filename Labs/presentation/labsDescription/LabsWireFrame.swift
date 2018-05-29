@@ -8,30 +8,30 @@
 
 import UIKit
 
-protocol LabsDescriptionWireFrameProtocol: class {
+protocol LabsWireFrameProtocol: class {
     func openLabInformation(_ lab: Lab)
     func previewViewControllerFor(lab: Lab) -> UIViewController
     func finishPreviewingViewController()
     func openAboutApp()
 }
 
-class LabsDescriptionWireFrame: BaseWireFrame {
+class LabsWireFrame: BaseWireFrame {
     
     let navigationController: UINavigationController
-    let viewController = LabsDescriptionViewController()
-    let presenter: LabsDescriptionPresenterProtocol
-    let interactor: LabsDescriptionInteractorProtocol
+    let viewController = LabsViewController()
+    let presenter: LabsPresenterProtocol
+    let interactor: LabsInteractorProtocol
     var labInformationWireFramePreviewing: LabInformationWireFrame?
     
     override init() {
-        let interactor = LabsDescriptionInteractor()
-        let presenter = LabsDescriptionPresenter()
+        let interactor = LabsInteractor()
+        let presenter = LabsPresenter()
         
         self.presenter = presenter
         self.interactor = interactor
         
         viewController.presenter = presenter
-        interactor.repository = LabsDescriptionRepository(firebaseRealtimeDatabase: FirebaseRealtimeDatabase())
+        interactor.repository = LabsRepository(firebaseRealtimeDatabase: FirebaseRealtimeDatabase())
         
         navigationController = UINavigationController(rootViewController: viewController)
         
@@ -50,7 +50,7 @@ class LabsDescriptionWireFrame: BaseWireFrame {
     }
 }
 
-extension LabsDescriptionWireFrame: LabsDescriptionWireFrameProtocol {
+extension LabsWireFrame: LabsWireFrameProtocol {
     func openLabInformation(_ lab: Lab) {
         let labInformationWireFrame = LabInformationWireFrame(lab: lab)
         labInformationWireFrame.presentOn(navigationController: navigationController, presenterWireFrame: self)

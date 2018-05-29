@@ -13,8 +13,8 @@
 		F02D1A581F58774E00361C5B /* FirebaseRealtimeDatabase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02D1A571F58774E00361C5B /* FirebaseRealtimeDatabase.swift */; };
 		F02E4E021F55DD3500CABD37 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02E4E011F55DD3500CABD37 /* R.generated.swift */; };
 		F02E4E041F55E22B00CABD37 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */; };
-		F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */; };
-		F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */; };
+		F02FDCCD1F4F44DA00865A72 /* LabsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCCC1F4F44DA00865A72 /* LabsTableViewCell.swift */; };
+		F02FDCCF1F4F450900865A72 /* LabsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F02FDCCE1F4F450900865A72 /* LabsTableViewCell.xib */; };
 		F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */; };
 		F0302D101F7434CA00858929 /* Montserrat-Black.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D081F74340D00858929 /* Montserrat-Black.otf */; };
 		F0302D111F7434CA00858929 /* Montserrat-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0302D091F74340D00858929 /* Montserrat-Bold.otf */; };
@@ -36,7 +36,7 @@
 		F0465E6F1F6D95090013CED2 /* AboutPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */; };
 		F0465E711F6D95200013CED2 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0465E701F6D95200013CED2 /* AboutViewController.swift */; };
 		F0465E731F6D95330013CED2 /* AboutViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0465E721F6D95320013CED2 /* AboutViewController.xib */; };
-		F09EA1D11FA7B7A700393C37 /* LabsDescriptionRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09EA1D01FA7B7A700393C37 /* LabsDescriptionRepository.swift */; };
+		F09EA1D11FA7B7A700393C37 /* LabsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09EA1D01FA7B7A700393C37 /* LabsRepository.swift */; };
 		F09EA1D41FA7B80100393C37 /* BaseRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = F09EA1D31FA7B80100393C37 /* BaseRepository.swift */; };
 		F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */; };
 		F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C294521F51ED2A00CDA442 /* Lab.swift */; };
@@ -60,10 +60,10 @@
 		F0FA0E621F4DF0EB002CDA39 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */; };
 		F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */; };
 		F0FA0E661F4DF19E002CDA39 /* BaseInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E651F4DF19E002CDA39 /* BaseInteractor.swift */; };
-		F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E681F4DF2F9002CDA39 /* LabsDescriptionPresenter.swift */; };
-		F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E691F4DF2F9002CDA39 /* LabsDescriptionViewController.swift */; };
-		F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E6B1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift */; };
-		F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E711F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift */; };
+		F0FA0E6C1F4DF2FA002CDA39 /* LabsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E681F4DF2F9002CDA39 /* LabsPresenter.swift */; };
+		F0FA0E6D1F4DF2FA002CDA39 /* LabsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E691F4DF2F9002CDA39 /* LabsViewController.swift */; };
+		F0FA0E6F1F4DF2FA002CDA39 /* LabsWireFrame.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E6B1F4DF2FA002CDA39 /* LabsWireFrame.swift */; };
+		F0FA0E721F4DF4CE002CDA39 /* LabsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E711F4DF4CE002CDA39 /* LabsInteractor.swift */; };
 		F0FA0E741F4DF9B6002CDA39 /* Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0FA0E731F4DF9B6002CDA39 /* Appearance.swift */; };
 /* End PBXBuildFile section */
 
@@ -87,8 +87,8 @@
 		F02D1A571F58774E00361C5B /* FirebaseRealtimeDatabase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseRealtimeDatabase.swift; sourceTree = "<group>"; };
 		F02E4E011F55DD3500CABD37 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		F02E4E031F55E22B00CABD37 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionTableViewCell.swift; sourceTree = "<group>"; };
-		F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabsDescriptionTableViewCell.xib; sourceTree = "<group>"; };
+		F02FDCCC1F4F44DA00865A72 /* LabsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsTableViewCell.swift; sourceTree = "<group>"; };
+		F02FDCCE1F4F450900865A72 /* LabsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LabsTableViewCell.xib; sourceTree = "<group>"; };
 		F02FDCD01F4F456800865A72 /* BaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		F0302D081F74340D00858929 /* Montserrat-Black.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Black.otf"; sourceTree = "<group>"; };
 		F0302D091F74340D00858929 /* Montserrat-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.otf"; sourceTree = "<group>"; };
@@ -114,7 +114,7 @@
 		F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutPresenter.swift; sourceTree = "<group>"; };
 		F0465E701F6D95200013CED2 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		F0465E721F6D95320013CED2 /* AboutViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutViewController.xib; sourceTree = "<group>"; };
-		F09EA1D01FA7B7A700393C37 /* LabsDescriptionRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsDescriptionRepository.swift; sourceTree = "<group>"; };
+		F09EA1D01FA7B7A700393C37 /* LabsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabsRepository.swift; sourceTree = "<group>"; };
 		F09EA1D31FA7B80100393C37 /* BaseRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRepository.swift; sourceTree = "<group>"; };
 		F0C2944F1F51ECB500CDA442 /* RequestResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestResponse.swift; sourceTree = "<group>"; };
 		F0C294521F51ED2A00CDA442 /* Lab.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lab.swift; sourceTree = "<group>"; };
@@ -138,10 +138,10 @@
 		F0FA0E5E1F4DF0EB002CDA39 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		F0FA0E601F4DF0EB002CDA39 /* BaseWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseWireFrame.swift; sourceTree = "<group>"; };
 		F0FA0E651F4DF19E002CDA39 /* BaseInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseInteractor.swift; sourceTree = "<group>"; };
-		F0FA0E681F4DF2F9002CDA39 /* LabsDescriptionPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionPresenter.swift; sourceTree = "<group>"; };
-		F0FA0E691F4DF2F9002CDA39 /* LabsDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionViewController.swift; sourceTree = "<group>"; };
-		F0FA0E6B1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionWireFrame.swift; sourceTree = "<group>"; };
-		F0FA0E711F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsDescriptionInteractor.swift; sourceTree = "<group>"; };
+		F0FA0E681F4DF2F9002CDA39 /* LabsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsPresenter.swift; sourceTree = "<group>"; };
+		F0FA0E691F4DF2F9002CDA39 /* LabsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsViewController.swift; sourceTree = "<group>"; };
+		F0FA0E6B1F4DF2FA002CDA39 /* LabsWireFrame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsWireFrame.swift; sourceTree = "<group>"; };
+		F0FA0E711F4DF4CE002CDA39 /* LabsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabsInteractor.swift; sourceTree = "<group>"; };
 		F0FA0E731F4DF9B6002CDA39 /* Appearance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Appearance.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -277,7 +277,7 @@
 		F09EA1CF1FA7B74800393C37 /* repository */ = {
 			isa = PBXGroup;
 			children = (
-				F09EA1D01FA7B7A700393C37 /* LabsDescriptionRepository.swift */,
+				F09EA1D01FA7B7A700393C37 /* LabsRepository.swift */,
 				F0E4A7601FC33F5B00D43927 /* AboutRepository.swift */,
 			);
 			path = repository;
@@ -332,14 +332,6 @@
 			path = views;
 			sourceTree = "<group>";
 		};
-		F0E4A75B1FC33D1100D43927 /* about */ = {
-			isa = PBXGroup;
-			children = (
-				F0E4A75C1FC33D4100D43927 /* AboutInteractor.swift */,
-			);
-			path = about;
-			sourceTree = "<group>";
-		};
 		F0F8FF571F60BC8E00A906F9 /* webView */ = {
 			isa = PBXGroup;
 			children = (
@@ -368,8 +360,8 @@
 				F0C294511F51ECD300CDA442 /* models */,
 				F0C2944E1F51EC9000CDA442 /* utils */,
 				F0FA0E5C1F4DEFC6002CDA39 /* base */,
-				F0FA0E701F4DF4B9002CDA39 /* labsDescription */,
-				F0E4A75B1FC33D1100D43927 /* about */,
+				F0FA0E711F4DF4CE002CDA39 /* LabsInteractor.swift */,
+				F0E4A75C1FC33D4100D43927 /* AboutInteractor.swift */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -419,17 +411,9 @@
 			isa = PBXGroup;
 			children = (
 				F0FA0E751F4DFA67002CDA39 /* view */,
-				F0FA0E681F4DF2F9002CDA39 /* LabsDescriptionPresenter.swift */,
-				F0FA0E691F4DF2F9002CDA39 /* LabsDescriptionViewController.swift */,
-				F0FA0E6B1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift */,
-			);
-			path = labsDescription;
-			sourceTree = "<group>";
-		};
-		F0FA0E701F4DF4B9002CDA39 /* labsDescription */ = {
-			isa = PBXGroup;
-			children = (
-				F0FA0E711F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift */,
+				F0FA0E681F4DF2F9002CDA39 /* LabsPresenter.swift */,
+				F0FA0E691F4DF2F9002CDA39 /* LabsViewController.swift */,
+				F0FA0E6B1F4DF2FA002CDA39 /* LabsWireFrame.swift */,
 			);
 			path = labsDescription;
 			sourceTree = "<group>";
@@ -437,8 +421,8 @@
 		F0FA0E751F4DFA67002CDA39 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				F02FDCCC1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift */,
-				F02FDCCE1F4F450900865A72 /* LabsDescriptionTableViewCell.xib */,
+				F02FDCCC1F4F44DA00865A72 /* LabsTableViewCell.swift */,
+				F02FDCCE1F4F450900865A72 /* LabsTableViewCell.xib */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -542,7 +526,7 @@
 				F0302D151F7434CA00858929 /* Montserrat-Regular.otf in Resources */,
 				F0302D161F7434CA00858929 /* Montserrat-SemiBold.otf in Resources */,
 				F0302D171F7434CA00858929 /* Montserrat-UltraLight.otf in Resources */,
-				F02FDCCF1F4F450900865A72 /* LabsDescriptionTableViewCell.xib in Resources */,
+				F02FDCCF1F4F450900865A72 /* LabsTableViewCell.xib in Resources */,
 				F0C294671F52074B00CDA442 /* Localizable.strings in Resources */,
 				F042DD7A1F5DC21400924057 /* LabInformationViewController.xib in Resources */,
 				F0F8FF5F1F60C1A500A906F9 /* WebViewController.xib in Resources */,
@@ -672,7 +656,7 @@
 				F0C294531F51ED2A00CDA442 /* Lab.swift in Sources */,
 				F0E4A7611FC33F5B00D43927 /* AboutRepository.swift in Sources */,
 				F0465E6D1F6D94FA0013CED2 /* AboutWireFrame.swift in Sources */,
-				F0FA0E6D1F4DF2FA002CDA39 /* LabsDescriptionViewController.swift in Sources */,
+				F0FA0E6D1F4DF2FA002CDA39 /* LabsViewController.swift in Sources */,
 				F02CF8F41F5F0EFA00916244 /* TeamAPI.swift in Sources */,
 				F09EA1D41FA7B80100393C37 /* BaseRepository.swift in Sources */,
 				F033F7231F5A311D001B3A89 /* LabInformationWireFrame.swift in Sources */,
@@ -683,8 +667,8 @@
 				F0C294691F52147A00CDA442 /* DomainHelper.swift in Sources */,
 				F0C2945C1F51F64D00CDA442 /* EmptyOrErrorView.swift in Sources */,
 				F0F8FF5B1F60BCE800A906F9 /* WebViewPreseter.swift in Sources */,
-				F0FA0E721F4DF4CE002CDA39 /* LabsDescriptionInteractor.swift in Sources */,
-				F02FDCCD1F4F44DA00865A72 /* LabsDescriptionTableViewCell.swift in Sources */,
+				F0FA0E721F4DF4CE002CDA39 /* LabsInteractor.swift in Sources */,
+				F02FDCCD1F4F44DA00865A72 /* LabsTableViewCell.swift in Sources */,
 				F02D1A581F58774E00361C5B /* FirebaseRealtimeDatabase.swift in Sources */,
 				F0FA0E641F4DF0EB002CDA39 /* BaseWireFrame.swift in Sources */,
 				F0F8FF591F60BCD800A906F9 /* WebViewWireFrame.swift in Sources */,
@@ -693,14 +677,14 @@
 				F02CF8F61F5F123A00916244 /* Team.swift in Sources */,
 				F0465E711F6D95200013CED2 /* AboutViewController.swift in Sources */,
 				F034E7E21F4A1FD100276796 /* AppDelegate.swift in Sources */,
-				F0FA0E6C1F4DF2FA002CDA39 /* LabsDescriptionPresenter.swift in Sources */,
+				F0FA0E6C1F4DF2FA002CDA39 /* LabsPresenter.swift in Sources */,
 				F02FDCD11F4F456800865A72 /* BaseTableViewCell.swift in Sources */,
 				F0E4A75F1FC33DC200D43927 /* AboutAPI.swift in Sources */,
 				F0C294501F51ECB500CDA442 /* RequestResponse.swift in Sources */,
 				F0E4A75D1FC33D4100D43927 /* AboutInteractor.swift in Sources */,
 				F033F7271F5A315A001B3A89 /* LabInformationPresenter.swift in Sources */,
-				F0FA0E6F1F4DF2FA002CDA39 /* LabsDescriptionWireFrame.swift in Sources */,
-				F09EA1D11FA7B7A700393C37 /* LabsDescriptionRepository.swift in Sources */,
+				F0FA0E6F1F4DF2FA002CDA39 /* LabsWireFrame.swift in Sources */,
+				F09EA1D11FA7B7A700393C37 /* LabsRepository.swift in Sources */,
 				F033F7251F5A3130001B3A89 /* LabInformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
