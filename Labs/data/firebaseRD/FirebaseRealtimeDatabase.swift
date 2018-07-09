@@ -12,8 +12,8 @@ import Result
 import FirebaseDatabase
 
 protocol FirebaseRealtimeDatabaseProtocol {
-    var labsResponseVariable: Variable<RequestResponse<[LabAPI]?>> {get}
-    var aboutResponseVariable: Variable<RequestResponse<AboutAPI?>> {get}
+    var labsResponseVariable: Variable<RequestResponse<[LabAPI]?>> { get }
+    var aboutResponseVariable: Variable<RequestResponse<AboutAPI?>> { get }
     
     func getAllLabsInDB()
     func getAboutInformationInDB()
@@ -22,7 +22,7 @@ protocol FirebaseRealtimeDatabaseProtocol {
 class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
     
     var ref: DatabaseReference! {
-        didSet {bind()}
+        didSet { bind() }
     }
     
     var labsResponseVariable = Variable<RequestResponse<[LabAPI]?>>(.new)
@@ -44,10 +44,10 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
             
             strongSelf.labsResponseVariable.value = .success(responseObject: labsAPI)
         
-        }) {[weak self] (error) in
+        }, withCancel: {[weak self] (error) in
             guard let strongSelf = self else { return }
-            strongSelf.labsResponseVariable.value = .failure(error: error.localizedDescription) //TODO Adding moya translate error
-        }
+            strongSelf.labsResponseVariable.value = .failure(error: error.localizedDescription)
+        })
         
         ref.queryOrdered(byChild: "projects").observe(.childRemoved, with: { [weak self] (snapshot) in
             guard let strongSelf = self else { return }
@@ -62,11 +62,11 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
             }
             
             strongSelf.labsResponseVariable.value = .success(responseObject: labsAPI)
-        }) {[weak self] (error) in
+        }, withCancel: {[weak self] (error) in
             guard let strongSelf = self else { return }
             strongSelf.labsResponseVariable.value = .failure(error: error.localizedDescription)
             
-        }
+        })
     }
     
     func getAllLabsInDB() {
@@ -88,10 +88,10 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
             
             strongSelf.labsResponseVariable.value = .success(responseObject: labsAPI)
             
-        }) {[weak self] (error) in
+        }, withCancel: {[weak self] (error) in
             guard let strongSelf = self else { return }
             strongSelf.labsResponseVariable.value = .failure(error: error.localizedDescription)
-        }
+        })
     }
     
     func getAboutInformationInDB() {
@@ -106,9 +106,9 @@ class FirebaseRealtimeDatabase: FirebaseRealtimeDatabaseProtocol {
             
             strongSelf.aboutResponseVariable.value = .success(responseObject: aboutAPI)
             
-        }) {[weak self] (error) in
+        }, withCancel: {[weak self] (error) in
             guard let strongSelf = self else { return }
             strongSelf.aboutResponseVariable.value = .failure(error: error.localizedDescription)
-        }
+        })
     }
 }
