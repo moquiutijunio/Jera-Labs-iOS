@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol AboutRepositoryProtocol: class {
-    var aboutResponse: Observable<RequestResponse<AboutAPI?>> {get}
+    var aboutResponse: Observable<RequestResponse<AboutAPI?>> { get }
     func getAboutInformationInDB()
 }
 

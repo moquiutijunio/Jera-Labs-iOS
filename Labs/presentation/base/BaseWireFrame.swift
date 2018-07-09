@@ -7,32 +7,35 @@
 //
 
 import UIKit
+import RxSwift
 
-protocol PresentedWireFrameInterface {
-    
-}
-
-protocol PresenterWireFrameProtocol: class {
-    func wireframeDidDismiss()
+protocol WireFrameCallbackProtocol: class {
+    func shouldDismissPresentedWireFrame()
 }
 
 class BaseWireFrame: NSObject {
+    var presentedWireFrame: BaseWireFrame?
+    weak var callback: WireFrameCallbackProtocol?
     
-    var presentedWireFrame: PresentedWireFrameInterface?
-    weak var presenterWireFrame: PresenterWireFrameProtocol?
+    internal var disposeBag = DisposeBag()
+    
+    override init() {
+        super.init()
+        bind()
+    }
+    
+    internal func bind() {
+        
+    }
     
     deinit {
         print("dealloc ---> \(String(describing: type(of: self)))")
     }
 }
 
-extension BaseWireFrame: PresenterWireFrameProtocol {
+extension BaseWireFrame: WireFrameCallbackProtocol {
     
-    func wireframeDidDismiss() {
+    func shouldDismissPresentedWireFrame() {
         presentedWireFrame = nil
     }
-}
-
-extension BaseWireFrame: PresentedWireFrameInterface {
-    
 }

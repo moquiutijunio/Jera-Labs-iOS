@@ -10,60 +10,63 @@ import UIKit
 import RxCocoa
 
 protocol LabInformationWireFrameProtocol: class {
-    func openWebViewWith(url: URL, title: String)
-    func openAppleStoreWith(url: URL, title: String)
+    func showWebViewWith(url: URL, title: String)
+    func showAppleStoreWith(url: URL, title: String)
 }
 
 class LabInformationWireFrame: BaseWireFrame {
     
-    var navigationController: UINavigationController?
-    let viewController = LabInformationViewController(nibName: "LabInformationViewController", bundle: nil)
+    private var navigationController: UINavigationController?
+    let viewController: LabInformationViewController
 
     let presenter: LabInformationPresenterProtocol
     
     init(lab: Lab) {
         let presenter = LabInformationPresenter(lab: lab)
 
+        self.viewController = LabInformationViewController(nibName: "LabInformationViewController", bundle: nil)
         self.presenter = presenter
-        
-        viewController.presenterProtocol = presenter
         
         super.init()
 
+        viewController.presenter = presenter
         presenter.viewProtocol = viewController
         presenter.router = self
+        
+        self.callback = callback
     }
     
-    func presentOn(navigationController: UINavigationController, presenterWireFrame: PresenterWireFrameProtocol) {
+    func presentOn(navigationController: UINavigationController, callback: WireFrameCallbackProtocol) {
         navigationController.pushViewController(viewController, animated: true)
+        
         self.navigationController = navigationController
-        self.presenterWireFrame = presenterWireFrame
+        self.callback = callback
         
         _ = self.navigationController!.rx
             .didShow
             .takeUntil(rx.deallocated)
-            .subscribe(onNext: { [weak self] (viewController) in
+            .subscribe(onNext: { [weak self] (viewController, _) in
                 guard let strongSelf = self else { return }
                 
-                if strongSelf.viewController.isEqual(viewController) {
+                if strongSelf.viewController === viewController {
                     strongSelf.presentedWireFrame = nil
                 }
             })
     }
-    
 }
 
 extension LabInformationWireFrame: LabInformationWireFrameProtocol {
-    func openWebViewWith(url: URL, title: String) {
+    
+    func showWebViewWith(url: URL, title: String) {
         guard let navigationController = navigationController else { return }
-        let webViewWireFrame = WebViewWireFrame(url: url, title: title, presenterWireFrame: self)
+        let webViewWireFrame = WebViewWireFrame(url: url, title: title, callback: self)
         webViewWireFrame.presentOn(navigationController: navigationController)
         presentedWireFrame = webViewWireFrame
     }
     
-    func openAppleStoreWith(url: URL, title: String) {
+    func showAppleStoreWith(url: URL, title: String) {
         guard UIApplication.shared.canOpenURL(url) else {
-            openWebViewWith(url: url, title: title)
+            showWebViewWith(url: url, title: title)
             return
         }
         

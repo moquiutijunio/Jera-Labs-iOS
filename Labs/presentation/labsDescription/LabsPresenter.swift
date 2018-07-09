@@ -12,23 +12,27 @@ import RxSwift
 protocol LabsPresenterProtocol {
     var labsModel: Variable<[LabsTableViewModel]> {get}
     
-    func makeRequestLabs()
+    func viewDidLoad()
     func didSelectedRow(at row: Int)
     func viewControllerPreviewing(at row: Int) -> UIViewController?
     func finishViewControllerPreviewing()
-    func aboutIconDidTapped()
+    func aboutButtonTapped()
 }
 
 class LabsPresenter: BasePresenter {
     
     weak var viewProtocol: LabsViewProtocol?
     weak var router: LabsWireFrameProtocol?
-    var interactor: LabsInteractorProtocol! {
-        didSet {bind()}
-    }
+    var interactor: LabsInteractorProtocol
     
     let disposeBag = DisposeBag()
     var labsModel = Variable<[LabsTableViewModel]>([])
+    
+    init(interactor: LabsInteractorProtocol) {
+        self.interactor = interactor
+        super.init()
+        bind()
+    }
     
     private func bind() {
         
@@ -75,23 +79,23 @@ class LabsPresenter: BasePresenter {
 
 extension LabsPresenter: LabsPresenterProtocol {
     
-    func makeRequestLabs() {
+    func viewDidLoad() {
         interactor.makeRequestLabs()
     }
     
     func didSelectedRow(at row: Int) {
-        router?.openLabInformation(labsModel.value[row].lab)
+        router?.showLabInformation(with: labsModel.value[row].lab)
     }
     
     func viewControllerPreviewing(at row: Int) -> UIViewController? {
-        return router?.previewViewControllerFor(lab: labsModel.value[row].lab)
+        return router?.showPreviewLabInformationFor(lab: labsModel.value[row].lab)
     }
     
     func finishViewControllerPreviewing() {
-        router?.finishPreviewingViewController()
+        router?.finishPreviewingLabInformation()
     }
     
-    func aboutIconDidTapped() {
-        router?.openAboutApp()
+    func aboutButtonTapped() {
+        router?.showAbout()
     }
 }

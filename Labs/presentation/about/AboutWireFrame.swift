@@ -14,54 +14,58 @@ protocol AboutWireFrameProtocol: class {
 
 class AboutWireFrame: BaseWireFrame {
     
-    var navigationController: UINavigationController?
-    let viewController = AboutViewController(nibName: "AboutViewController", bundle: nil)
-    let presenter: AboutPresenterProtocol
-    let interactor: AboutInteractorProtocol
+    private let navigationController: UINavigationController
+    private let viewController: AboutViewController
+    private let presenter: AboutPresenterProtocol
+    private let interactor: AboutInteractorProtocol
     
-    init(presenterWireFrame: PresenterWireFrameProtocol) {
+    init(callback: WireFrameCallbackProtocol) {
+        interactor = AboutInteractor(repository: AboutRepository(firebaseRealtimeDatabase: FirebaseRealtimeDatabase()))
+        
         let presenter = AboutPresenter()
-        let interactor = AboutInteractor()
         
+        self.viewController = AboutViewController(nibName: "AboutViewController", bundle: nil)
         self.presenter = presenter
-        self.interactor = interactor
-        
-        viewController.presenter = presenter
-        interactor.repository = AboutRepository(firebaseRealtimeDatabase: FirebaseRealtimeDatabase())
         
         navigationController = UINavigationController(rootViewController: viewController)
         
         super.init()
         
+        viewController.presenter = presenter
         presenter.viewProtocol = viewController
         presenter.interactor = interactor
         presenter.router = self
-        self.presenterWireFrame = presenterWireFrame
+        
+        self.callback = callback
     }
     
-    func presentOn(viewController: UIViewController) {
-        guard let navigationController = navigationController else { return }
-        viewController.present(navigationController, animated: true, completion: nil)
+    override func bind() {
+        super.bind()
         
         _ = navigationController.rx
             .didShow
             .takeUntil(rx.deallocated)
-            .subscribe(onNext: { [weak self] (viewController) in
+            .subscribe(onNext: { [weak self] (viewController, _) in
                 guard let strongSelf = self else { return }
                 
-                if strongSelf.viewController.isEqual(viewController) {
+                if strongSelf.viewController === viewController {
                     strongSelf.presentedWireFrame = nil
                 }
             })
     }
     
+    func presentOn(viewController: UIViewController) {
+        viewController.present(navigationController, animated: true, completion: nil)
+    }
+    
 }
 
 extension AboutWireFrame: AboutWireFrameProtocol {
+    
     func dismiss() {
         viewController.dismiss(animated: true) { [weak self] in
             guard let strongSelf = self else { return }
-            strongSelf.presenterWireFrame?.wireframeDidDismiss()
+            strongSelf.callback?.shouldDismissPresentedWireFrame()
         }
     }
 }

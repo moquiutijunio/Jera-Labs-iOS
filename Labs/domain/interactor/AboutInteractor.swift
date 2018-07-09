@@ -10,21 +10,24 @@ import UIKit
 import RxSwift
 
 protocol AboutInteractorProtocol {
-    var aboutResponse: Observable<RequestResponse<About>> {get}
+    var aboutResponse: Observable<RequestResponse<About>> { get }
     func makeRequestAbout()
 }
 
 class AboutInteractor: BaseInteractor {
     
-    var repository: AboutRepositoryProtocol! {
-        didSet {bind()}
-    }
+    var repository: AboutRepositoryProtocol
     
-    fileprivate var disposeBag: DisposeBag!
+    fileprivate var disposeBag = DisposeBag()
     fileprivate let aboutResponseVariable = Variable<RequestResponse<About>>(.new)
     
+    init(repository: AboutRepositoryProtocol) {
+        self.repository = repository
+        super.init()
+        bind()
+    }
+    
     private func bind() {
-        disposeBag = DisposeBag()
         
         repository.aboutResponse
             .asObservable()

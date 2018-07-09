@@ -32,16 +32,13 @@ class AboutViewController: BaseViewController {
         title = R.string.localizable.aboutTitle()
         addLeftBarButton(image: #imageLiteral(resourceName: "ic_close_white").withRenderingMode(.alwaysTemplate).tint(with: .primaryColor)!) { [weak self] in
             guard let strongSelf = self else {return}
-            strongSelf.presenter.closeButtonDidTapped()
+            strongSelf.presenter.closeButtonTapped()
         }
         
         applyLayout()
         bind()
         
-        presenter.makeRequestAbout()
-        
-        view.spruce.prepare(with: spruceAnimations)
-        view.spruce.animate(spruceAnimations, sortFunction: sortFunction)
+        presenter.viewDidLoad()
     }
     
     private func applyLayout() {
@@ -63,7 +60,14 @@ class AboutViewController: BaseViewController {
         
         presenter.description
             .asObservable()
-            .bind(to: aboutDescriptionTextView.rx.text)
+            .bind(onNext: {[weak self] (description) in
+                guard let strongSelf = self else { return }
+                strongSelf.aboutDescriptionTextView.text = description
+                
+                //Create animation in View
+                strongSelf.view.spruce.prepare(with: strongSelf.spruceAnimations)
+                strongSelf.view.spruce.animate(strongSelf.spruceAnimations, sortFunction: strongSelf.sortFunction)
+            })
             .disposed(by: disposeBag)
     }
 }

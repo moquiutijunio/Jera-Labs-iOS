@@ -8,7 +8,7 @@
 
 import Foundation
 
-class BaseInteractor: NSObject {
+class BaseInteractor {
     
     deinit {
         print("dealloc ---> \(String(describing: type(of: self)))")

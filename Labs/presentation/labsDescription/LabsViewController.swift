@@ -24,14 +24,14 @@ class LabsViewController: BaseViewController {
         addLogoOnNav()
         addRightBarButton(image: #imageLiteral(resourceName: "ic_info_outline").withRenderingMode(.alwaysTemplate).tint(with: .gray)!) { [weak self] in
             guard let strongSelf = self else {return}
-            strongSelf.presenter.aboutIconDidTapped()
+            strongSelf.presenter.aboutButtonTapped()
         }
         
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: tableView)
         }
 
-        presenter.makeRequestLabs()
+        presenter.viewDidLoad()
     }
     
     override func configureTableView() {
@@ -52,13 +52,18 @@ extension LabsViewController: UIViewControllerPreviewingDelegate {
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         guard let indexPath = tableView.indexPathForRow(at: location) else { return nil }
-        return presenter.viewControllerPreviewing(at: indexPath.row)
+        guard let cell = tableView.cellForRow(at: indexPath) as? LabsTableViewCell else { return nil }
+        guard let labId = cell.viewModel?.lab.id else { return nil }
+        
+        let viewRect = tableView.convert(cell.frame, to: cell.superview!)
+        previewingContext.sourceRect = viewRect
+        
+        return presenter.viewControllerPreviewing(at: labId)
     }
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         presenter.finishViewControllerPreviewing()
     }
-    
 }
 
 extension LabsViewController {

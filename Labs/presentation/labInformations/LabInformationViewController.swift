@@ -29,7 +29,7 @@ class LabInformationViewController: BaseViewController {
     @IBOutlet weak var descriptionLabel: UILabel!
     
     var disposeBag: DisposeBag!
-    var presenterProtocol: LabInformationPresenterProtocol!
+    var presenter: LabInformationPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,7 +60,7 @@ class LabInformationViewController: BaseViewController {
     }
     
     private func bind() {
-        guard let presenter = presenterProtocol else { return }
+        guard let presenter = presenter else { return }
         
         disposeBag = DisposeBag()
         
@@ -174,7 +174,7 @@ class LabInformationViewController: BaseViewController {
             .when(.recognized)
             .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else {return}
-                strongSelf.presenterProtocol.appleStoreDidTap()
+                strongSelf.presenter.appleStoreImageTapped()
             })
             .disposed(by: disposeBag)
         
@@ -183,7 +183,7 @@ class LabInformationViewController: BaseViewController {
             .when(.recognized)
             .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else {return}
-                strongSelf.presenterProtocol.playStoreDidTap()
+                strongSelf.presenter.playStoreImageTapped()
             })
             .disposed(by: disposeBag)
         
@@ -192,7 +192,7 @@ class LabInformationViewController: BaseViewController {
             .when(.recognized)
             .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else {return}
-                strongSelf.presenterProtocol.githubDidTap()
+                strongSelf.presenter.githubImageTapped()
             })
             .disposed(by: disposeBag)
         
@@ -201,7 +201,7 @@ class LabInformationViewController: BaseViewController {
             .when(.recognized)
             .subscribe(onNext: { [weak self] (_) in
                 guard let strongSelf = self else {return}
-                strongSelf.presenterProtocol.gitlabDidTap()
+                strongSelf.presenter.gitlabImageTapped()
             })
             .disposed(by: disposeBag)
     }

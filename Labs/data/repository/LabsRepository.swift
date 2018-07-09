@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 protocol LabsRepositoryProtocol: class {
-    var labsResponse: Observable<RequestResponse<[LabAPI]?>> {get}
+    var labsResponse: Observable<RequestResponse<[LabAPI]?>> { get }
     func getAllLabsInDB()
 }
 

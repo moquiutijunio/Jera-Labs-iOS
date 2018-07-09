@@ -15,15 +15,18 @@ protocol LabsInteractorProtocol {
 }
 
 class LabsInteractor: BaseInteractor {
-    var repository: LabsRepositoryProtocol! {
-        didSet { bind() }
-    }
+    var repository: LabsRepositoryProtocol
     
-    fileprivate var disposeBag: DisposeBag!
+    fileprivate var disposeBag = DisposeBag()
     fileprivate let labsResponseVariable = Variable<RequestResponse<[Lab]>>(.new)
     
+    init(repository: LabsRepositoryProtocol) {
+        self.repository = repository
+        super.init()
+        bind()
+    }
+    
     private func bind() {
-        disposeBag = DisposeBag()
         
         repository.labsResponse
             .asObservable()

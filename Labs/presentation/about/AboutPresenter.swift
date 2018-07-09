@@ -13,8 +13,8 @@ protocol AboutPresenterProtocol: BasePresenterProtocol {
     var version: Variable<String> {get}
     var description: Variable<String> {get}
     
-    func makeRequestAbout()
-    func closeButtonDidTapped()
+    func viewDidLoad()
+    func closeButtonTapped()
 }
 
 class AboutPresenter: BasePresenter {
@@ -59,11 +59,11 @@ class AboutPresenter: BasePresenter {
 
 extension AboutPresenter: AboutPresenterProtocol {
     
-    func makeRequestAbout() {
+    func viewDidLoad() {
         interactor.makeRequestAbout()
     }
     
-    func closeButtonDidTapped() {
+    func closeButtonTapped() {
         router?.dismiss()
     }
 }

@@ -10,23 +10,23 @@ import UIKit
 import RxSwift
 
 protocol LabInformationPresenterProtocol {
-    var name: Variable<String?> {get}
-    var description: Variable<String?> {get}
-    var backgroundURL: Variable<URL?> {get}
-    var firtPerson: Variable<URL?> {get}
-    var secondPerson: Variable<URL?> {get}
-    var thirdPerson: Variable<URL?> {get}
-    var fourthPerson: Variable<URL?> {get}
-    var fifthPerson: Variable<URL?> {get}
-    var appleStoreState: Variable<Bool> {get}
-    var playStoreState: Variable<Bool> {get}
-    var gitlabState: Variable<Bool> {get}
-    var githubState: Variable<Bool> {get}
+    var name: Variable<String?> { get }
+    var description: Variable<String?> { get }
+    var backgroundURL: Variable<URL?> { get }
+    var firtPerson: Variable<URL?> { get }
+    var secondPerson: Variable<URL?> { get }
+    var thirdPerson: Variable<URL?> { get }
+    var fourthPerson: Variable<URL?> { get }
+    var fifthPerson: Variable<URL?> { get }
+    var appleStoreState: Variable<Bool> { get }
+    var playStoreState: Variable<Bool> { get }
+    var gitlabState: Variable<Bool> { get }
+    var githubState: Variable<Bool> { get }
     
-    func appleStoreDidTap()
-    func playStoreDidTap()
-    func githubDidTap()
-    func gitlabDidTap()
+    func appleStoreImageTapped()
+    func playStoreImageTapped()
+    func githubImageTapped()
+    func gitlabImageTapped()
 }
 
 class LabInformationPresenter: BasePresenter {
@@ -80,31 +80,31 @@ class LabInformationPresenter: BasePresenter {
 }
 
 extension LabInformationPresenter: LabInformationPresenterProtocol {
-    func appleStoreDidTap() {
+    func appleStoreImageTapped() {
         if appleStoreState.value,
             let appleStoreURL = labVariable.value.appleStore {
-            router?.openAppleStoreWith(url: appleStoreURL, title: R.string.localizable.labInfoAppleStore())
+            router?.showAppleStoreWith(url: appleStoreURL, title: R.string.localizable.labInfoAppleStore())
         }
     }
     
-    func playStoreDidTap() {
+    func playStoreImageTapped() {
         if playStoreState.value,
             let playStoreURL = labVariable.value.playStore {
-            router?.openWebViewWith(url: playStoreURL, title: R.string.localizable.labInfoPlayStore())
+            router?.showWebViewWith(url: playStoreURL, title: R.string.localizable.labInfoPlayStore())
         }
     }
     
-    func githubDidTap() {
+    func githubImageTapped() {
         if githubState.value,
             let githubURL = labVariable.value.github {
-            router?.openWebViewWith(url: githubURL, title: R.string.localizable.labInfoRepository())
+            router?.showWebViewWith(url: githubURL, title: R.string.localizable.labInfoRepository())
         }
     }
     
-    func gitlabDidTap() {
+    func gitlabImageTapped() {
         if gitlabState.value,
             let gitlabURL = labVariable.value.gitlab {
-            router?.openWebViewWith(url: gitlabURL, title: R.string.localizable.labInfoRepository())
+            router?.showWebViewWith(url: gitlabURL, title: R.string.localizable.labInfoRepository())
         }
     }
 }

@@ -18,7 +18,7 @@ class WebViewController: BaseViewController {
     @IBOutlet fileprivate weak var webView: UIWebView!
     
     private var presenterDisposeBag: DisposeBag!
-    var presenterProtocol: WebViewPresenterProtocol!
+    var presenter: WebViewPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +35,13 @@ class WebViewController: BaseViewController {
     private func bind() {
         presenterDisposeBag = DisposeBag()
         
-        presenterProtocol.currentURL
+        presenter.currentURL
             .asObservable()
             .subscribe(onNext: { [weak self] (currentURL) in
                 guard let strongSelf = self else { return }
                 
                 strongSelf.webView.loadRequest(URLRequest(url: currentURL))
-                strongSelf.presenterProtocol?.webViewDidStartLoad()
+                strongSelf.presenter?.webViewDidStartLoad()
             })
             .disposed(by: presenterDisposeBag)
     }
@@ -50,20 +50,20 @@ class WebViewController: BaseViewController {
 extension WebViewController: WebViewProtocol {
     func reloadWebView(url: URL) {
         webView.loadRequest(URLRequest(url: url))
-        presenterProtocol?.webViewDidStartLoad()
+        presenter?.webViewDidStartLoad()
     }
 }
 
 extension WebViewController: UIWebViewDelegate {
     func webViewDidFinishLoad(_ webView: UIWebView) {
-        presenterProtocol?.webViewDidFinishLoad()
+        presenter?.webViewDidFinishLoad()
     }
     
     func webViewDidStartLoad(_ webView: UIWebView) {
-        presenterProtocol?.webViewDidStartLoad()
+        presenter?.webViewDidStartLoad()
     }
     
     func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
-        presenterProtocol?.webViewDidFailLoadWithError(error: error)
+        presenter?.webViewDidFailLoadWithError(error: error)
     }
 }

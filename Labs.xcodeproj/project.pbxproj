@@ -208,10 +208,10 @@
 		F033F7211F5A309D001B3A89 /* labInformations */ = {
 			isa = PBXGroup;
 			children = (
-				F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */,
+				F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */,
 				F042DD791F5DC21400924057 /* LabInformationViewController.xib */,
 				F033F7241F5A3130001B3A89 /* LabInformationViewController.swift */,
-				F033F7221F5A311D001B3A89 /* LabInformationWireFrame.swift */,
+				F033F7261F5A315A001B3A89 /* LabInformationPresenter.swift */,
 			);
 			path = labInformations;
 			sourceTree = "<group>";
@@ -266,10 +266,10 @@
 		F0465E6B1F6D94840013CED2 /* about */ = {
 			isa = PBXGroup;
 			children = (
-				F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */,
+				F0465E6C1F6D94FA0013CED2 /* AboutWireFrame.swift */,
 				F0465E721F6D95320013CED2 /* AboutViewController.xib */,
 				F0465E701F6D95200013CED2 /* AboutViewController.swift */,
-				F0465E6C1F6D94FA0013CED2 /* AboutWireFrame.swift */,
+				F0465E6E1F6D95090013CED2 /* AboutPresenter.swift */,
 			);
 			path = about;
 			sourceTree = "<group>";
@@ -277,18 +277,11 @@
 		F09EA1CF1FA7B74800393C37 /* repository */ = {
 			isa = PBXGroup;
 			children = (
+				F09EA1D31FA7B80100393C37 /* BaseRepository.swift */,
 				F09EA1D01FA7B7A700393C37 /* LabsRepository.swift */,
 				F0E4A7601FC33F5B00D43927 /* AboutRepository.swift */,
 			);
 			path = repository;
-			sourceTree = "<group>";
-		};
-		F09EA1D21FA7B7E900393C37 /* base */ = {
-			isa = PBXGroup;
-			children = (
-				F09EA1D31FA7B80100393C37 /* BaseRepository.swift */,
-			);
-			path = base;
 			sourceTree = "<group>";
 		};
 		F0C2944E1F51EC9000CDA442 /* utils */ = {
@@ -335,10 +328,10 @@
 		F0F8FF571F60BC8E00A906F9 /* webView */ = {
 			isa = PBXGroup;
 			children = (
-				F0F8FF5A1F60BCE800A906F9 /* WebViewPreseter.swift */,
+				F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */,
 				F0F8FF5E1F60C1A500A906F9 /* WebViewController.xib */,
 				F0F8FF5C1F60BCFA00A906F9 /* WebViewViewController.swift */,
-				F0F8FF581F60BCD800A906F9 /* WebViewWireFrame.swift */,
+				F0F8FF5A1F60BCE800A906F9 /* WebViewPreseter.swift */,
 			);
 			path = webView;
 			sourceTree = "<group>";
@@ -346,7 +339,6 @@
 		F0FA0E571F4DEF48002CDA39 /* data */ = {
 			isa = PBXGroup;
 			children = (
-				F09EA1D21FA7B7E900393C37 /* base */,
 				F02D1A561F5876E700361C5B /* firebaseRD */,
 				F0C294541F51EE0D00CDA442 /* entities */,
 				F09EA1CF1FA7B74800393C37 /* repository */,
@@ -357,11 +349,9 @@
 		F0FA0E581F4DEF53002CDA39 /* domain */ = {
 			isa = PBXGroup;
 			children = (
-				F0C294511F51ECD300CDA442 /* models */,
 				F0C2944E1F51EC9000CDA442 /* utils */,
-				F0FA0E5C1F4DEFC6002CDA39 /* base */,
-				F0FA0E711F4DF4CE002CDA39 /* LabsInteractor.swift */,
-				F0E4A75C1FC33D4100D43927 /* AboutInteractor.swift */,
+				F0C294511F51ECD300CDA442 /* models */,
+				F0FA0E5C1F4DEFC6002CDA39 /* interactor */,
 			);
 			path = domain;
 			sourceTree = "<group>";
@@ -369,8 +359,8 @@
 		F0FA0E591F4DEF5A002CDA39 /* presentation */ = {
 			isa = PBXGroup;
 			children = (
-				F0C294581F51F5FD00CDA442 /* views */,
 				F0FA0E5B1F4DEF95002CDA39 /* utils */,
+				F0C294581F51F5FD00CDA442 /* views */,
 				F0FA0E5A1F4DEF8A002CDA39 /* base */,
 				F0FA0E671F4DF2A2002CDA39 /* labsDescription */,
 				F033F7211F5A309D001B3A89 /* labInformations */,
@@ -399,21 +389,23 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
-		F0FA0E5C1F4DEFC6002CDA39 /* base */ = {
+		F0FA0E5C1F4DEFC6002CDA39 /* interactor */ = {
 			isa = PBXGroup;
 			children = (
 				F0FA0E651F4DF19E002CDA39 /* BaseInteractor.swift */,
+				F0FA0E711F4DF4CE002CDA39 /* LabsInteractor.swift */,
+				F0E4A75C1FC33D4100D43927 /* AboutInteractor.swift */,
 			);
-			path = base;
+			path = interactor;
 			sourceTree = "<group>";
 		};
 		F0FA0E671F4DF2A2002CDA39 /* labsDescription */ = {
 			isa = PBXGroup;
 			children = (
 				F0FA0E751F4DFA67002CDA39 /* view */,
-				F0FA0E681F4DF2F9002CDA39 /* LabsPresenter.swift */,
-				F0FA0E691F4DF2F9002CDA39 /* LabsViewController.swift */,
 				F0FA0E6B1F4DF2FA002CDA39 /* LabsWireFrame.swift */,
+				F0FA0E691F4DF2F9002CDA39 /* LabsViewController.swift */,
+				F0FA0E681F4DF2F9002CDA39 /* LabsPresenter.swift */,
 			);
 			path = labsDescription;
 			sourceTree = "<group>";

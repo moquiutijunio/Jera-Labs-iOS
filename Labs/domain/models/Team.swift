@@ -19,7 +19,11 @@ struct Team {
 extension Team {
     
     static func map(teamAPI: TeamAPI?) -> Team? {
-        guard let teamAPI = teamAPI else {return nil}
-        return Team(first: teamAPI.first, second: teamAPI.second, third: teamAPI.third, fourth: teamAPI.fourth, fifth: teamAPI.fifth)
+        guard let teamAPI = teamAPI else { return nil }
+        return Team(first: teamAPI.first,
+                    second: teamAPI.second,
+                    third: teamAPI.third,
+                    fourth: teamAPI.fourth,
+                    fifth: teamAPI.fifth)
     }
 }

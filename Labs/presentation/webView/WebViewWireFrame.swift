@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol WebViewWireFrameProtocol: PresenterWireFrameProtocol {
+protocol WebViewWireFrameProtocol: class {
     
 }
 
@@ -19,12 +19,12 @@ class WebViewWireFrame: BaseWireFrame {
     
     let presenter: WebViewPresenterProtocol
     
-    init(url: URL, title: String, presenterWireFrame: PresenterWireFrameProtocol) {
+    init(url: URL, title: String, callback: WireFrameCallbackProtocol) {
         let presenter = WebViewPresenter(currentURL: url)
         
         self.presenter = presenter
         
-        viewController.presenterProtocol = presenter
+        viewController.presenter = presenter
         viewController.title = title
         
         super.init()
@@ -32,23 +32,12 @@ class WebViewWireFrame: BaseWireFrame {
         presenter.viewProtocol = viewController
         presenter.router = self
         
-        self.presenterWireFrame = presenterWireFrame
+        self.callback = callback
     }
     
     func presentOn(navigationController: UINavigationController) {
         navigationController.pushViewController(viewController, animated: true)
         self.navigationController = navigationController
-        
-        _ = self.navigationController!.rx
-            .didShow
-            .takeUntil(rx.deallocated)
-            .subscribe(onNext: { [weak self] (viewController) in
-                guard let strongSelf = self else { return }
-                
-                if strongSelf.viewController.isEqual(viewController) {
-                    strongSelf.presentedWireFrame = nil
-                }
-            })
     }
 }
 
